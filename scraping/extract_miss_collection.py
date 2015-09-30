@@ -1,5 +1,6 @@
 #! -*- coding: utf-8 -*-
 __author__ = 'kensuke-mi'
+__version__ = '0.1'
 
 from settings import *
 from bs4 import BeautifulSoup
@@ -11,6 +12,20 @@ import time
 import sys
 from collections import namedtuple
 import pickle
+import logging
+import random
+random.seed(1)
+
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
+formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+
+#sys.stderrへ出力するハンドラーを定義
+sh = logging.StreamHandler()
+sh.setLevel(logging.INFO)
+sh.setFormatter(formatter)
+#rootロガーにハンドラーを登録する
+logger.addHandler(sh)
 
 TopUnivInfo = namedtuple("UnivInfo", "univ_name link_univ_page")
 UnivMemberPage = namedtuple("UnivMemberPage", "univ_name link_univ_page html")
@@ -56,7 +71,9 @@ class MemberProfiles(object):
         assert isinstance(profile_obj, ProfileInfo)
         assert isinstance(q_a_tuples, list)
 
-
+        self.abstract = member_abstract_obj
+        self.profile = profile_obj
+        self.QA = q_a_tuples
 
 
 class ExtractPersonInfo(object):
@@ -85,18 +102,34 @@ class ExtractPersonInfo(object):
         return top_html_data
 
     def save_pickle_object(self, path_to_pickle, object):
-        assert os.path.exists(path_to_pickle)
-        f = open(path_to_pickle, "r")
+        assert os.path.exists(os.path.dirname(path_to_pickle))
+        f = open(path_to_pickle, "w")
         pickle.dump(object, f)
         f.close()
     # -------------------------------------------------------------------------------
     # These methods are for parsing top page
-    def parse_top_html(self, top_html):
+    def save_univ_pickle_object(self, path_to_pickle, object):
+        assert os.path.exists(os.path.dirname(path_to_pickle))
+        converted_object = [
+            {
+                "univ_name": univ_tuple.univ_name,
+                "univ_link":  univ_tuple.link_univ_page
+            }
+            for univ_tuple
+            in object
+        ]
+        f = open(path_to_pickle, "w")
+        pickle.dump(converted_object, f)
+        f.close()
+
+
+    def parse_top_html(self):
         """This method get parse top page.
 
         :param top_html:
         :return:
         """
+        top_html = self.__get_html_page(page_url=self.root_url)
         assert isinstance(top_html, (str, unicode))
         soup = BeautifulSoup(top_html, "html.parser")
 
@@ -112,6 +145,7 @@ class ExtractPersonInfo(object):
             for univ_node in university_nodes
         ]
 
+        logging.info(msg=u"finished extracting from top page")
         return univ_page_objects
 
 
@@ -212,9 +246,13 @@ class ExtractPersonInfo(object):
         stack = []
         for univ_obj in university_objects:
             url_link = self.root_url + univ_obj.link_univ_page
+            if url_link in except_pages: continue
+
+            logging.info(msg=u"started university {}".format(univ_obj.univ_name))
             univ_top_html = self.__get_html_page(url_link)
             stack += self.parge_univ_member_page(univ_name=univ_obj.univ_name, univ_member_page_html=univ_top_html)
-            time.sleep(wait_time)
+            logging.info(msg=u"finished university {}".format(univ_obj.univ_name))
+            time.sleep(random.randint(wait_time_from, wait_time_to))
 
         return stack
 
@@ -325,14 +363,49 @@ class ExtractPersonInfo(object):
     def make_person_information(self, list_of_abstract_obj):
         assert isinstance(list_of_abstract_obj, list)
         stack = []
-        for abstract_obj in list_of_abstract_obj:
+        for index_number, abstract_obj in enumerate(list_of_abstract_obj):
             assert isinstance(abstract_obj, MemberAbstractInfo)
+            logging.info(msg=u"started {} of {}.".format(abstract_obj.member_name,
+                                                                      abstract_obj.univ_name))
             html_page = self.__get_html_page(abstract_obj.prof_link)
             profile_object, q_a_tuples = self.parse_member_profile_page(html_page)
             member_info = MemberProfiles(member_abstract_obj=abstract_obj,
                                          profile_obj=profile_object,
                                          q_a_tuples=q_a_tuples)
             stack.append(member_info)
+            logging.info(msg=u"finished {} of {}. Now {} of {}".format(abstract_obj.member_name,
+                                                                      abstract_obj.univ_name,
+                                                                      index_number,
+                                                                      len(list_of_abstract_obj)))
+            time.sleep(random.randint(wait_time_from, wait_time_to))
 
         return stack
 
+
+    def conv_profiles_with_json(self, list_of_member_profile):
+        assert isinstance(list_of_member_profile, list)
+
+        array_object = []
+        for member_profile in list_of_member_profile:
+            item = {}
+            assert isinstance(member_profile, MemberProfiles)
+            item['name'] = member_profile.abstract.member_name
+            item['name_rubi'] = member_profile.profile.name_rubi
+            item['univ_name'] = member_profile.abstract.univ_name
+            item['entry_no'] = member_profile.abstract.entry_no
+            item['twitter_link'] = member_profile.abstract.twitter_link
+            item['blog_link'] = member_profile.abstract.blog_link
+            item['photo_url'] = member_profile.abstract.photo_url
+            item['birth_date'] = member_profile.profile.birth_date
+            item['birth_place'] = member_profile.profile.birth_place
+            item['blood_type'] = member_profile.profile.blood_type
+            item['height'] = member_profile.profile.height
+            item['major'] = member_profile.profile.major
+            item['QA'] = {}
+
+            for key_value_tuple in member_profile.QA:
+                item['QA'][key_value_tuple[0]] = key_value_tuple[1]
+
+            array_object.append(item)
+
+        return array_object

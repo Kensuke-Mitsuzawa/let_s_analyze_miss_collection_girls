@@ -42,6 +42,15 @@ class TestExtractPersonInfo(unittest.TestCase):
         for member_obj in members_objects: assert isinstance(member_obj, scraping.extract_miss_collection.MemberAbstractInfo)
 
 
+        univ_name3 = "大阪府立大学"
+        univ_link3 = "https://misscolle.com/abeno2015"
+        univ_html3 = self.extract_obj._ExtractPersonInfo__get_html_page(univ_link3)
+
+        members_objects = self.extract_obj.parge_univ_member_page(univ_name=univ_name3,
+                                                                  univ_member_page_html=univ_html3)
+        assert isinstance(members_objects, list)
+        for member_obj in members_objects: assert isinstance(member_obj, scraping.extract_miss_collection.MemberAbstractInfo)
+
     def test_get_univ_members_page(self):
         univ_parsed_objects = self.test_parse_top_html()
         member_abstract_objects = self.extract_obj.get_university_members_page(university_objects=univ_parsed_objects)
