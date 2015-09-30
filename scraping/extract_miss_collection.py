@@ -382,11 +382,20 @@ class ExtractPersonInfo(object):
         return stack
 
 
-    def conv_profiles_with_json(self, list_of_member_profile):
+    def __download_pics(self, url, path):
+        fp = urllib2.urlopen(url)
+        local = open(path, 'wb')
+        local.write(fp.read())
+        local.close()
+        fp.close()
+
+
+    def conv_profiles_with_json(self, list_of_member_profile, path_pics_dir):
         assert isinstance(list_of_member_profile, list)
+        assert os.path.exists(path_pics_dir)
 
         array_object = []
-        for member_profile in list_of_member_profile:
+        for index, member_profile in enumerate(list_of_member_profile):
             item = {}
             assert isinstance(member_profile, MemberProfiles)
             item['name'] = member_profile.abstract.member_name
@@ -403,9 +412,15 @@ class ExtractPersonInfo(object):
             item['major'] = member_profile.profile.major
             item['QA'] = {}
 
+            path_pic = u'{}.jpg'.format(os.path.join(path_pics_dir, member_profile.profile.name_rubi))
+            self.__download_pics(url=member_profile.abstract.photo_url, path=path_pic)
+            time.sleep(random.randint(wait_time_from, wait_time_to))
+            item['path_pic'] = path_pic
+
             for key_value_tuple in member_profile.QA:
                 item['QA'][key_value_tuple[0]] = key_value_tuple[1]
 
             array_object.append(item)
+            logging.info(msg=u'{} of {} is processed'.format(index, len(list_of_member_profile)))
 
         return array_object

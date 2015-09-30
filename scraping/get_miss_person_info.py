@@ -21,6 +21,7 @@ def prepare_miss_collection_info():
     PATH_MEMBER_ABST_PICKLE = '../extracted/miss_collection/miss_abstract.pickle'
     PATH_MEMBER_INFO = '../extracted/miss_collection/miss_member.pickle'
     PATH_MEMBER_JSON = '../extracted/miss_collection/miss_member.json'
+    PATH_TO_PICS_DIR =  '../extracted/miss_collection/pics'
 
 
     extract_obj = extract_miss_collection.ExtractPersonInfo(root_url=miss_root_url)
@@ -42,7 +43,7 @@ def prepare_miss_collection_info():
     """
 
     member_profile_data = load_pickle_obj(PATH_MEMBER_INFO)
-    list_of_items = extract_obj.conv_profiles_with_json(member_profile_data)
+    list_of_items = extract_obj.conv_profiles_with_json(member_profile_data, PATH_TO_PICS_DIR)
     with codecs.open(PATH_MEMBER_JSON, 'w', 'utf-8') as f:
         f.write(json.dumps(list_of_items, indent=4, ensure_ascii=False))
 
