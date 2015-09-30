@@ -4,11 +4,13 @@ __author__ = 'kensuke-mi'
 from settings import *
 from bs4 import BeautifulSoup
 from bs4.element import Tag
+import os
 import urllib2
 import re
 import time
 import sys
 from collections import namedtuple
+import pickle
 
 TopUnivInfo = namedtuple("UnivInfo", "univ_name link_univ_page")
 UnivMemberPage = namedtuple("UnivMemberPage", "univ_name link_univ_page html")
@@ -48,6 +50,13 @@ class ProfileInfo(object):
         return "Profile Object"
 
 
+class MemberProfiles(object):
+    def __init__(self, member_abstract_obj, profile_obj, q_a_tuples):
+        assert isinstance(member_abstract_obj, MemberAbstractInfo)
+        assert isinstance(profile_obj, ProfileInfo)
+        assert isinstance(q_a_tuples, list)
+
+
 
 
 class ExtractPersonInfo(object):
@@ -75,7 +84,13 @@ class ExtractPersonInfo(object):
 
         return top_html_data
 
-
+    def save_pickle_object(self, path_to_pickle, object):
+        assert os.path.exists(path_to_pickle)
+        f = open(path_to_pickle, "r")
+        pickle.dump(object, f)
+        f.close()
+    # -------------------------------------------------------------------------------
+    # These methods are for parsing top page
     def parse_top_html(self, top_html):
         """This method get parse top page.
 
@@ -117,6 +132,8 @@ class ExtractPersonInfo(object):
         return univ_obj_tuple
 
 
+    # -------------------------------------------------------------------------------
+    # These methods are for parsing member page in each university
     def __parge_member_abstract(self, univ_name, member_node):
         """This method extracts member abstract information from university member page
         See https://misscolle.com/kandai2015, as example
@@ -201,7 +218,8 @@ class ExtractPersonInfo(object):
 
         return stack
 
-
+    # -------------------------------------------------------------------------------
+    # These methods are for parsing profile page
     def __parse_dl_node_in_member_prof(self, dl_node):
         assert isinstance(dl_node, Tag)
 
@@ -259,18 +277,62 @@ class ExtractPersonInfo(object):
         return profile_object
 
 
+    def __extract_topic_QA(self, li_node):
+        """This method is sub-function of __extract_topics_part
+
+        :param li_node:
+        :return:
+        """
+        assert isinstance(li_node, Tag)
+        key = unicode(li_node.find("h3").string).strip()
+        value = unicode(li_node.find("p").string).strip()
+        if value==None or value==u'None':
+            text = li_node.find("p").text
+            value = text.strip().replace('\n', u',')
+        return key, value
+
+
+    def __extract_topics_part(self, topics_node):
+        """This method extracts QA from profile page See: https://misscolle.com/kandai2015/profile/1
+
+        :param topics_node:
+        :return:
+        """
+        assert isinstance(topics_node, Tag)
+        topics_node = topics_node.find("ul", class_="columns js-masonry").find_all("li", class_=re.compile(r"^column"))
+        key_value_tuples = [
+            self.__extract_topic_QA(li_node)
+            for li_node in topics_node
+        ]
+
+        return key_value_tuples
 
 
     def parse_member_profile_page(self, member_page_html):
         assert isinstance(member_page_html, (str, unicode))
-        #assert isinstance(member_abstract_info, MemberAbstractInfo)
 
         member_top_node = BeautifulSoup(member_page_html, "html.parser")
         content_main_node = member_top_node.find("div", id="whole").find("div", id="content-wrap").find("div", id="content-main")
         member_info_node = content_main_node.find("div", id="contest-main")
+        topics_node = content_main_node.find("div", id="profile_topics")
+
         profile_object = self.__extract_profile_part(member_info_node)
-        
+        q_a_tuples = self.__extract_topics_part(topics_node)
 
+        return profile_object, q_a_tuples
+    # TODO 写真一覧を取得するメソッドを書くこと
+    # -------------------------------------------------------------------------------
+    def make_person_information(self, list_of_abstract_obj):
+        assert isinstance(list_of_abstract_obj, list)
+        stack = []
+        for abstract_obj in list_of_abstract_obj:
+            assert isinstance(abstract_obj, MemberAbstractInfo)
+            html_page = self.__get_html_page(abstract_obj.prof_link)
+            profile_object, q_a_tuples = self.parse_member_profile_page(html_page)
+            member_info = MemberProfiles(member_abstract_obj=abstract_obj,
+                                         profile_obj=profile_object,
+                                         q_a_tuples=q_a_tuples)
+            stack.append(member_info)
 
-
+        return stack
 

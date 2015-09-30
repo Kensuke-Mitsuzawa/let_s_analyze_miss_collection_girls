@@ -53,9 +53,9 @@ class TestExtractPersonInfo(unittest.TestCase):
         test_member_html_1 = self.extract_obj._ExtractPersonInfo__get_html_page(test_member1)
         self.extract_obj.parse_member_profile_page(member_page_html=test_member_html_1)
 
-
-
-
+        test_member2 = 'https://misscolle.com/rits2015/profile/2'
+        test_member_html_2 = self.extract_obj._ExtractPersonInfo__get_html_page(test_member2)
+        self.extract_obj.parse_member_profile_page(member_page_html=test_member_html_2)
 
 
 def suite():
