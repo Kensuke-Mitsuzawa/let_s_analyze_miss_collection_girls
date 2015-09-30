@@ -44,7 +44,16 @@ class TestExtractPersonInfo(unittest.TestCase):
 
     def test_get_univ_members_page(self):
         univ_parsed_objects = self.test_parse_top_html()
-        univ_member_html = self.extract_obj.get_university_members_page(university_objects=univ_parsed_objects)
+        member_abstract_objects = self.extract_obj.get_university_members_page(university_objects=univ_parsed_objects)
+        for member_obj in member_abstract_objects: assert isinstance(member_obj, scraping.extract_miss_collection.MemberAbstractInfo)
+
+
+    def test_parse_member_profile_page(self):
+        test_member1 = 'https://misscolle.com/kandai2015/profile/1'
+        test_member_html_1 = self.extract_obj._ExtractPersonInfo__get_html_page(test_member1)
+        self.extract_obj.parse_member_profile_page(member_page_html=test_member_html_1)
+
+
 
 
 
