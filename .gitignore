@@ -1,4 +1,5 @@
 extracted/
+.DS_Store
 .idea/
 misc/chainer-1.3.2/
 *pyc
