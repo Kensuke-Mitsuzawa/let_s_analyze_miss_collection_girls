@@ -7,4 +7,5 @@ batchsize = 100
 #n_epoch = 30
 n_epoch = 2
 # 中間層の数
-n_units = 1000
+#n_units = 1000
+n_units = 100

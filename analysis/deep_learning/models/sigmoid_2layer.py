@@ -13,7 +13,7 @@ def forward(model, x_data, y_data, is_drop):
     assert isinstance(y_data, np.ndarray)
 
     x, t = Variable(x_data), Variable(y_data)
-    y = F.dropout(F.relu(model.l1(x)),  train=is_drop)
+    y = F.dropout(F.sigmoid(model.l1(x)),  train=is_drop)
     x_hat  = F.dropout(model.l2(y),  train=is_drop)
     # 誤差関数として二乗誤差関数を用いる
     return F.mean_squared_error(x_hat, t)

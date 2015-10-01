@@ -5,19 +5,27 @@ import time
 
 import numpy as np
 import os
+import re
 from chainer import cuda
 
-from models.setting import *
 import data_loader
 from models import relu_2layer
+from models import sigmoid_2layer
 
 
 class ChainerDeepNetWoek(object):
-    def __init__(self, model_type, path_input_dir, N, is_add_noise, is_drop, noise_rate):
+    def __init__(self, model_type, path_input_dir, n_units, n_epoch, batchsize, N, is_add_noise, is_drop, noise_rate):
         assert os.path.exists(path_input_dir)
         assert isinstance(N, int)
         assert isinstance(is_drop, bool)
         assert isinstance(noise_rate, float)
+        assert isinstance(n_units, int)
+        assert isinstance(n_epoch, int)
+        assert isinstance(batchsize, int)
+
+        self.n_unit = n_units
+        self.n_epoch = n_epoch
+        self.batchsize = batchsize
 
         self.noise_rate = noise_rate
         self.is_drop = is_drop
@@ -30,9 +38,13 @@ class ChainerDeepNetWoek(object):
 
 
     def __model_selection(self, model_type):
-        if model_type=='relu_2layer':
+        if re.findall(r'relu_2layer', model_type)!=[]:
             self.forward = relu_2layer.forward
-            self.model,self.optimizer = relu_2layer.setup_model(n_dimention=self.n_dimension)
+            self.model,self.optimizer = relu_2layer.setup_model(n_dimention=self.n_dimension, n_units=self.n_unit)
+
+        elif re.findall(r'sigmoid_2layer', model_type)!=[]:
+            self.forward = sigmoid_2layer.forward
+            self.model,self.optimizer = sigmoid_2layer.setup_model(n_dimention=self.n_dimension, n_units=self.n_unit)
 
         else:
             raise SystemError()
@@ -79,9 +91,9 @@ class ChainerDeepNetWoek(object):
         # training
         perm = np.random.permutation(self.N)
         sum_loss = 0
-        for i in xrange(0, self.N, batchsize):
-            x_batch = x_train[perm[i:i+batchsize]]
-            y_batch = y_train[perm[i:i+batchsize]]
+        for i in xrange(0, self.N, self.batchsize):
+            x_batch = x_train[perm[i:i+self.batchsize]]
+            y_batch = y_train[perm[i:i+self.batchsize]]
 
             optimizer.zero_grads()
             loss = self.forward(model, x_batch, y_batch, self.is_drop)
@@ -89,7 +101,7 @@ class ChainerDeepNetWoek(object):
             optimizer.update()
 
             train_loss.append(loss.data)
-            sum_loss += float(cuda.to_cpu(loss.data)) * batchsize
+            sum_loss += float(cuda.to_cpu(loss.data)) * self.batchsize
 
         print '\ttrain mean loss={} '.format(sum_loss / self.N)
         return model, optimizer, train_loss
@@ -99,13 +111,13 @@ class ChainerDeepNetWoek(object):
                    test_mean_loss, test_loss, loss_rate, prev_loss, loss_std, l1_W, l2_W):
         # evaluation
         sum_loss = 0
-        for i in xrange(0, self.N_test, batchsize):
-            x_batch = x_test[i:i+batchsize]
-            y_batch = y_test[i:i+batchsize]
+        for i in xrange(0, self.N_test, self.batchsize):
+            x_batch = x_test[i:i+self.batchsize]
+            y_batch = y_test[i:i+self.batchsize]
             loss = self.forward(model, x_batch, y_batch, self.is_drop)
 
             test_loss.append(loss.data)
-            sum_loss += float(cuda.to_cpu(loss.data)) * batchsize
+            sum_loss += float(cuda.to_cpu(loss.data)) * self.batchsize
 
         loss_val = sum_loss / self.N_test
 
@@ -149,15 +161,15 @@ class ChainerDeepNetWoek(object):
         model = self.model
         optimizer = self.optimizer
 
-        for epoch in xrange(1, n_epoch+1):
+        for epoch in xrange(1, self.n_epoch+1):
             print 'epoch', epoch
             start_time = time.clock()
             train_loss = []
             perm = np.random.permutation(self.N)
             sum_loss = 0
-            for i in xrange(0, self.N, batchsize):
-                x_batch = self.x_train[perm[i:i+batchsize]]
-                y_batch = self.y_train[perm[i:i+batchsize]]
+            for i in xrange(0, self.N, self.batchsize):
+                x_batch = self.x_train[perm[i:i+self.batchsize]]
+                y_batch = self.y_train[perm[i:i+self.batchsize]]
 
                 optimizer.zero_grads()
                 loss = self.forward(model, x_batch, y_batch, self.is_drop)
@@ -165,19 +177,19 @@ class ChainerDeepNetWoek(object):
                 optimizer.update()
 
                 train_loss.append(loss.data)
-                sum_loss += float(cuda.to_cpu(loss.data)) * batchsize
+                sum_loss += float(cuda.to_cpu(loss.data)) * self.batchsize
 
             print '\ttrain mean loss={} '.format(sum_loss / self.N)
 
             # evaluation
             sum_loss = 0
-            for i in xrange(0, self.N_test, batchsize):
-                x_batch = self.x_test[i:i+batchsize]
-                y_batch = self.y_test[i:i+batchsize]
+            for i in xrange(0, self.N_test, self.batchsize):
+                x_batch = self.x_test[i:i+self.batchsize]
+                y_batch = self.y_test[i:i+self.batchsize]
                 loss = self.forward(model, x_batch, y_batch, self.is_drop)
 
                 test_loss.append(loss.data)
-                sum_loss += float(cuda.to_cpu(loss.data)) * batchsize
+                sum_loss += float(cuda.to_cpu(loss.data)) * self.batchsize
 
             loss_val = sum_loss / self.N_test
 
