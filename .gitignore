@@ -4,4 +4,6 @@ extracted/
 misc/chainer-1.3.2/
 *pyc
 .ipynb_checkpoints/
+*jpg
+*png
 

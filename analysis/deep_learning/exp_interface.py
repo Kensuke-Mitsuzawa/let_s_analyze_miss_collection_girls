@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import math
 import os
 from numpy import ndarray
+import numpy
 
 
 def draw_test_mean_loss(test_mean_loss, path_to_graph_png, is_show=False):
@@ -22,12 +23,10 @@ def draw_test_mean_loss(test_mean_loss, path_to_graph_png, is_show=False):
     plt.savefig(path_to_graph_png)
 
 
-def __draw_digit_w(size, data, n, row, col, i, length):
+def __draw_digit_w(size, data, n, row, col, i):
     assert isinstance(size, int)
-    assert isinstance(data, ndarray)
     assert isinstance(n, int)
     assert isinstance(i, int)
-    assert isinstance(length, int)
 
     plt.subplot(row, col, n)
     Z = data.reshape(size, size)   # convert from vector to matrix
@@ -42,7 +41,7 @@ def __draw_digit_w(size, data, n, row, col, i, length):
     plt.tick_params(labelleft="off")
 
 
-def plot_intermediate_node(l1_W, path_to_plot_png, n_epoch, is_show=False):
+def plot_intermediate_node(l1_W, path_to_plot_png, n_epoch, datatype, is_show=False):
     assert os.path.exists(os.path.dirname(path_to_plot_png))
     assert isinstance(l1_W, list)
     assert isinstance(n_epoch, int)
@@ -52,18 +51,36 @@ def plot_intermediate_node(l1_W, path_to_plot_png, n_epoch, is_show=False):
 
     plt.style.use('fivethirtyeight')
     # draw digit images
-    plt.figure(figsize=(15, math.ceil(len(l1_W[n_epoch - 1]) / 15)))
-    cnt = 1
-    COL=15
-    ROW=(l1_W[n_epoch - 1].shape[0] / COL) + 1
-    for i in range(0, len(l1_W[n_epoch - 1])):
-        __draw_digit_w(size=size,
-                       data=l1_W[n_epoch - 1][i],
-                       n=cnt,
-                       i=i,
-                       length=len(l1_W[n_epoch - 1][i]),
-                       col=COL, row=ROW)
-        cnt += 1
+    if datatype=='vector':
+
+        plt.figure(figsize=(15, math.ceil(len(l1_W[n_epoch - 1]) / 15)))
+        cnt = 1
+        COL=15
+        ROW=(l1_W[n_epoch - 1].shape[0] / COL) + 1
+        for i in range(0, len(l1_W[n_epoch - 1])):
+            __draw_digit_w(size=size,
+                           data=l1_W[n_epoch - 1][i],
+                           n=cnt,
+                           i=i,
+                           col=COL, row=ROW)
+            cnt += 1
+
+    elif datatype=='matrix':
+        plt.figure(figsize=(15, math.ceil(len(l1_W[n_epoch - 1]) / 15)))
+        cnt = 1
+        COL=15
+        ROW=(l1_W[n_epoch - 1].shape[1] / COL) + 1
+        W_T = numpy.array(l1_W[n_epoch - 1]).T
+        for i in range(0, W_T.shape[1]):
+            print i
+            __draw_digit_w(size=size,
+                           data=W_T[i],
+                           n=cnt,
+                           i=i,
+                           col=COL, row=ROW)
+            cnt += 1
+
+
 
     if is_show==True: plt.show()
     plt.savefig(path_to_plot_png)
@@ -90,10 +107,10 @@ PATH_W1_LAYER_GRAPH_DIR = './graphs/w1_layer'
 PATH_W2_LAYER_GRAPH_DIR = './graphs/w2_layer'
 
 def relu_2layer():
-    N_UNIT = 1000
+    N_UNIT = 1000 
     N_EPOCH = 30
     BATCHSIZE = 100
-    N = 100
+    N = 110
 
     model_type = "relu_2layer_drop"
     relu_2layer_obj = ChainerDeepNetWoek(model_type=model_type,
@@ -104,17 +121,17 @@ def relu_2layer():
     draw_test_mean_loss(test_mean_loss, path_to_graph_png=os.path.join(PATH_LOSS_GRAPH_DIR, model_type + '.png'))
 
 
-    plot_intermediate_node(l1_W=l1_W, n_epoch=N_EPOCH,
+    plot_intermediate_node(l1_W=l1_W, n_epoch=N_EPOCH, datatype='vector',
                            path_to_plot_png=os.path.join(PATH_W1_LAYER_GRAPH_DIR, model_type + '.png'))
-    plot_intermediate_node(l1_W=l2_W, n_epoch=N_EPOCH,
-                           path_to_plot_png=os.path.join(PATH_W2_LAYER_GRAPH_DIR, model_type + '.png'))
+    #plot_intermediate_node(l1_W=l2_W, n_epoch=N_EPOCH, datatype='matrix',
+    #                       path_to_plot_png=os.path.join(PATH_W2_LAYER_GRAPH_DIR, model_type + '.png'))
 
 
 def relu_2layer_nodrop():
     N_UNIT = 1000
     N_EPOCH = 30
     BATCHSIZE = 100
-    N = 100
+    N = 110
 
     model_type = "relu_2layer_nodrop"
     relu_2layer_obj = ChainerDeepNetWoek(model_type=model_type,
@@ -125,10 +142,10 @@ def relu_2layer_nodrop():
     draw_test_mean_loss(test_mean_loss, path_to_graph_png=os.path.join(PATH_LOSS_GRAPH_DIR, model_type + '.png'))
 
 
-    plot_intermediate_node(l1_W=l1_W, n_epoch=N_EPOCH,
+    plot_intermediate_node(l1_W=l1_W, n_epoch=N_EPOCH, datatype='vector',
                            path_to_plot_png=os.path.join(PATH_W1_LAYER_GRAPH_DIR, model_type + '.png'))
-    plot_intermediate_node(l1_W=l2_W, n_epoch=N_EPOCH,
-                           path_to_plot_png=os.path.join(PATH_W2_LAYER_GRAPH_DIR, model_type + '.png'))
+    #plot_intermediate_node(l1_W=l2_W, n_epoch=N_EPOCH,
+    #                       path_to_plot_png=os.path.join(PATH_W2_LAYER_GRAPH_DIR, model_type + '.png'))
 
 
 
@@ -136,7 +153,7 @@ def relu_2layer_400_unit_drop():
     N_UNIT = 400
     N_EPOCH = 30
     BATCHSIZE = 100
-    N = 100
+    N = 110
 
     model_type = "relu_2layer_400_layer_drop"
     relu_2layer_obj = ChainerDeepNetWoek(model_type=model_type,
@@ -147,10 +164,10 @@ def relu_2layer_400_unit_drop():
     draw_test_mean_loss(test_mean_loss, path_to_graph_png=os.path.join(PATH_LOSS_GRAPH_DIR, model_type + '.png'))
 
 
-    plot_intermediate_node(l1_W=l1_W, n_epoch=N_EPOCH,
+    plot_intermediate_node(l1_W=l1_W, n_epoch=N_EPOCH, datatype='vector',
                            path_to_plot_png=os.path.join(PATH_W1_LAYER_GRAPH_DIR, model_type + '.png'))
-    plot_intermediate_node(l1_W=l2_W, n_epoch=N_EPOCH,
-                           path_to_plot_png=os.path.join(PATH_W2_LAYER_GRAPH_DIR, model_type + '.png'))
+    #plot_intermediate_node(l1_W=l2_W, n_epoch=N_EPOCH,
+    #                       path_to_plot_png=os.path.join(PATH_W2_LAYER_GRAPH_DIR, model_type + '.png'))
 
 
 
@@ -158,7 +175,7 @@ def relu_2layer_400_unit_nodrop():
     N_UNIT = 400
     N_EPOCH = 30
     BATCHSIZE = 100
-    N = 100
+    N = 110
 
     model_type = "relu_2layer_400_layer_nodrop"
     relu_2layer_obj = ChainerDeepNetWoek(model_type=model_type,
@@ -169,10 +186,10 @@ def relu_2layer_400_unit_nodrop():
     draw_test_mean_loss(test_mean_loss, path_to_graph_png=os.path.join(PATH_LOSS_GRAPH_DIR, model_type + '.png'))
 
 
-    plot_intermediate_node(l1_W=l1_W, n_epoch=N_EPOCH,
+    plot_intermediate_node(l1_W=l1_W, n_epoch=N_EPOCH, datatype='vector',
                            path_to_plot_png=os.path.join(PATH_W1_LAYER_GRAPH_DIR, model_type + '.png'))
-    plot_intermediate_node(l1_W=l2_W, n_epoch=N_EPOCH,
-                           path_to_plot_png=os.path.join(PATH_W2_LAYER_GRAPH_DIR, model_type + '.png'))
+    #plot_intermediate_node(l1_W=l2_W, n_epoch=N_EPOCH,
+    #                       path_to_plot_png=os.path.join(PATH_W2_LAYER_GRAPH_DIR, model_type + '.png'))
 
 
 
@@ -180,7 +197,7 @@ def sigmoid_2layer_drop():
     N_UNIT = 1000
     N_EPOCH = 30
     BATCHSIZE = 100
-    N = 100
+    N = 110
 
     model_type = "sigmoid_2layer_drop"
     relu_2layer_obj = ChainerDeepNetWoek(model_type=model_type,
@@ -191,17 +208,17 @@ def sigmoid_2layer_drop():
     draw_test_mean_loss(test_mean_loss, path_to_graph_png=os.path.join(PATH_LOSS_GRAPH_DIR, model_type + '.png'))
 
 
-    plot_intermediate_node(l1_W=l1_W, n_epoch=N_EPOCH,
+    plot_intermediate_node(l1_W=l1_W, n_epoch=N_EPOCH, datatype='vector',
                            path_to_plot_png=os.path.join(PATH_W1_LAYER_GRAPH_DIR, model_type + '.png'))
-    plot_intermediate_node(l1_W=l2_W, n_epoch=N_EPOCH,
-                           path_to_plot_png=os.path.join(PATH_W2_LAYER_GRAPH_DIR, model_type + '.png'))
+    #plot_intermediate_node(l1_W=l2_W, n_epoch=N_EPOCH,
+    #                       path_to_plot_png=os.path.join(PATH_W2_LAYER_GRAPH_DIR, model_type + '.png'))
 
 
 def sigmoid_2layer_drop_noise():
     N_UNIT = 1000
     N_EPOCH = 30
     BATCHSIZE = 100
-    N = 100
+    N = 110
 
     model_type = "sigmoid_2layer_drop_noise"
     relu_2layer_obj = ChainerDeepNetWoek(model_type=model_type,
@@ -212,17 +229,17 @@ def sigmoid_2layer_drop_noise():
     draw_test_mean_loss(test_mean_loss, path_to_graph_png=os.path.join(PATH_LOSS_GRAPH_DIR, model_type + '.png'))
 
 
-    plot_intermediate_node(l1_W=l1_W, n_epoch=N_EPOCH,
+    plot_intermediate_node(l1_W=l1_W, n_epoch=N_EPOCH, datatype='vector',
                            path_to_plot_png=os.path.join(PATH_W1_LAYER_GRAPH_DIR, model_type + '.png'))
-    plot_intermediate_node(l1_W=l2_W, n_epoch=N_EPOCH,
-                           path_to_plot_png=os.path.join(PATH_W2_LAYER_GRAPH_DIR, model_type + '.png'))
+    #plot_intermediate_node(l1_W=l2_W, n_epoch=N_EPOCH,
+    #                       path_to_plot_png=os.path.join(PATH_W2_LAYER_GRAPH_DIR, model_type + '.png'))
 
 
 def sigmoid_2layer_100_nodrop_noise():
     N_UNIT = 100
     N_EPOCH = 30
     BATCHSIZE = 100
-    N = 100
+    N = 110
 
     model_type = "sigmoid_2layer_100_nodrop_noise"
     relu_2layer_obj = ChainerDeepNetWoek(model_type=model_type,
@@ -233,12 +250,18 @@ def sigmoid_2layer_100_nodrop_noise():
     draw_test_mean_loss(test_mean_loss, path_to_graph_png=os.path.join(PATH_LOSS_GRAPH_DIR, model_type + '.png'))
 
 
-    plot_intermediate_node(l1_W=l1_W, n_epoch=N_EPOCH,
+    plot_intermediate_node(l1_W=l1_W, n_epoch=N_EPOCH, datatype='vector',
                            path_to_plot_png=os.path.join(PATH_W1_LAYER_GRAPH_DIR, model_type + '.png'))
-    plot_intermediate_node(l1_W=l2_W, n_epoch=N_EPOCH,
-                           path_to_plot_png=os.path.join(PATH_W2_LAYER_GRAPH_DIR, model_type + '.png'))
+    #plot_intermediate_node(l1_W=l2_W, n_epoch=N_EPOCH,
+    #                       path_to_plot_png=os.path.join(PATH_W2_LAYER_GRAPH_DIR, model_type + '.png'))
 
 
 if __name__ == '__main__':
-    relu_2layer()
+    #relu_2layer()
+    relu_2layer_nodrop()
+    relu_2layer_400_unit_drop()
+    relu_2layer_400_unit_nodrop()
+    sigmoid_2layer_100_nodrop_noise()
+    sigmoid_2layer_drop()
+    sigmoid_2layer_drop_noise()
 
