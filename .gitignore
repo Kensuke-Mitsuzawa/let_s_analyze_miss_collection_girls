@@ -1,6 +1,7 @@
 extracted/
 .DS_Store
 .idea/
+misc/bokeh-notebooks/
 misc/chainer-1.3.2/
 *pyc
 .ipynb_checkpoints/
