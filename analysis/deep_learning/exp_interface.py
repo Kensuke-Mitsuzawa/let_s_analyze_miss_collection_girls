@@ -61,12 +61,15 @@ def relu_2layer():
     l1_W, l2_W, test_mean_loss, model = relu_2layer_obj.train_network()
 
     draw_test_mean_loss(test_mean_loss, path_to_graph_png=os.path.join(PATH_LOSS_GRAPH_DIR, model_type + '.png'))
+    relu_2layer_obj.save_trained_models(__make_model_pickle_path(PATH_TRAINED_MODELS, model_type))
 
 
-    #plot_intermediate_node(l1_W=l1_W, n_epoch=N_EPOCH, datatype='vector',
-    #                       path_to_plot_png=os.path.join(PATH_W1_LAYER_GRAPH_DIR, model_type + '.png'))
-    #plot_intermediate_node(l1_W=l2_W, n_epoch=N_EPOCH, datatype='matrix',
-    #                       path_to_plot_png=os.path.join(PATH_W2_LAYER_GRAPH_DIR, model_type + '.png'))
+    plot_intermediate_node(l1_W=l1_W, n_epoch=N_EPOCH, datatype='vector',
+                           path_to_plot_png=os.path.join(PATH_W1_LAYER_GRAPH_DIR, model_type + '.png'),
+                           logger=logger)
+    plot_intermediate_node(l1_W=l2_W, n_epoch=N_EPOCH, datatype='matrix',
+                           path_to_plot_png=os.path.join(PATH_W2_LAYER_GRAPH_DIR, model_type + '.png'),
+                           logger=logger)
 
 
 def relu_2layer_nodrop():
@@ -81,6 +84,7 @@ def relu_2layer_nodrop():
                                  is_add_noise=False, is_drop=False, noise_rate=0.0,
                                  n_units=N_UNIT, n_epoch=N_EPOCH, batchsize=BATCHSIZE)
     l1_W, l2_W, test_mean_loss, model = relu_2layer_obj.train_network()
+    relu_2layer_obj.save_trained_models(__make_model_pickle_path(PATH_TRAINED_MODELS, model_type))
 
 
     draw_test_mean_loss(test_mean_loss, path_to_graph_png=os.path.join(PATH_LOSS_GRAPH_DIR, model_type + '.png'))
@@ -106,14 +110,18 @@ def relu_2layer_400_unit_drop():
                                  is_add_noise=False, is_drop=True, noise_rate=0.0,
                                  n_units=N_UNIT, n_epoch=N_EPOCH, batchsize=BATCHSIZE)
     l1_W, l2_W, test_mean_loss, model = relu_2layer_obj.train_network()
+    relu_2layer_obj.save_trained_models(__make_model_pickle_path(PATH_TRAINED_MODELS, model_type))
+
     draw_test_mean_loss(test_mean_loss, path_to_graph_png=os.path.join(PATH_LOSS_GRAPH_DIR, model_type + '.png'))
     relu_2layer_obj.save_trained_models(__make_model_pickle_path(PATH_TRAINED_MODELS, model_type))
 
 
-    #plot_intermediate_node(l1_W=l1_W, n_epoch=N_EPOCH, datatype='vector',
-    #                       path_to_plot_png=os.path.join(PATH_W1_LAYER_GRAPH_DIR, model_type + '.png'))
-    #plot_intermediate_node(l1_W=l2_W, n_epoch=N_EPOCH,
-    #                       path_to_plot_png=os.path.join(PATH_W2_LAYER_GRAPH_DIR, model_type + '.png'))
+    plot_intermediate_node(l1_W=l1_W, n_epoch=N_EPOCH, datatype='vector',
+                           path_to_plot_png=os.path.join(PATH_W1_LAYER_GRAPH_DIR, model_type + '.png'),
+                           logger=logger)
+    plot_intermediate_node(l1_W=l2_W, n_epoch=N_EPOCH,
+                           path_to_plot_png=os.path.join(PATH_W2_LAYER_GRAPH_DIR, model_type + '.png'),
+                           datatype='matrix', logger=logger)
 
 
 
@@ -129,13 +137,16 @@ def relu_2layer_400_unit_nodrop():
                                  is_add_noise=False, is_drop=False, noise_rate=0.0,
                                  n_units=N_UNIT, n_epoch=N_EPOCH, batchsize=BATCHSIZE)
     l1_W, l2_W, test_mean_loss, model = relu_2layer_obj.train_network()
+    relu_2layer_obj.save_trained_models(__make_model_pickle_path(PATH_TRAINED_MODELS, model_type))
+
     draw_test_mean_loss(test_mean_loss, path_to_graph_png=os.path.join(PATH_LOSS_GRAPH_DIR, model_type + '.png'))
 
 
     plot_intermediate_node(l1_W=l1_W, n_epoch=N_EPOCH, datatype='vector',
-                           path_to_plot_png=os.path.join(PATH_W1_LAYER_GRAPH_DIR, model_type + '.png'))
-    #plot_intermediate_node(l1_W=l2_W, n_epoch=N_EPOCH,
-    #                       path_to_plot_png=os.path.join(PATH_W2_LAYER_GRAPH_DIR, model_type + '.png'))
+                           path_to_plot_png=os.path.join(PATH_W1_LAYER_GRAPH_DIR, model_type + '.png'), logger=logger)
+    plot_intermediate_node(l1_W=l2_W, n_epoch=N_EPOCH,
+                           path_to_plot_png=os.path.join(PATH_W2_LAYER_GRAPH_DIR, model_type + '.png'),
+                           datatype='matrix', logger=logger)
 
 
 
@@ -151,13 +162,15 @@ def sigmoid_2layer_drop():
                                  is_add_noise=False, is_drop=True, noise_rate=0.0,
                                  n_units=N_UNIT, n_epoch=N_EPOCH, batchsize=BATCHSIZE)
     l1_W, l2_W, test_mean_loss, model = relu_2layer_obj.train_network()
+    relu_2layer_obj.save_trained_models(__make_model_pickle_path(PATH_TRAINED_MODELS, model_type))
     draw_test_mean_loss(test_mean_loss, path_to_graph_png=os.path.join(PATH_LOSS_GRAPH_DIR, model_type + '.png'))
 
 
     plot_intermediate_node(l1_W=l1_W, n_epoch=N_EPOCH, datatype='vector',
-                           path_to_plot_png=os.path.join(PATH_W1_LAYER_GRAPH_DIR, model_type + '.png'))
-    #plot_intermediate_node(l1_W=l2_W, n_epoch=N_EPOCH,
-    #                       path_to_plot_png=os.path.join(PATH_W2_LAYER_GRAPH_DIR, model_type + '.png'))
+                           path_to_plot_png=os.path.join(PATH_W1_LAYER_GRAPH_DIR, model_type + '.png'), logger=logger)
+    plot_intermediate_node(l1_W=l2_W, n_epoch=N_EPOCH,
+                           path_to_plot_png=os.path.join(PATH_W2_LAYER_GRAPH_DIR, model_type + '.png'),
+                           logger=logger)
 
 
 def sigmoid_2layer_drop_noise():
@@ -172,13 +185,16 @@ def sigmoid_2layer_drop_noise():
                                  is_add_noise=True, is_drop=True, noise_rate=0.2,
                                  n_units=N_UNIT, n_epoch=N_EPOCH, batchsize=BATCHSIZE)
     l1_W, l2_W, test_mean_loss, model = relu_2layer_obj.train_network()
+    relu_2layer_obj.save_trained_models(__make_model_pickle_path(PATH_TRAINED_MODELS, model_type))
     draw_test_mean_loss(test_mean_loss, path_to_graph_png=os.path.join(PATH_LOSS_GRAPH_DIR, model_type + '.png'))
 
 
     plot_intermediate_node(l1_W=l1_W, n_epoch=N_EPOCH, datatype='vector',
-                           path_to_plot_png=os.path.join(PATH_W1_LAYER_GRAPH_DIR, model_type + '.png'))
-    #plot_intermediate_node(l1_W=l2_W, n_epoch=N_EPOCH,
-    #                       path_to_plot_png=os.path.join(PATH_W2_LAYER_GRAPH_DIR, model_type + '.png'))
+                           path_to_plot_png=os.path.join(PATH_W1_LAYER_GRAPH_DIR, model_type + '.png'),
+                           logger=logger)
+    plot_intermediate_node(l1_W=l2_W, n_epoch=N_EPOCH,
+                           path_to_plot_png=os.path.join(PATH_W2_LAYER_GRAPH_DIR, model_type + '.png'),
+                           datatype='matrix', logger=logger)
 
 
 def sigmoid_2layer_100_nodrop_noise():
@@ -193,22 +209,25 @@ def sigmoid_2layer_100_nodrop_noise():
                                  is_add_noise=True, is_drop=False, noise_rate=0.2,
                                  n_units=N_UNIT, n_epoch=N_EPOCH, batchsize=BATCHSIZE)
     l1_W, l2_W, test_mean_loss, model = relu_2layer_obj.train_network()
+    relu_2layer_obj.save_trained_models(__make_model_pickle_path(PATH_TRAINED_MODELS, model_type))
+
     draw_test_mean_loss(test_mean_loss, path_to_graph_png=os.path.join(PATH_LOSS_GRAPH_DIR, model_type + '.png'))
 
 
     plot_intermediate_node(l1_W=l1_W, n_epoch=N_EPOCH, datatype='vector',
-                           path_to_plot_png=os.path.join(PATH_W1_LAYER_GRAPH_DIR, model_type + '.png'))
-    #plot_intermediate_node(l1_W=l2_W, n_epoch=N_EPOCH,
-    #                       path_to_plot_png=os.path.join(PATH_W2_LAYER_GRAPH_DIR, model_type + '.png'))
+                           path_to_plot_png=os.path.join(PATH_W1_LAYER_GRAPH_DIR, model_type + '.png'), logger=logger)
+    plot_intermediate_node(l1_W=l2_W, n_epoch=N_EPOCH,
+                           path_to_plot_png=os.path.join(PATH_W2_LAYER_GRAPH_DIR, model_type + '.png'),
+                           datatype='matrix', logger=logger)
 
 
 if __name__ == '__main__':
-    simple_test()
-    #relu_2layer()
-    #relu_2layer_nodrop()
-    #relu_2layer_400_unit_drop()
-    #relu_2layer_400_unit_nodrop()
-    #sigmoid_2layer_100_nodrop_noise()
-    #sigmoid_2layer_drop()
-    #sigmoid_2layer_drop_noise()
+    #simple_test()
+    relu_2layer()
+    relu_2layer_nodrop()
+    relu_2layer_400_unit_drop()
+    relu_2layer_400_unit_nodrop()
+    sigmoid_2layer_100_nodrop_noise()
+    sigmoid_2layer_drop()
+    sigmoid_2layer_drop_noise()
 
