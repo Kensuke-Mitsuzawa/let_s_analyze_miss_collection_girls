@@ -16,14 +16,27 @@ def make_path_pic_list(path_input_dir, suffix='*jpg'):
     ]
 
 
-def __convert_into_ndarray(path_to_pic):
+def __convert_into_ndarray(path_to_pic, index_no):
     assert os.path.exists(path_to_pic)
 
     img = np.array( Image.open(path_to_pic), 'f' )
     vector = __flatten_image(img)
 
-    return vector
+    return (index_no, path_to_pic, vector)
 
+
+def __make_data_mapping_dict(list_of_datasource):
+    assert isinstance(list_of_datasource, list)
+    path_source_mapper = {}
+    list_of_array = []
+    for data_source_info_tuple in list_of_datasource:
+        assert isinstance(data_source_info_tuple, tuple)
+        # save data array itself
+        list_of_array.append(data_source_info_tuple[2])
+        # save index id and its data content
+        path_source_mapper[data_source_info_tuple[0]] = data_source_info_tuple[1]
+
+    return path_source_mapper, list_of_array
 
 
 
@@ -44,17 +57,18 @@ def make_data_matrix(list_of_input_files, is_convert=True, denominator=255):
     :return:
     """
     assert isinstance(list_of_input_files, list)
-    list_of_ndarray = [
-        __convert_into_ndarray(path_to_pic)
-        for path_to_pic
-        in list_of_input_files
+    list_of_datasource = [
+        __convert_into_ndarray(path_to_pic, index_no=index_no)
+        for index_no, path_to_pic
+        in enumerate(list_of_input_files)
     ]
+    path_source_mapper, list_of_array = __make_data_mapping_dict(list_of_datasource)
 
-    data_matrix = np.array(list_of_ndarray)
+    data_matrix = np.array(list_of_array)
     if is_convert==True:
-        return data_matrix.astype(np.float32) /denominator
+        return path_source_mapper, data_matrix.astype(np.float32) /denominator
     else:
-        return data_matrix.astype(np.float32)
+        return path_source_mapper, data_matrix.astype(np.float32)
 
 
 def split_data_train_and_test(dataset, N):
