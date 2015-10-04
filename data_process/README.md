@@ -6,9 +6,9 @@ This is simple script to process face pictures.
 
 This code uses a lot of dependencies around OpenCV
 
-You can install all of them with Anaconda
+You can install all of them with pyenv + Anaconda
 
-About installing, see [here](http://hogehuga.com/post-241/)
+if you have anaconda environment already, you put `conda install -c https://conda.binstar.org/jjhelmus opencv`
 
 # usage
 
