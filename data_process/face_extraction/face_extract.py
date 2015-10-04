@@ -8,12 +8,13 @@ import cv2
 import os
 import Image
 import ImageOps
-import glob
+
 
 COLOR = (255, 255, 255) #白
 CASCADE_PATH = "/Users/kensuke-mi/.pyenv/versions/anaconda-2.1.0/share/OpenCV/haarcascades/haarcascade_frontalface_alt.xml"
 assert os.path.exists(CASCADE_PATH)
-RESIZED_TUPLE = (150, 150)
+RESIZED_TUPLE = (100, 100)
+
 
 def detectFace(image):
     image_gray = cv2.cvtColor(image, cv2.cv.CV_BGR2GRAY)
@@ -133,19 +134,4 @@ def example_usage():
     save_path_test = './demo.jpg'
     main_procedure(imagefile_name, save_path_test)
 
-
-def girls_face_process():
-    PATH_INPUT_DIR = '../../extracted/miss_collection/pics'
-    PATH_SAVE_DIR = '../../extracted/miss_collection/face'
-
-    path_pics_list = [path_pic for path_pic in glob.glob('{}/*jpg'.format(PATH_INPUT_DIR))]
-    path_save_list = [input_path.replace(PATH_INPUT_DIR, PATH_SAVE_DIR) for input_path in path_pics_list]
-
-    for index, path_input in enumerate(path_pics_list):
-        main_procedure(imagefile_name=path_input, path_to_save=path_save_list[index])
-
-
-if __name__ == '__main__':
-    #example_usage()
-    girls_face_process()
 
