@@ -5,11 +5,13 @@ __version__ = '0.1'
 from settings import *
 from bs4 import BeautifulSoup
 from bs4.element import Tag
+from bs4.element import ResultSet
 import os
 import urllib2
 import re
 import time
-import sys
+import codecs
+import json
 from collections import namedtuple
 import pickle
 import logging
@@ -27,8 +29,15 @@ sh.setFormatter(formatter)
 #rootロガーにハンドラーを登録する
 logger.addHandler(sh)
 
+# ----------------------------------------------------------
 TopUnivInfo = namedtuple("UnivInfo", "univ_name link_univ_page")
 UnivMemberPage = namedtuple("UnivMemberPage", "univ_name link_univ_page html")
+#PersonPhotoUrl = namedtuple("PersonPhotoURL", "photo_url person_name")
+
+class PersonPhotoUrl(object):
+    def __init__(self, photo_url, person_name):
+        self.photo_url = photo_url
+        self.person_name = person_name
 
 
 class MemberAbstractInfo(object):
@@ -67,6 +76,7 @@ class ProfileInfo(object):
 
 class MemberProfiles(object):
     def __init__(self, member_abstract_obj, profile_obj, q_a_tuples):
+
         assert isinstance(member_abstract_obj, MemberAbstractInfo)
         assert isinstance(profile_obj, ProfileInfo)
         assert isinstance(q_a_tuples, list)
@@ -74,19 +84,30 @@ class MemberProfiles(object):
         self.abstract = member_abstract_obj
         self.profile = profile_obj
         self.QA = q_a_tuples
+        self.photo_urls = []
 
 
+# ----------------------------------------------------------
 class ExtractPersonInfo(object):
-    def __init__(self, root_url):
+    def __init__(self, root_url, path_to_cache_files):
         assert isinstance(root_url, (unicode, str))
+        assert os.path.exists(path_to_cache_files)
 
-        self.root_url = root_url
+        if type(root_url) == str:
+            self.root_url = root_url.decode('utf-8')
+        else:
+            self.root_url = root_url
+
+        self.path_to_cache_files = path_to_cache_files
+        if os.path.exists(os.path.join(path_to_cache_files, 'pics'))==False:
+            os.mkdir(os.path.join(path_to_cache_files, 'pics'))
 
 
     def __checkURL(self, url):
         try:
             f = urllib2.urlopen(url)
             f.close()
+            time.sleep(random.randint(wait_time_from, wait_time_to))
             return True
 
         except urllib2.HTTPError:
@@ -101,6 +122,7 @@ class ExtractPersonInfo(object):
 
         return top_html_data
 
+
     def save_pickle_object(self, path_to_pickle, object):
         assert os.path.exists(os.path.dirname(path_to_pickle))
         f = open(path_to_pickle, "w")
@@ -108,7 +130,9 @@ class ExtractPersonInfo(object):
         f.close()
     # -------------------------------------------------------------------------------
     # These methods are for parsing top page
-    def save_univ_pickle_object(self, path_to_pickle, object):
+    def save_univ_pickle_object(self, object):
+        path_to_pickle = os.path.join(self.path_to_cache_files, 'universities.pickle')
+
         assert os.path.exists(os.path.dirname(path_to_pickle))
         converted_object = [
             {
@@ -121,6 +145,8 @@ class ExtractPersonInfo(object):
         f = open(path_to_pickle, "w")
         pickle.dump(converted_object, f)
         f.close()
+
+        return path_to_pickle
 
 
     def parse_top_html(self):
@@ -358,9 +384,143 @@ class ExtractPersonInfo(object):
         q_a_tuples = self.__extract_topics_part(topics_node)
 
         return profile_object, q_a_tuples
-    # TODO 写真一覧を取得するメソッドを書くこと
+
+    # -------------------------------------------------------------------------------
+    # these methods are to get photo pages
+    def __get_link_to_photo_page(self, univInfoTuple):
+        """This method gets photo link to each university page
+
+        :param univInfoTuple:
+        :return:
+        """
+        assert isinstance(univInfoTuple, TopUnivInfo)
+        link_photos = self.root_url + os.path.join(univInfoTuple.link_univ_page, 'photo')
+        if link_photos not in except_pages:
+            assert self.__checkURL(link_photos)
+            return univInfoTuple.univ_name, link_photos
+
+        else:
+            return univInfoTuple.univ_name, None
+
+
+    def __extract_photo_url_personame(self, photo_node):
+        """This method just extracts photo url and name
+
+        :param photo_node:
+        :return:
+        """
+        assert isinstance(photo_node, Tag)
+
+        photo_url = photo_node.find("a").get("href")
+        photo_name = photo_node.find("a").get("rel")[0]
+
+        return PersonPhotoUrl(photo_url, photo_name)
+
+
+    def __person_photo_root(self, person_photos_root_node):
+        """This method returns all photo urls in one person
+
+        :param person_photos_root_node:
+        :return:
+        """
+        assert isinstance(person_photos_root_node, Tag)
+        photos_nodes = person_photos_root_node.find("ul", class_="photos").find_all("li", class_="photo")
+        assert isinstance(photos_nodes, ResultSet)
+
+        person_photo_infos = [
+            self.__extract_photo_url_personame(p_node)
+            for p_node
+            in photos_nodes
+        ]
+        logging.info(msg=u"Finished extracting photo links of Mr/Ms {}".format(person_photo_infos[0].person_name))
+
+        return person_photo_infos
+
+
+    def __parse_photo_page(self, university_link_obj):
+        """This method returns photoURL and Personname of ALL members in each university pgae. Like this page https://misscolle.com/aoyama2015/photo
+
+        :param university_link_obj:
+        :return:
+        """
+        assert isinstance(university_link_obj, tuple)
+        assert isinstance(university_link_obj[0], (str, unicode))
+        assert isinstance(university_link_obj[1], (str, unicode))
+
+        members_photos_root_html = self.__get_html_page(university_link_obj[1])
+        time.sleep(random.randint(wait_time_from, wait_time_to))
+
+        photo_page_node = BeautifulSoup(members_photos_root_html, "html.parser")
+
+        photo_node_top = photo_page_node.find("div", id="whole").find("div", id="content-wrap")\
+            .find("div", id="content-main").find("div", id="contest-main").find("div", id="photo-content").find("ul", id="photo_entries")
+        photo_nodes = photo_node_top.find_all('li', class_='photo_entry')
+        assert isinstance(photo_nodes, list)
+
+        photo_member_persons = [
+            self.__person_photo_root(person_node_root)
+            for person_node_root
+            in photo_nodes
+        ]
+        logging.info(msg=u"Finished extracting member photo links in {}".format(university_link_obj[0]))
+
+        return [one_item for member_urls_objects in photo_member_persons for one_item in member_urls_objects]
+
+
+    def make_photo_links(self, universities):
+        """This method creates (photo url, person name) tuple for all persons
+
+        :param universities:
+        :return:
+        """
+        assert isinstance(universities, list)
+        photo_links_object = [
+            self.__get_link_to_photo_page(university_obj)
+            for university_obj
+            in universities
+        ]
+        photo_links_object = [p_obj for p_obj in photo_links_object if p_obj[1] != None]
+
+        all_person_photo_urls = [
+            self.__parse_photo_page(university_photo_link_tuple)
+            for university_photo_link_tuple
+            in photo_links_object
+        ]
+        assert isinstance(all_person_photo_urls, list)
+        for l in all_person_photo_urls: assert isinstance(l, list)
+
+        self.all_photo_urls = [person_obj for per_university in all_person_photo_urls for person_obj in per_university]
+        return self.all_photo_urls
+
+
+    def save_photo_links_pickle(self):
+        path_to_pickle = os.path.join(self.path_to_cache_files, 'photo_links.pickle')
+
+        assert os.path.exists(os.path.dirname(path_to_pickle))
+        assert hasattr(self, 'all_photo_urls')
+
+        """
+        converted_object = [
+            {
+                "photo_url": PersonPhotoUrl.photo_url,
+                "person_name":  PersonPhotoUrl.person_name
+            }
+            for PersonPhotoUrl
+            in self.all_photo_urls
+        ]"""
+        f = open(path_to_pickle, "w")
+        pickle.dump(self.all_photo_urls, f)
+        f.close()
+
+        return path_to_pickle
+
     # -------------------------------------------------------------------------------
     def make_person_information(self, list_of_abstract_obj):
+        """This method fetches personal information from
+
+        :param list_of_abstract_obj:
+        :return:
+        """
         assert isinstance(list_of_abstract_obj, list)
         stack = []
         for index_number, abstract_obj in enumerate(list_of_abstract_obj):
@@ -379,32 +539,117 @@ class ExtractPersonInfo(object):
                                                                       len(list_of_abstract_obj)))
             time.sleep(random.randint(wait_time_from, wait_time_to))
 
+        self.person_information = stack
         return stack
 
 
+    def save_persons_information_pickle(self, member_profile_info):
+        assert isinstance(member_profile_info, list)
+        assert os.path.exists(self.path_to_cache_files)
+        path_to_pickle = os.path.join(self.path_to_cache_files, 'persons_information.pickle')
+        self.save_pickle_object(path_to_pickle=path_to_pickle, object=member_profile_info)
+
+        return path_to_pickle
+
+    # -------------------------------------------------------------------------------
+    def __reconstruct_person_information(self, person_information_object):
+        assert isinstance(person_information_object, MemberProfiles)
+
+        person_name = re.sub(ur'\s', u'', person_information_object.abstract.member_name)
+
+        return person_name
+
+
+    def __reconstruct_photo_object(self, all_photo_urls):
+        """This method remake the structure of photo link objects. Key is person name and value is urls to photos
+
+        :param all_photo_urls:
+        :return:
+        """
+        assert isinstance(all_photo_urls, list)
+        name_index_dict = {}
+
+        for photo_url_obj in all_photo_urls:
+            assert isinstance(photo_url_obj, PersonPhotoUrl)
+            person_name = re.sub(ur'\s', u'', photo_url_obj.person_name)
+            if name_index_dict.has_key(person_name):
+                name_index_dict[person_name].append(photo_url_obj.photo_url)
+            else:
+                name_index_dict[person_name] = [photo_url_obj.photo_url]
+
+        return name_index_dict
+
+
+    def merge_person_info_photo_url(self, person_information, all_photo_urls):
+        """This method merge して、新しい情報を返す
+
+        :return:
+        """
+        assert isinstance(person_information, list)
+        assert isinstance(all_photo_urls, list)
+
+
+        name_index_perosn_dict = {
+            self.__reconstruct_person_information(person_information_object): person_information_object
+            for person_information_object
+            in person_information
+        }
+        name_index_photo_dict = self.__reconstruct_photo_object(all_photo_urls)
+
+        for name, person_info_obj in name_index_perosn_dict.items():
+            assert isinstance(person_info_obj, MemberProfiles)
+            try:
+                photo_urls = name_index_photo_dict[name]
+                person_info_obj.photo_urls = photo_urls
+                name_index_perosn_dict[name] = person_info_obj
+            except KeyError:
+                logging.warning(msg=u'Person name {} is not existing in name_index_photo_dict. But keep processing'.format(name))
+
+        self.person_index_information = name_index_perosn_dict
+        return self.person_index_information
+    # -------------------------------------------------------------------------------
     def __download_pics(self, url, path):
-        fp = urllib2.urlopen(url)
-        local = open(path, 'wb')
-        local.write(fp.read())
-        local.close()
-        fp.close()
+        try:
+            fp = urllib2.urlopen(url)
+            local = open(path, 'wb')
+            local.write(fp.read())
+            local.close()
+            fp.close()
+        except urllib2.HTTPError:
+            logging.warning(msg=u'{} is invalid URL. Skipped'.format(url))
 
 
-    def conv_profiles_with_json(self, list_of_member_profile, path_pics_dir):
-        assert isinstance(list_of_member_profile, list)
+    def __make_persons_directory(self, path_to_pics_dir, person_name):
+        assert os.path.exists(path_to_pics_dir)
+        person_s_dir = os.path.join(path_to_pics_dir, person_name)
+
+        if os.path.exists(person_s_dir)==False:
+            os.mkdir(person_s_dir)
+
+        return person_s_dir
+
+
+    def conv_profiles_with_json(self, person_index_information, path_pics_dir):
+        assert isinstance(person_index_information, dict)
         assert os.path.exists(path_pics_dir)
 
         array_object = []
-        for index, member_profile in enumerate(list_of_member_profile):
+        index_number = 1
+        for index_person_name, member_profile in person_index_information.items():
+
             item = {}
             assert isinstance(member_profile, MemberProfiles)
             item['name'] = member_profile.abstract.member_name
             item['name_rubi'] = member_profile.profile.name_rubi
             item['univ_name'] = member_profile.abstract.univ_name
             item['entry_no'] = member_profile.abstract.entry_no
+
             item['twitter_link'] = member_profile.abstract.twitter_link
             item['blog_link'] = member_profile.abstract.blog_link
-            item['photo_url'] = member_profile.abstract.photo_url
+
+            item['top_profile_photo_url'] = member_profile.abstract.photo_url
+            item['photo_urls'] = [self.root_url + url for url in member_profile.photo_urls]
+
             item['birth_date'] = member_profile.profile.birth_date
             item['birth_place'] = member_profile.profile.birth_place
             item['blood_type'] = member_profile.profile.blood_type
@@ -412,15 +657,47 @@ class ExtractPersonInfo(object):
             item['major'] = member_profile.profile.major
             item['QA'] = {}
 
-            path_pic = u'{}.jpg'.format(os.path.join(path_pics_dir, member_profile.profile.name_rubi))
-            self.__download_pics(url=member_profile.abstract.photo_url, path=path_pic)
-            time.sleep(random.randint(wait_time_from, wait_time_to))
-            item['path_pic'] = path_pic
 
+            path_to_persons_pics_dir = self.__make_persons_directory(path_to_pics_dir=path_pics_dir,
+                                                                     person_name=member_profile.profile.name_rubi)
+            # ----------------------------------------------------------------------
+            # download and save top profile picture
+            """
+            path_top_pic = u'{}.jpg'.format(os.path.join(path_to_persons_pics_dir, member_profile.profile.name_rubi))
+            self.__download_pics(url=member_profile.abstract.photo_url, path=path_top_pic)
+            time.sleep(random.randint(wait_time_from, wait_time_to))
+            # ----------------------------------------------------------------------
+            # download and save all profile pictures
+            path_to_saved_photos = []
+            for photo_index, photo_url in enumerate(member_profile.photo_urls):
+                path_to_photo = os.path.join(path_to_persons_pics_dir, u'{}_{}.jpg'.format(member_profile.profile.name_rubi,
+                                                                                           photo_index))
+                self.__download_pics(url=self.root_url + photo_url, path=path_to_photo)
+                path_to_saved_photos.append(path_to_photo)
+                """
+            # ----------------------------------------------------------------------
             for key_value_tuple in member_profile.QA:
                 item['QA'][key_value_tuple[0]] = key_value_tuple[1]
 
             array_object.append(item)
-            logging.info(msg=u'{} of {} is processed'.format(index, len(list_of_member_profile)))
+            logging.info(msg=u'{} of {} is processed'.format(index_number, len(person_index_information)))
+            index_number += 1
 
         return array_object
+
+
+    def save_result_with_json(self, person_index_information):
+        assert os.path.exists(self.path_to_cache_files)
+        assert isinstance(person_index_information, dict)
+
+        if os.path.exists(os.path.join(self.path_to_cache_files, 'original_pic'))==False:
+            os.mkdir(os.path.join(self.path_to_cache_files, 'original_pic'))
+
+
+        array_object = self.conv_profiles_with_json(person_index_information=person_index_information,
+                                                    path_pics_dir=os.path.join(self.path_to_cache_files, 'original_pic'))
+
+        path_member_json = self
+        with codecs.open(os.path.join(self.path_to_cache_files, 'miss_member.json'), 'w', 'utf-8') as f:
+            f.write(json.dumps(array_object, indent=4, ensure_ascii=False))
+

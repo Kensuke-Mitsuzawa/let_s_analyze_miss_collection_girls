@@ -3,6 +3,7 @@ __author__ = 'kensuke-mi'
 
 import scraping.extract_miss_collection
 from scraping.extract_miss_collection import ExtractPersonInfo
+import scraping.extract_miss_collection
 from scraping.settings import *
 import unittest
 
@@ -14,7 +15,7 @@ class TestExtractPersonInfo(unittest.TestCase):
 
     def test_parse_top_html(self):
         top_html = self.extract_obj._ExtractPersonInfo__get_html_page(self.miss_url_root)
-        univ_parsed_objects = self.extract_obj.parse_top_html(top_html)
+        univ_parsed_objects = self.extract_obj.parse_top_html()
         assert isinstance(univ_parsed_objects, list)
         for univ_obj in univ_parsed_objects: assert isinstance(univ_obj, scraping.extract_miss_collection.TopUnivInfo)
 
@@ -51,6 +52,7 @@ class TestExtractPersonInfo(unittest.TestCase):
         assert isinstance(members_objects, list)
         for member_obj in members_objects: assert isinstance(member_obj, scraping.extract_miss_collection.MemberAbstractInfo)
 
+
     def test_get_univ_members_page(self):
         univ_parsed_objects = self.test_parse_top_html()
         member_abstract_objects = self.extract_obj.get_university_members_page(university_objects=univ_parsed_objects)
@@ -65,6 +67,30 @@ class TestExtractPersonInfo(unittest.TestCase):
         test_member2 = 'https://misscolle.com/rits2015/profile/2'
         test_member_html_2 = self.extract_obj._ExtractPersonInfo__get_html_page(test_member2)
         self.extract_obj.parse_member_profile_page(member_page_html=test_member_html_2)
+
+
+    def test_parse_photo_page(self):
+        test_university_object = scraping.extract_miss_collection.TopUnivInfo(u"青山学院大学", u"https://misscolle.com/aoyama2015")
+        photo_url_object = self.extract_obj._ExtractPersonInfo__get_link_to_photo_page(test_university_object)
+        list_path_photo_objects = self.extract_obj._ExtractPersonInfo__parse_photo_page(photo_url_object)
+
+        assert isinstance(list_path_photo_objects, list)
+        for ob in list_path_photo_objects:
+            print ob
+            assert isinstance(ob, scraping.extract_miss_collection.PersonPhotoUrl)
+            assert len(ob)==2
+            print ob[0], ob[1]
+
+
+    def test_make_photo_links(self):
+        test_university_object = [scraping.extract_miss_collection.TopUnivInfo(u"青山学院大学", u"https://misscolle.com/aoyama2015"),
+                                  scraping.extract_miss_collection.TopUnivInfo(u"慶應義塾大学", u"https://misscolle.com/keiosfc2015")]
+        assert isinstance(test_university_object, list)
+        list_all_person_photo_urls = self.extract_obj.make_photo_links(test_university_object)
+        assert isinstance(list_all_person_photo_urls, list)
+        for obj in list_all_person_photo_urls: assert isinstance(obj, tuple)
+
+
 
 
 def suite():
