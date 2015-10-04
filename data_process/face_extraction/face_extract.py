@@ -64,19 +64,6 @@ def draw_line_face(facerect_list, image, path_to_save):
     cv2.imwrite(path_to_save, image)
 
 
-def main_procedure(imagefile_name, path_to_save):
-    assert os.path.exists(imagefile_name)
-    assert os.path.exists(os.path.dirname(path_to_save))
-
-    image = cv2.imread(imagefile_name)
-    facerect_list = detectFace(image)
-    if len(facerect_list) > 0:
-        image_obj = extract_face(facerect_list, image, path_to_save)
-        path_to_save_resized = path_to_save.replace('.jpg', '_resized.jpg')
-        resize_pic_opencv(im=image_obj, save_path=path_to_save_resized, size_tuple=RESIZED_TUPLE, gray_scale=True)
-    else:
-        return False
-
 
 def resize_pic_opencv(im, save_path, size_tuple, gray_scale=True):
     """画像サイズ調整とグレースケール化。ただし、OpenCV使用
@@ -131,7 +118,30 @@ def resize_pic_pil(input_path, save_path, size_tuple, gray_scale=True):
 def example_usage():
 
     imagefile_name = '../../extracted/miss_collection/pics/Adachi Mako.jpg'
+    path_to_resized = ''
     save_path_test = './demo.jpg'
-    main_procedure(imagefile_name, save_path_test)
+    main_procedure(imagefile_name, save_path_test, path_to_resized)
 
+
+def main_procedure(imagefile_name, path_to_save, path_to_resized):
+    # IMPORTANAT this mrthod requires FULL PATH not relative path
+    assert os.path.exists(imagefile_name)
+    assert os.path.exists(os.path.dirname(path_to_save))
+    assert os.path.exists(path_to_resized)
+
+    print u'start processing {}'.format(imagefile_name)
+    try:
+        image = cv2.imread(imagefile_name)
+        facerect_list = detectFace(image)
+    except cv2.error:
+        print u'[WARNING] problem happens while processing {}'.format(imagefile_name)
+        return False
+    else:
+        if len(facerect_list) > 0:
+            image_obj = extract_face(facerect_list, image, path_to_save)
+            file_name = os.path.basename(path_to_save)
+            path_to_save_resized = os.path.join(path_to_resized, file_name)
+            resize_pic_opencv(im=image_obj, save_path=path_to_save_resized, size_tuple=RESIZED_TUPLE, gray_scale=True)
+        else:
+            return False
 
