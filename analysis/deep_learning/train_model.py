@@ -71,12 +71,13 @@ class ChainerDeepNetWoek(object):
         self.N_test = train_test_object['N_test']
 
         if self.is_add_noise==True:
+            # TODO ノイズを加える作業が何かおかしい
             self.x_test = self.add_noise(train_set=train_test_object['test'], noise_ratio=self.noise_rate)
             self.x_train = self.add_noise(train_set=train_test_object['train'], noise_ratio=self.noise_rate)
         else:
             self.x_train = train_test_object['train']
             self.x_test = train_test_object['test']
-        self.n_dimension = self.x_train.shape[1]
+            self.n_dimension = self.x_train.shape[1]
 
 
 
@@ -88,7 +89,7 @@ class ChainerDeepNetWoek(object):
         noised_set = []
         for data in train_set:
             assert isinstance(data, np.ndarray)
-            perm = np.random.permutation(data.shape[1])[:int(data.shape[1]*noise_ratio)]
+            perm = np.random.permutation(data.shape[0])[:int(data.shape[0]*noise_ratio)]
             data[perm] = 0.0
             noised_set.append(data)
 

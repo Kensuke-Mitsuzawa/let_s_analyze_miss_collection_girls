@@ -222,11 +222,19 @@ def sigmoid_2layer_100_nodrop_noise():
 
 
 if __name__ == '__main__':
+    import resource
+    rsrc = resource.RLIMIT_DATA
+    soft, hard = resource.getrlimit(rsrc)
+    print 'Soft limit starts as  :', soft
+    resource.setrlimit(rsrc, (1024, hard)) #limit to one kilobyte
+    soft, hard = resource.getrlimit(rsrc)
+    print 'Soft limit changed to :', soft
+    
     #simple_test()
-    relu_2layer()
-    relu_2layer_nodrop()
-    relu_2layer_400_unit_drop()
-    relu_2layer_400_unit_nodrop()
+    #relu_2layer()
+    #relu_2layer_nodrop()
+    #relu_2layer_400_unit_drop()
+    #relu_2layer_400_unit_nodrop()
     sigmoid_2layer_100_nodrop_noise()
     sigmoid_2layer_drop()
     sigmoid_2layer_drop_noise()
