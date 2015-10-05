@@ -260,6 +260,6 @@ if __name__ == '__main__':
     #relu_2layer_nodrop()
     #relu_2layer_400_unit_drop()
     #relu_2layer_400_unit_nodrop()
-    sigmoid_2layer_100_nodrop_noise()
-    sigmoid_2layer_drop()
+    #sigmoid_2layer_100_nodrop_noise()
+    #sigmoid_2layer_drop()
     sigmoid_2layer_drop_noise()

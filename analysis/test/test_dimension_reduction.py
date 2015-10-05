@@ -6,6 +6,7 @@ import json
 import codecs
 
 from analysis.dimension_reduction.modules.data_loader_documet import *
+from analysis.dimension_reduction.modules.data_loader_picture import *
 
 
 class TestDocumentDataLoader(unittest.TestCase):
@@ -23,8 +24,19 @@ class TestDocumentDataLoader(unittest.TestCase):
         self.document_data_load.make_all_members_matrix(self.question_answer_dict_objects)
 
 
+class TestPictureDataLoader(unittest.TestCase):
+    def setUp(self):
+        self.list_path_to_files = [
+            './pics/Adachi Mako_resized.jpg',
+            './pics/Amano Nanami_resized.jpg'
+        ]
+        self.pic_data_loader_obj = PictureDataLoader(list_path_to_images=self.list_path_to_files)
 
-
+    def test_make_data_matrix(self):
+        # this method returns tuple
+        file_index_mapper, data_matrix = self.pic_data_loader_obj.make_data_matrix()
+        assert isinstance(file_index_mapper, dict)
+        assert isinstance(data_matrix, np.ndarray)
 
 
 
