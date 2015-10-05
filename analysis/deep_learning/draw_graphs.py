@@ -3,6 +3,9 @@ __author__ = 'kensuke-mi'
 import os
 from numpy import ndarray
 import numpy
+import matplotlib
+# if you're using ubuntu
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import math
 import logging

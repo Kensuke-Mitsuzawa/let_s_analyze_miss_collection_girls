@@ -230,4 +230,3 @@ if __name__ == '__main__':
     sigmoid_2layer_100_nodrop_noise()
     sigmoid_2layer_drop()
     sigmoid_2layer_drop_noise()
-
