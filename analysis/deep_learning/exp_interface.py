@@ -47,6 +47,30 @@ def simple_test():
                            logger=logger)
 
 
+def simple_noise_test():
+    N_UNIT = 100
+    N_EPOCH = 30
+    BATCHSIZE = 100
+    N = 400
+
+    model_type = "sigmoid_2layer_noise_simple_test"
+    relu_2layer_obj = ChainerDeepNetWoek(model_type=model_type,
+                                 path_input_dir=PATH_INPUT_DATA_DIR, N=N,
+                                 is_add_noise=True, is_drop=False, noise_rate=0.2,
+                                 n_units=N_UNIT, n_epoch=N_EPOCH, batchsize=BATCHSIZE)
+    l1_W, l2_W, test_mean_loss, model = relu_2layer_obj.train_network()
+    relu_2layer_obj.save_trained_models(__make_model_pickle_path(PATH_TRAINED_MODELS, model_type))
+
+    draw_test_mean_loss(test_mean_loss, path_to_graph_png=os.path.join(PATH_LOSS_GRAPH_DIR, model_type + '.png'))
+
+
+    plot_intermediate_node(l1_W=l1_W, n_epoch=N_EPOCH, datatype='vector',
+                           path_to_plot_png=os.path.join(PATH_W1_LAYER_GRAPH_DIR, model_type + '.png'), logger=logger)
+    plot_intermediate_node(l1_W=l2_W, n_epoch=N_EPOCH,
+                           path_to_plot_png=os.path.join(PATH_W2_LAYER_GRAPH_DIR, model_type + '.png'),
+                           datatype='matrix', logger=logger)
+
+
 def relu_2layer():
     N_UNIT = 1000 
     N_EPOCH = 30
@@ -170,7 +194,7 @@ def sigmoid_2layer_drop():
                            path_to_plot_png=os.path.join(PATH_W1_LAYER_GRAPH_DIR, model_type + '.png'), logger=logger)
     plot_intermediate_node(l1_W=l2_W, n_epoch=N_EPOCH,
                            path_to_plot_png=os.path.join(PATH_W2_LAYER_GRAPH_DIR, model_type + '.png'),
-                           logger=logger)
+                           datatype='matrix', logger=logger)
 
 
 def sigmoid_2layer_drop_noise():
@@ -231,6 +255,7 @@ if __name__ == '__main__':
     print 'Soft limit changed to :', soft
     
     #simple_test()
+    #simple_noise_test()
     #relu_2layer()
     #relu_2layer_nodrop()
     #relu_2layer_400_unit_drop()

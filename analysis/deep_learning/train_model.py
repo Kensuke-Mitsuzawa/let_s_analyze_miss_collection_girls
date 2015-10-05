@@ -71,15 +71,22 @@ class ChainerDeepNetWoek(object):
         self.N_test = train_test_object['N_test']
 
         if self.is_add_noise==True:
-            # TODO ノイズを加える作業が何かおかしい
-            self.x_test = self.add_noise(train_set=train_test_object['test'], noise_ratio=self.noise_rate)
-            self.x_train = self.add_noise(train_set=train_test_object['train'], noise_ratio=self.noise_rate)
+            x_train = self.add_noise(train_set=train_test_object['train'], noise_ratio=self.noise_rate)
+            x_test = self.add_noise(train_set=train_test_object['test'], noise_ratio=self.noise_rate)
+            n_dimension = x_train.shape[1]
         else:
-            self.x_train = train_test_object['train']
-            self.x_test = train_test_object['test']
-            self.n_dimension = self.x_train.shape[1]
+            x_train = train_test_object['train']
+            x_test = train_test_object['test']
+            n_dimension = x_train.shape[1]
 
+        assert isinstance(x_train, np.ndarray)
+        assert isinstance(x_test, np.ndarray)
+        assert len(x_train.shape) == 2
+        assert len(x_test.shape) == 2
 
+        self.x_train = x_train
+        self.x_test = x_test
+        self.n_dimension = n_dimension
 
     def add_noise(self, train_set, noise_ratio):
         assert isinstance(train_set, np.ndarray)
@@ -93,7 +100,7 @@ class ChainerDeepNetWoek(object):
             data[perm] = 0.0
             noised_set.append(data)
 
-        return noised_set
+        return np.array(noised_set)
 
 
     def train_epoch(self, model, x_train, y_train, optimizer, train_loss):
