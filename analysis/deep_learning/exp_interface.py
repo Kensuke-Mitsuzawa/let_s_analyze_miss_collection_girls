@@ -1,6 +1,4 @@
 #! -*- coding: utf-8 -*-
-__author__ = 'kensuke-mi'
-
 from train_model import ChainerDeepNetWoek
 from draw_graphs import *
 import os
@@ -9,6 +7,9 @@ logger = logging.getLogger('root_logger')
 logger.setLevel(level=logging.INFO)
 sh = logging.StreamHandler()
 logger.addHandler(sh)
+"""This is experimental interface that uses chainer library
+"""
+__author__ = 'kensuke-mi'
 
 
 PATH_INPUT_DATA_DIR = '../../extracted/miss_collection/gray'
@@ -18,6 +19,8 @@ PATH_W2_LAYER_GRAPH_DIR = './graphs/w2_layer'
 PATH_TRAINED_MODELS = './trained_models'
 
 # -----------------------------------------------------------------------
+
+
 def __make_model_pickle_path(path_trained_model_dir, model_name):
     return os.path.join(path_trained_model_dir, '{}.pickle'.format(model_name))
 

@@ -1,11 +1,13 @@
 #! -*- coding: utf-8 -*-
-__author__ = 'kensuke-mi'
-
 import glob
 import os
 
 from PIL import Image
 import numpy as np
+"""This script file is one module called from others. This file makes training data which is numpy.ndarray type.
+"""
+
+__author__ = 'kensuke-mi'
 
 
 def make_path_pic_list(path_input_dir, suffix='*jpg'):
