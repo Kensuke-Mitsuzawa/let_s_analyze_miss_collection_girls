@@ -1,0 +1,76 @@
+!obj:pylearn2.train.Train {
+    dataset: &data !obj:pylearn2.datasets.binarizer.Binarizer {
+        raw: &raw_train !pkl: %(input_pickle_path)s,
+    },
+    model: !obj:pylearn2.models.dbm.DBM {
+        batch_size: %(batch_size)i,
+        niter: 5,
+        visible_layer: !obj:pylearn2.models.dbm.BinaryVector {
+            nvis: %(nvis)i,
+            bias_from_marginals: *raw_train,
+        },
+        hidden_layers: [
+                 !obj:pylearn2.models.dbm.BinaryVectorMaxPool {
+                     layer_name: 'h1',
+                     detector_layer_dim: %(detector_layer_dim1)i,
+                     pool_size: 1,
+                     irange: .05,
+                     init_bias: -2.,
+                 },
+                 !obj:pylearn2.models.dbm.BinaryVectorMaxPool {
+                     layer_name: 'h2',
+                     detector_layer_dim: %(detector_layer_dim2)i,
+                     pool_size: 1,
+                     irange: .05,
+                     init_bias: -2.,
+                 },
+                 !obj:pylearn2.models.dbm.BinaryVectorMaxPool {
+                     layer_name: 'y',
+                     detector_layer_dim: %(detector_layer_dim3)i,
+                     pool_size: 1,
+                     irange: .05,
+                     init_bias: -2.,
+                 }
+        ],
+    },
+    algorithm: !obj:pylearn2.training_algorithms.sgd.SGD {
+        learning_rate: .05,
+        learning_rule: !obj:pylearn2.training_algorithms.learning_rule.Momentum {
+            init_momentum: .5,
+        },
+        monitoring_batches: %(monitoring_batches)i,
+        monitoring_dataset: { 'train': *data
+                            },
+        cost: !obj:pylearn2.costs.cost.SumOfCosts {
+            costs: [
+                !obj:pylearn2.costs.dbm.VariationalPCD {
+                    num_chains: 100,
+                    num_gibbs_steps: 5
+                },
+                !obj:pylearn2.costs.dbm.WeightDecay {
+                    coeffs: [.0001, .0001, .0001]
+                },
+                !obj:pylearn2.costs.dbm.TorontoSparsity {
+                    targets: [.2, .2, .2],
+                    coeffs: [.001, .001, .001],
+                }
+            ],
+        },
+        termination_criterion: !obj:pylearn2.termination_criteria.EpochCounter { max_epochs: %(max_epochs)i },
+        update_callbacks: [
+            !obj:pylearn2.training_algorithms.sgd.ExponentialDecay {
+                decay_factor: 1.000015,
+                min_lr: .000001
+            }
+        ]
+    },
+    extensions: [
+        !obj:pylearn2.training_algorithms.learning_rule.MomentumAdjustor {
+            final_momentum: .9,
+            start: 5,
+            saturate: 6
+        }
+    ],
+    save_path: "%(save_path)s/grbm_dbm.pkl",
+    save_freq: 1
+}
