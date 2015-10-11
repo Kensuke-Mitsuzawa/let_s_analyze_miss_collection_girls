@@ -662,7 +662,7 @@ class ExtractPersonInfo(object):
                                                                      person_name=member_profile.profile.name_rubi)
             # ----------------------------------------------------------------------
             # download and save top profile picture
-            """
+
             path_top_pic = u'{}.jpg'.format(os.path.join(path_to_persons_pics_dir, member_profile.profile.name_rubi))
             self.__download_pics(url=member_profile.abstract.photo_url, path=path_top_pic)
             time.sleep(random.randint(wait_time_from, wait_time_to))
@@ -674,7 +674,7 @@ class ExtractPersonInfo(object):
                                                                                            photo_index))
                 self.__download_pics(url=self.root_url + photo_url, path=path_to_photo)
                 path_to_saved_photos.append(path_to_photo)
-                """
+
             # ----------------------------------------------------------------------
             for key_value_tuple in member_profile.QA:
                 item['QA'][key_value_tuple[0]] = key_value_tuple[1]
