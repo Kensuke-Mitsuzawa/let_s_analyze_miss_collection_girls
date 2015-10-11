@@ -1,8 +1,10 @@
 #! -*- coding: utf-8 -*-
-__author__ = 'kensuke-mi'
 import face_extract
 import glob
 import os
+import re
+
+__author__ = 'kensuke-mi'
 
 
 def make_save_paths(PATH_INPUT_DIR, PATH_SAVE_DIR):
@@ -13,7 +15,14 @@ def make_save_paths(PATH_INPUT_DIR, PATH_SAVE_DIR):
         for dir_name in dirs:
             for f_lists in glob.glob(os.path.join(path, dir_name, "*jpg")):
                 path_to_file = os.path.abspath(f_lists)
-                path_to_save = os.path.join(PATH_SAVE_DIR, os.path.split(path_to_file)[-1])
+                file_name = os.path.split(path_to_file)[-1]
+                if re.findall(ur'.*_\d', file_name)==[]:
+                    f_name, ext = os.path.splitext(file_name)
+                    new_file_name = '{}_main{}'.format(f_name, ext)
+                else:
+                    new_file_name = file_name
+
+                path_to_save = os.path.join(PATH_SAVE_DIR, new_file_name)
                 input_output_save_dict[path_to_file] = os.path.abspath(path_to_save)
 
     return input_output_save_dict
