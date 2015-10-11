@@ -39,5 +39,14 @@ you can install dependency libs. with pip
 [sudo] pip install -r requirement.txt
 ```
 
+## installing Pylearn2
+
+It's impossible to install PyLearn2 with package management system.
+
+I put simple bash script which install pylearn2 and run demo code.
+
+To execute this file, move into `using_pylearn2` directory and execute `setup_procedure.sh`
+
+
 # usage
 
