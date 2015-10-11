@@ -24,7 +24,7 @@ def train_yaml(yaml_file):
 
 
 def train_grdm_dbm_mode(yaml_models_dir):
-    input_pickle_path = os.path.abspath('./model_pylearn2/toy_train.pkl')
+    input_pickle_path = os.path.abspath('./intermediate_files_pylearn2/toy_train/toy_train.pkl')
     yaml_file_path = os.path.join(yaml_models_dir, 'grdm_dbm.yaml')
     save_path = os.path.join(yaml_models_dir, 'grdm_dbm.pickle')
     yaml = open(yaml_file_path, 'r').read()
@@ -46,7 +46,7 @@ def train_grdm_dbm_mode(yaml_models_dir):
 
 def train_dbm_model(yaml_models_dir):
 
-    input_pickle_path = os.path.abspath('./model_pylearn2/toy_train.pkl')
+    input_pickle_path = os.path.abspath('./intermediate_files_pylearn2/toy_train/toy_train.pkl')
     yaml_file_path = os.path.join(yaml_models_dir, 'rbm.yaml')
     save_path = os.path.join(yaml_models_dir, 'rbm.pickle')
 
