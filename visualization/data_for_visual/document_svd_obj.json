@@ -1,0 +1,2882 @@
+{
+    "Aoki Sohi": {
+        "major": "文学部日本文学文化学科", 
+        "grade": 3, 
+        "age": 19, 
+        "member_name_rubi": "Aoki Sohi", 
+        "height": 164.0, 
+        "member_index": 27, 
+        "blog_url": "http://b2015.misscolle.com/senshu-aoki", 
+        "member_name": "青木素姫", 
+        "university": "専修大学", 
+        "position_vector": [
+            165.20241506307545, 
+            -0.018112908695387585
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/senshu2015/1/main.jpg?1439095793"
+    }, 
+    "Ouchi Kasumi": {
+        "major": "経営学部経営学科", 
+        "grade": 1, 
+        "age": 18, 
+        "member_name_rubi": "Ouchi Kasumi", 
+        "height": 155.0, 
+        "member_index": 105, 
+        "blog_url": "", 
+        "member_name": "大内香澄", 
+        "university": "国士舘大学", 
+        "position_vector": [
+            156.06453504125815, 
+            -1.347926574132357
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/kokushikan2015/4/main.jpg?1443276159"
+    }, 
+    "Mochizuki Miku": {
+        "major": "観光コミュニティ学部観光デザイン学科", 
+        "grade": 1, 
+        "age": 18, 
+        "member_name_rubi": "Mochizuki Miku", 
+        "height": 165.0, 
+        "member_index": 79, 
+        "blog_url": "", 
+        "member_name": "望月未来", 
+        "university": "跡見学園女子大学", 
+        "position_vector": [
+            166.05888858150482, 
+            -1.6331135951984181
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/atomi2015/1/main.jpg?1440732284"
+    }, 
+    "Itatani Akiho": {
+        "major": "文学部", 
+        "grade": 1, 
+        "age": 18, 
+        "member_name_rubi": "Itatani Akiho", 
+        "height": 169.0, 
+        "member_index": 16, 
+        "blog_url": "http://b2015.misscolle.com/abeno-itatani", 
+        "member_name": "板谷明穂", 
+        "university": "大阪府立大学・大阪市立大学", 
+        "position_vector": [
+            169.93965724790363, 
+            -2.9395951761593486
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/abeno2015/1/main.jpg?1443414822"
+    }, 
+    "Furusawa Emu": {
+        "major": "教育学部児童教育学科", 
+        "grade": 1, 
+        "age": 18, 
+        "member_name_rubi": "Furusawa Emu", 
+        "height": 153.0, 
+        "member_index": 73, 
+        "blog_url": "http://b2015.misscolle.com/musashino-furusawa", 
+        "member_name": "古沢笑", 
+        "university": "武蔵野大学", 
+        "position_vector": [
+            154.0749405465785, 
+            -0.9776025558702456
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/musashino2015/7/main.jpg?1439276519"
+    }, 
+    "Tomita Mami": {
+        "major": "経営学部経営学科", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Tomita Mami", 
+        "height": 159.5, 
+        "member_index": 174, 
+        "blog_url": "http://b2015.misscolle.com/aoyama-tomita/", 
+        "member_name": "冨田麻実", 
+        "university": "青山学院大学", 
+        "position_vector": [
+            160.82861232314707, 
+            0.9581328740622491
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/aoyama2015/5/main.jpg?1435724512"
+    }, 
+    "Onoue Shuka": {
+        "major": "法学部現代ビジネス法学科", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Onoue Shuka", 
+        "height": 163.0, 
+        "member_index": 61, 
+        "blog_url": "", 
+        "member_name": "尾上秋華", 
+        "university": "国士舘大学", 
+        "position_vector": [
+            164.15010434109848, 
+            -0.7609070517011515
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/kokushikan2015/1/main.jpg?1443276161"
+    }, 
+    "Iwaki Miho": {
+        "major": "理学部数学科", 
+        "grade": 2, 
+        "age": 18, 
+        "member_name_rubi": "Iwaki Miho", 
+        "height": 165.0, 
+        "member_index": 153, 
+        "blog_url": "http://b2015.misscolle.com/kobe-iwaki", 
+        "member_name": "岩木美帆", 
+        "university": "神戸大学", 
+        "position_vector": [
+            165.98977087064205, 
+            -1.8833057184663873
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/kobe2015/2/main.jpg?1443540461"
+    }, 
+    "Morikawa Fumika": {
+        "major": "6類", 
+        "grade": 1, 
+        "age": 17, 
+        "member_name_rubi": "Morikawa Fumika", 
+        "height": 166.0, 
+        "member_index": 50, 
+        "blog_url": "", 
+        "member_name": "森川郁花", 
+        "university": "東京工業大学", 
+        "position_vector": [
+            166.87453633439225, 
+            -3.0336346041575193
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/titech2015/2/main.jpg?1440404326"
+    }, 
+    "Sugawara Saori": {
+        "major": "ビジネスマネジメント学群", 
+        "grade": 1, 
+        "age": 18, 
+        "member_name_rubi": "Sugawara Saori", 
+        "height": 158.0, 
+        "member_index": 148, 
+        "blog_url": "http://b2015.misscolle.com/obirin-sugawara", 
+        "member_name": "菅原彩織", 
+        "university": "桜美林大学", 
+        "position_vector": [
+            159.06849824025244, 
+            -1.2346067572064439
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/obirin2015/4/main.jpg?1439904071"
+    }, 
+    "Yoshinuma Saki": {
+        "major": "薬学部薬学科", 
+        "grade": 1, 
+        "age": 18, 
+        "member_name_rubi": "Yoshinuma Saki", 
+        "height": 156.0, 
+        "member_index": 84, 
+        "blog_url": "", 
+        "member_name": "吉沼彩紀", 
+        "university": "慶應義塾大学薬学部", 
+        "position_vector": [
+            157.03680132138678, 
+            -1.4849041247392782
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/keiopha2015/4/main.jpg?1442314647"
+    }, 
+    "Nishimori Kozue": {
+        "major": "外国語学部フランス語学科", 
+        "grade": 1, 
+        "age": 18, 
+        "member_name_rubi": "Nishimori Kozue", 
+        "height": 151.0, 
+        "member_index": 11, 
+        "blog_url": "", 
+        "member_name": "西森梢", 
+        "university": "獨協大学", 
+        "position_vector": [
+            152.103331026515, 
+            -1.060122737095785
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/dokkyo2015/3/main.jpg?1442385289"
+    }, 
+    "Kojima Momoko": {
+        "major": "文学部臨床心理学科", 
+        "grade": 2, 
+        "age": 18, 
+        "member_name_rubi": "Kojima Momoko", 
+        "height": 156.0, 
+        "member_index": 70, 
+        "blog_url": "", 
+        "member_name": "小嶋桃子", 
+        "university": "跡見学園女子大学", 
+        "position_vector": [
+            157.09328935440814, 
+            -0.8798241905710463
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/atomi2015/3/main.jpg?1440732283"
+    }, 
+    "Nimura Ayaka": {
+        "major": "国際学部国際学科", 
+        "grade": 3, 
+        "age": 19, 
+        "member_name_rubi": "Nimura Ayaka", 
+        "height": 156.0, 
+        "member_index": 147, 
+        "blog_url": "http://b2015.misscolle.com/kyoritsu-nimura", 
+        "member_name": "二村朱香", 
+        "university": "共立女子大学", 
+        "position_vector": [
+            157.2416979144696, 
+            0.8325933722353731
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/kyoritsu2015/1/main.jpg?1440139628"
+    }, 
+    "Mashiko Sarah": {
+        "major": "人間科学部人間科学科", 
+        "grade": 1, 
+        "age": 16, 
+        "member_name_rubi": "Mashiko Sarah", 
+        "height": 162.0, 
+        "member_index": 8, 
+        "blog_url": "http://b2015.misscolle.com/musashino-mashiko", 
+        "member_name": "増子紗良", 
+        "university": "武蔵野大学", 
+        "position_vector": [
+            162.83161876903384, 
+            -2.6705370648269464
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/musashino2015/5/main.jpg?1439276520"
+    }, 
+    "Shoji Shiori": {
+        "major": "外国語学部英語学科", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Shoji Shiori", 
+        "height": 160.0, 
+        "member_index": 40, 
+        "blog_url": "", 
+        "member_name": "庄司志央里", 
+        "university": "獨協大学", 
+        "position_vector": [
+            161.20609195464027, 
+            0.490298660211512
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/dokkyo2015/5/main.jpg?1442385288"
+    }, 
+    "Homma Shoko": {
+        "major": "経済学部経営学科", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Homma Shoko", 
+        "height": 163.0, 
+        "member_index": 170, 
+        "blog_url": "http://b2015.misscolle.com/meigaku-homma", 
+        "member_name": "本間翔子", 
+        "university": "明治学院大学", 
+        "position_vector": [
+            164.32781554507423, 
+            1.0528918980227195
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/meigaku2015/5/main.jpg?1442820730"
+    }, 
+    "Nishida Norie": {
+        "major": "薬学科", 
+        "grade": 1, 
+        "age": 17, 
+        "member_name_rubi": "Nishida Norie", 
+        "height": 161.0, 
+        "member_index": 116, 
+        "blog_url": "", 
+        "member_name": "西田宜恵", 
+        "university": "明治薬科大学", 
+        "position_vector": [
+            161.94642327637413, 
+            -2.100345579084266
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/mpu2015/1/main.jpg?1441026238"
+    }, 
+    "Kuramochi Aya": {
+        "major": "社会イノベーション学部政策イノベーション学科", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Kuramochi Aya", 
+        "height": 154.0, 
+        "member_index": 38, 
+        "blog_url": "", 
+        "member_name": "倉持彩", 
+        "university": "成城大学", 
+        "position_vector": [
+            155.22307867336795, 
+            0.12693838448050898
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/seijo2015/3/main.jpg?1442129836"
+    }, 
+    "Nakamura Asami": {
+        "major": "経済学部経済学科", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Nakamura Asami", 
+        "height": 154.0, 
+        "member_index": 13, 
+        "blog_url": "http://b2015.misscolle.com/aoyama-nakamura/", 
+        "member_name": "中村麻美", 
+        "university": "青山学院大学", 
+        "position_vector": [
+            155.24134505564444, 
+            0.3998153560694567
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/aoyama2015/3/main.jpg?1435724513"
+    }, 
+    "Kijima Arisa": {
+        "major": "法学部新聞学科", 
+        "grade": 3, 
+        "age": 19, 
+        "member_name_rubi": "Kijima Arisa", 
+        "height": 161.0, 
+        "member_index": 25, 
+        "blog_url": "http://b2015.misscolle.com/phoenix-kijima", 
+        "member_name": "木島亜利沙", 
+        "university": "日本大学法学部", 
+        "position_vector": [
+            162.17219902386515, 
+            -0.1971056804816954
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/phoenix2015/4/main.jpg?1442816479"
+    }, 
+    "Kusakabe Yae": {
+        "major": "産業経営学科", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Kusakabe Yae", 
+        "height": 155.0, 
+        "member_index": 44, 
+        "blog_url": "http://b2015.misscolle.com/misaki-kusakabe", 
+        "member_name": "日下部也恵", 
+        "university": "日本大学経済学部", 
+        "position_vector": [
+            156.23835174925136, 
+            1.2215786788329568
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/misaki2015/2/main.jpg?1443032043"
+    }, 
+    "Sato Nanami": {
+        "major": "文学部コミュニケーション文化学科", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Sato Nanami", 
+        "height": 158.0, 
+        "member_index": 4, 
+        "blog_url": "", 
+        "member_name": "佐藤七海", 
+        "university": "跡見学園女子大学", 
+        "position_vector": [
+            159.35322491211804, 
+            1.074998962027443
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/atomi2015/2/main.jpg?1440732283"
+    }, 
+    "Hisadome Suzuna": {
+        "major": "教育学部小学校教員養成課程", 
+        "grade": 1, 
+        "age": 18, 
+        "member_name_rubi": "Hisadome Suzuna", 
+        "height": 157.3, 
+        "member_index": 96, 
+        "blog_url": "http://b2015.misscolle.com/kumadai-hisadome", 
+        "member_name": "久留鈴菜", 
+        "university": "熊本大学", 
+        "position_vector": [
+            158.33960890782117, 
+            -1.5049553673403857
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/kumadai2015/2/main.jpg?1441932619"
+    }, 
+    "Yamamoto Shiori": {
+        "major": "商学部商学科", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Yamamoto Shiori", 
+        "height": 166.0, 
+        "member_index": 20, 
+        "blog_url": "", 
+        "member_name": "山本史緒里", 
+        "university": "関西大学", 
+        "position_vector": [
+            167.30228530695462, 
+            0.7298367746462052
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/kandai2015/10/main.jpg?1437026898"
+    }, 
+    "Kimura Kana": {
+        "major": "文学部言語コミュニケーション専攻", 
+        "grade": 2, 
+        "age": 18, 
+        "member_name_rubi": "Kimura Kana", 
+        "height": 158.0, 
+        "member_index": 9, 
+        "blog_url": "http://b2015.misscolle.com/rits-kimura", 
+        "member_name": "木村佳奈", 
+        "university": "立命館大学", 
+        "position_vector": [
+            159.09345928047767, 
+            0.0492857076849871
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/rits2015/1/main.jpg?1441938696"
+    }, 
+    "Kitamura Lisa": {
+        "major": "国際関係学部国際教養学科", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Kitamura Lisa", 
+        "height": 158.0, 
+        "member_index": 75, 
+        "blog_url": "", 
+        "member_name": "北村理佐", 
+        "university": "日本大学国際関係学部", 
+        "position_vector": [
+            159.192927091026, 
+            0.8970929486768072
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/fuo2015/1/main.jpg?1443709056"
+    }, 
+    "Sugita Aya": {
+        "major": "教養学部教養学科", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Sugita Aya", 
+        "height": 166.0, 
+        "member_index": 48, 
+        "blog_url": "http://b2015.misscolle.com/saidai-sugita", 
+        "member_name": "杉田亜弥", 
+        "university": "埼玉大学", 
+        "position_vector": [
+            167.1457291906565, 
+            -0.7559835787355558
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/saidai2015/1/main.jpg?1438937864"
+    }, 
+    "Tomita Mao": {
+        "major": "理学部物理学科", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Tomita Mao", 
+        "height": 151.0, 
+        "member_index": 118, 
+        "blog_url": "http://b2015.misscolle.com/toho-tomita", 
+        "member_name": "冨田麻央", 
+        "university": "東邦大学", 
+        "position_vector": [
+            152.26448070827715, 
+            1.200909731572499
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/toho2015/4/main.jpg?1436249107"
+    }, 
+    "Maeda Yuuyu": {
+        "major": "経営学部経営システム科学科", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Maeda Yuuyu", 
+        "height": 166.0, 
+        "member_index": 66, 
+        "blog_url": "", 
+        "member_name": "前田悠有", 
+        "university": "横浜国立大学", 
+        "position_vector": [
+            167.11882129051978, 
+            -1.0386374542019947
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/ynu2015/1/main.jpg?1438243510"
+    }, 
+    "Okabe Emi": {
+        "major": "社会学部社会学科", 
+        "grade": 3, 
+        "age": 19, 
+        "member_name_rubi": "Okabe Emi", 
+        "height": 160.0, 
+        "member_index": 132, 
+        "blog_url": "", 
+        "member_name": "岡部恵后", 
+        "university": "龍谷大学", 
+        "position_vector": [
+            161.18915218353942, 
+            -0.02788966228179721
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/ryukoku2015/6/main.jpg?1442858030"
+    }, 
+    "Fujita Asuka": {
+        "major": "社会学部臨床福祉学科", 
+        "grade": 1, 
+        "age": 17, 
+        "member_name_rubi": "Fujita Asuka", 
+        "height": 168.0, 
+        "member_index": 168, 
+        "blog_url": "", 
+        "member_name": "藤田彩吹花", 
+        "university": "龍谷大学", 
+        "position_vector": [
+            168.86648809818186, 
+            -2.8422666338367413
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/ryukoku2015/5/main.jpg?1442858031"
+    }, 
+    "Okuda Sato": {
+        "major": "国際関係学部多文化コミュニケーション学科", 
+        "grade": 1, 
+        "age": 18, 
+        "member_name_rubi": "Okuda Sato", 
+        "height": 160.0, 
+        "member_index": 68, 
+        "blog_url": "http://b2015.misscolle.com/asia-okuda", 
+        "member_name": "奥田紗都", 
+        "university": "亜細亜大学", 
+        "position_vector": [
+            161.0206295044019, 
+            -1.7324382912282539
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/asia2015/3/main.jpg?1443295162"
+    }, 
+    "Ueda Riyo": {
+        "major": "国際文化学部国際文化学科", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Ueda Riyo", 
+        "height": 154.0, 
+        "member_index": 175, 
+        "blog_url": "", 
+        "member_name": "上田梨世", 
+        "university": "龍谷大学", 
+        "position_vector": [
+            155.19587088953102, 
+            -0.029921814991992025
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/ryukoku2015/3/main.jpg?1443540840"
+    }, 
+    "Fukasawa Saki": {
+        "major": "心理学科", 
+        "grade": 2, 
+        "age": 18, 
+        "member_name_rubi": "Fukasawa Saki", 
+        "height": 159.0, 
+        "member_index": 88, 
+        "blog_url": "http://b2015.misscolle.com/meigaku-fukasawa", 
+        "member_name": "深澤紗希", 
+        "university": "明治学院大学", 
+        "position_vector": [
+            160.09127670549032, 
+            -0.39823955204933503
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/meigaku2015/4/main.jpg?1442820730"
+    }, 
+    "Cho Nami": {
+        "major": "薬学部薬学科", 
+        "grade": 2, 
+        "age": 18, 
+        "member_name_rubi": "Cho Nami", 
+        "height": 162.0, 
+        "member_index": 139, 
+        "blog_url": "http://b2015.misscolle.com/toho-cho", 
+        "member_name": "張奈美", 
+        "university": "東邦大学", 
+        "position_vector": [
+            163.02857725903272, 
+            -0.9966269262377813
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/toho2015/2/main.jpg?1436249107"
+    }, 
+    "Fukui Serina": {
+        "major": "薬学部薬学科", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Fukui Serina", 
+        "height": 170.0, 
+        "member_index": 176, 
+        "blog_url": "", 
+        "member_name": "福井セリナ", 
+        "university": "慶應義塾大学薬学部", 
+        "position_vector": [
+            171.23286057983003, 
+            -0.07926142448503272
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/keiopha2015/2/main.jpg?1443142049"
+    }, 
+    "Tasaka Mayumi": {
+        "major": "生命理工学研究科修士", 
+        "grade": 2, 
+        "age": 24, 
+        "member_name_rubi": "Tasaka Mayumi", 
+        "height": 157.0, 
+        "member_index": 92, 
+        "blog_url": "", 
+        "member_name": "田坂真弓", 
+        "university": "東京工業大学", 
+        "position_vector": [
+            158.73853975691463, 
+            3.1923869052095557
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/titech2015/1/main.jpg?1440404326"
+    }, 
+    "Hayashi Rise": {
+        "major": "教育人間科学部", 
+        "grade": 3, 
+        "age": 19, 
+        "member_name_rubi": "Hayashi Rise", 
+        "height": 162.0, 
+        "member_index": 71, 
+        "blog_url": "", 
+        "member_name": "林莉世", 
+        "university": "横浜国立大学", 
+        "position_vector": [
+            163.18168187513575, 
+            -0.36497692367175893
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/ynu2015/2/main.jpg?1438243510"
+    }, 
+    "Kokubo Yuka": {
+        "major": "国際教養学部言語文化学科", 
+        "grade": 1, 
+        "age": 18, 
+        "member_name_rubi": "Kokubo Yuka", 
+        "height": 163.0, 
+        "member_index": 130, 
+        "blog_url": "", 
+        "member_name": "小久保佑香", 
+        "university": "獨協大学", 
+        "position_vector": [
+            164.01431021282121, 
+            -1.729659012315337
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/dokkyo2015/1/main.jpg?1442385290"
+    }, 
+    "Arakawa Haruna": {
+        "major": "経済学部国際経済学科", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Arakawa Haruna", 
+        "height": 164.5, 
+        "member_index": 56, 
+        "blog_url": "http://b2015.misscolle.com/senshu-arakawa", 
+        "member_name": "荒川晴菜", 
+        "university": "専修大学", 
+        "position_vector": [
+            165.8073745676726, 
+            0.5246582118328212
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/senshu2015/3/main.jpg?1439095792"
+    }, 
+    "Ueyama Rino": {
+        "major": "経済学部", 
+        "grade": 1, 
+        "age": 22, 
+        "member_name_rubi": "Ueyama Rino", 
+        "height": 158.0, 
+        "member_index": 90, 
+        "blog_url": "http://b2015.misscolle.com/saidai-ueyama", 
+        "member_name": "上山梨乃", 
+        "university": "埼玉大学", 
+        "position_vector": [
+            159.53540600601838, 
+            2.016660640240375
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/saidai2015/3/main.jpg?1438937863"
+    }, 
+    "Takase Ayu": {
+        "major": "リベラルアーツ学群", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Takase Ayu", 
+        "height": 157.0, 
+        "member_index": 60, 
+        "blog_url": "http://b2015.misscolle.com/obirin-takase", 
+        "member_name": "高瀬愛由", 
+        "university": "桜美林大学", 
+        "position_vector": [
+            158.35425697779695, 
+            2.1296047648104754
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/obirin2015/1/main.jpg?1439904073"
+    }, 
+    "Naoi Momoka": {
+        "major": "文学部日本語日本文学科", 
+        "grade": 3, 
+        "age": 19, 
+        "member_name_rubi": "Naoi Momoka", 
+        "height": 161.0, 
+        "member_index": 158, 
+        "blog_url": "http://b2015.misscolle.com/seisen-naoi", 
+        "member_name": "直井桃花", 
+        "university": "清泉女子大学", 
+        "position_vector": [
+            162.17096413801627, 
+            -0.3512645350496364
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/seisen2015/3/main.jpg?1439485963"
+    }, 
+    "Araki Marina": {
+        "major": "環境情報学部環境情報学科", 
+        "grade": 4, 
+        "age": 22, 
+        "member_name_rubi": "Araki Marina", 
+        "height": 160.0, 
+        "member_index": 24, 
+        "blog_url": "http://b2015.misscolle.com/keiosfc-araki", 
+        "member_name": "荒木毬菜", 
+        "university": "慶應義塾大学SFC", 
+        "position_vector": [
+            161.5604770800298, 
+            2.9540442557248054
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/keiosfc2015/2/main.jpg?1440980582"
+    }, 
+    "Matsumoto Manae": {
+        "major": "文学部英米文学科", 
+        "grade": 1, 
+        "age": 17, 
+        "member_name_rubi": "Matsumoto Manae", 
+        "height": 166.0, 
+        "member_index": 156, 
+        "blog_url": "http://b2015.misscolle.com/seikei-matsumoto", 
+        "member_name": "松本真映", 
+        "university": "成蹊大学", 
+        "position_vector": [
+            166.88091450235285, 
+            -2.346774578306993
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/seikei2015/3/main.jpg?1437216585"
+    }, 
+    "Tokida Kana": {
+        "major": "法学部法律学科", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Tokida Kana", 
+        "height": 164.0, 
+        "member_index": 136, 
+        "blog_url": "", 
+        "member_name": "時田茄奈", 
+        "university": "獨協大学", 
+        "position_vector": [
+            165.23420847873368, 
+            -0.17253052432522273
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/dokkyo2015/2/main.jpg?1442385289"
+    }, 
+    "Kakinuma Honoka": {
+        "major": "文学部地理学科", 
+        "grade": 2, 
+        "age": 20, 
+        "member_name_rubi": "Kakinuma Honoka", 
+        "height": 164.5, 
+        "member_index": 21, 
+        "blog_url": "http://b2015.misscolle.com/komazawa-kakinuma", 
+        "member_name": "柿沼穂香", 
+        "university": "駒澤大学", 
+        "position_vector": [
+            165.78519692375468, 
+            -0.29768414010933925
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/komazawa2015/1/main.jpg?1442823439"
+    }, 
+    "Shimaoka Aya": {
+        "major": "文学部英語英文学科", 
+        "grade": 4, 
+        "age": 22, 
+        "member_name_rubi": "Shimaoka Aya", 
+        "height": 157.0, 
+        "member_index": 112, 
+        "blog_url": "http://b2015.misscolle.com/seisen-shimaoka", 
+        "member_name": "島岡礼", 
+        "university": "清泉女子大学", 
+        "position_vector": [
+            158.5887728452637, 
+            3.3077570798066827
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/seisen2015/1/main.jpg?1439485964"
+    }, 
+    "Tonokawa Fumiko": {
+        "major": "国際文化学部国際文化学科", 
+        "grade": 2, 
+        "age": 18, 
+        "member_name_rubi": "Tonokawa Fumiko", 
+        "height": 160.0, 
+        "member_index": 150, 
+        "blog_url": "", 
+        "member_name": "殿川文子", 
+        "university": "龍谷大学", 
+        "position_vector": [
+            161.01520236666158, 
+            -1.8390836193720015
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/ryukoku2015/4/main.jpg?1442858031"
+    }, 
+    "Shino Natsuki": {
+        "major": "文学部", 
+        "grade": 2, 
+        "age": 20, 
+        "member_name_rubi": "Shino Natsuki", 
+        "height": 157.0, 
+        "member_index": 32, 
+        "blog_url": "http://b2015.misscolle.com/abeno-shino", 
+        "member_name": "志野夏紀", 
+        "university": "大阪府立大学・大阪市立大学", 
+        "position_vector": [
+            158.3294464919519, 
+            1.2499015730157237
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/abeno2015/2/main.jpg?1443414821"
+    }, 
+    "Ojima Hiyori": {
+        "major": "人間科学科", 
+        "grade": 1, 
+        "age": 17, 
+        "member_name_rubi": "Ojima Hiyori", 
+        "height": 162.0, 
+        "member_index": 2, 
+        "blog_url": "http://b2015.misscolle.com/musashino-ojima", 
+        "member_name": "小嶋ひより", 
+        "university": "武蔵野大学", 
+        "position_vector": [
+            162.8702300894649, 
+            -2.877120160868289
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/musashino2015/8/main.jpg?1439276519"
+    }, 
+    "Ono Haruka": {
+        "major": "法学部経営法学科", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Ono Haruka", 
+        "height": 155.0, 
+        "member_index": 159, 
+        "blog_url": "http://b2015.misscolle.com/phoenix-ono", 
+        "member_name": "小野遥加", 
+        "university": "日本大学法学部", 
+        "position_vector": [
+            156.22462792965865, 
+            0.3739465368138033
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/phoenix2015/2/main.jpg?1442816480"
+    }, 
+    "Seya Hikaru": {
+        "major": "ネットワーク情報学部ネットワーク情報学科", 
+        "grade": 4, 
+        "age": 21, 
+        "member_name_rubi": "Seya Hikaru", 
+        "height": 164.0, 
+        "member_index": 143, 
+        "blog_url": "http://b2015.misscolle.com/senshu-seya", 
+        "member_name": "瀬谷ひかる", 
+        "university": "専修大学", 
+        "position_vector": [
+            165.41717094741023, 
+            2.1928356856697135
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/senshu2015/5/main.jpg?1439095791"
+    }, 
+    "Sakai Runa": {
+        "major": "社会経済学科", 
+        "grade": 3, 
+        "age": 22, 
+        "member_name_rubi": "Sakai Runa", 
+        "height": 160.0, 
+        "member_index": 0, 
+        "blog_url": "http://b2015.misscolle.com/daito-sakai", 
+        "member_name": "坂井瑠奈", 
+        "university": "大東文化大学", 
+        "position_vector": [
+            161.50166413559023, 
+            1.674747255031487
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/daito2015/5/main.jpg?1442382271"
+    }, 
+    "Takahashi Yuki": {
+        "major": "理工学部環境ソリューション工学科", 
+        "grade": 1, 
+        "age": 18, 
+        "member_name_rubi": "Takahashi Yuki", 
+        "height": 156.0, 
+        "member_index": 52, 
+        "blog_url": "", 
+        "member_name": "高橋侑希", 
+        "university": "龍谷大学", 
+        "position_vector": [
+            157.0652677110859, 
+            -1.2965248175621804
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/ryukoku2015/1/main.jpg?1442858032"
+    }, 
+    "Nakao Yhuuka": {
+        "major": "文学部日本文化学科", 
+        "grade": 1, 
+        "age": 18, 
+        "member_name_rubi": "Nakao Yhuuka", 
+        "height": 166.0, 
+        "member_index": 128, 
+        "blog_url": "http://b2015.misscolle.com/teikyo-nakao", 
+        "member_name": "中尾有伽", 
+        "university": "帝京大学", 
+        "position_vector": [
+            166.98562956705203, 
+            -2.5242917877654834
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/teikyo2015/5/main.jpg?1441768925"
+    }, 
+    "Kurihara Saki": {
+        "major": "現代教養学部人文学科日本文学専攻", 
+        "grade": 1, 
+        "age": 18, 
+        "member_name_rubi": "Kurihara Saki", 
+        "height": 157.0, 
+        "member_index": 17, 
+        "blog_url": "http://b2015.misscolle.com/twu-kurihara", 
+        "member_name": "栗原早紀", 
+        "university": "東京女子大学", 
+        "position_vector": [
+            158.0309051112278, 
+            -1.5529704141537646
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/twu2015/5/main.jpg?1441442229"
+    }, 
+    "Nishi Maika": {
+        "major": "法学部法学科", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Nishi Maika", 
+        "height": 148.0, 
+        "member_index": 19, 
+        "blog_url": "http://b2015.misscolle.com/kumadai-nishi", 
+        "member_name": "西舞香", 
+        "university": "熊本大学", 
+        "position_vector": [
+            149.25285518188576, 
+            0.809512734832905
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/kumadai2015/4/main.jpg?1442396823"
+    }, 
+    "Iwasawa Yurika": {
+        "major": "薬学部薬学科", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Iwasawa Yurika", 
+        "height": 161.0, 
+        "member_index": 80, 
+        "blog_url": "", 
+        "member_name": "岩澤友里香", 
+        "university": "明治薬科大学", 
+        "position_vector": [
+            162.11341895615126, 
+            -1.0738307995459224
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/mpu2015/6/main.jpg?1441026236"
+    }, 
+    "Adachi Mako": {
+        "major": "グローバル・メディア・スタディーズ学部グローバル・メディア学科", 
+        "grade": 4, 
+        "age": 22, 
+        "member_name_rubi": "Adachi Mako", 
+        "height": 163.0, 
+        "member_index": 93, 
+        "blog_url": "http://b2015.misscolle.com/komazawa-adachi", 
+        "member_name": "足立真子", 
+        "university": "駒澤大学", 
+        "position_vector": [
+            164.53982456310035, 
+            2.1101668748643183
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/komazawa2015/5/main.jpg?1442823438"
+    }, 
+    "Kurimura Mayu": {
+        "major": "法学部法律学科", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Kurimura Mayu", 
+        "height": 164.0, 
+        "member_index": 87, 
+        "blog_url": "http://b2015.misscolle.com/sophia-kurimura", 
+        "member_name": "栗村真由", 
+        "university": "上智大学", 
+        "position_vector": [
+            165.33770367319644, 
+            1.3521239245123136
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/sophia2015/1/main.jpg?1443689582"
+    }, 
+    "Suzuki Yume": {
+        "major": "外国語学部外国語学科", 
+        "grade": 4, 
+        "age": 21, 
+        "member_name_rubi": "Suzuki Yume", 
+        "height": 153.0, 
+        "member_index": 26, 
+        "blog_url": "http://b2015.misscolle.com/teikyo-suzuki", 
+        "member_name": "鈴木夢", 
+        "university": "帝京大学", 
+        "position_vector": [
+            154.50324460576087, 
+            2.6088528682140404
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/teikyo2015/4/main.jpg?1441768926"
+    }, 
+    "Morita Marika": {
+        "major": "家政学部食物栄養学科", 
+        "grade": 2, 
+        "age": 18, 
+        "member_name_rubi": "Morita Marika", 
+        "height": 154.0, 
+        "member_index": 146, 
+        "blog_url": "http://b2015.misscolle.com/kyoritsu-morita", 
+        "member_name": "森田真理華", 
+        "university": "共立女子大学", 
+        "position_vector": [
+            155.06967743380446, 
+            -0.8642546193489571
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/kyoritsu2015/3/main.jpg?1440139627"
+    }, 
+    "Fuji Ayaka": {
+        "major": "文学部総合人文学科", 
+        "grade": 1, 
+        "age": 18, 
+        "member_name_rubi": "Fuji Ayaka", 
+        "height": 156.0, 
+        "member_index": 102, 
+        "blog_url": "", 
+        "member_name": "冨士綺香", 
+        "university": "関西大学", 
+        "position_vector": [
+            157.11246810102733, 
+            -0.5798545554772028
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/kandai2015/8/main.jpg?1437970860"
+    }, 
+    "Fujita Ayano": {
+        "major": "文学部英米文学科", 
+        "grade": 1, 
+        "age": 18, 
+        "member_name_rubi": "Fujita Ayano", 
+        "height": 163.0, 
+        "member_index": 164, 
+        "blog_url": "http://b2015.misscolle.com/daito-fujita", 
+        "member_name": "藤田綾乃", 
+        "university": "大東文化大学", 
+        "position_vector": [
+            164.0126761387467, 
+            -2.018612287288826
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/daito2015/3/main.jpg?1442382272"
+    }, 
+    "Mitsushima Haruka": {
+        "major": "国際総合科学部国際総合化学科", 
+        "grade": 1, 
+        "age": 18, 
+        "member_name_rubi": "Mitsushima Haruka", 
+        "height": 160.0, 
+        "member_index": 144, 
+        "blog_url": "http://b2015.misscolle.com/ycu-mitsushima", 
+        "member_name": "光嶋悠", 
+        "university": "横浜市立大学", 
+        "position_vector": [
+            161.0610650774842, 
+            -1.4528881586303524
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/ycu2015/2/main.jpg?1436373321"
+    }, 
+    "Inamura Naho": {
+        "major": "文学部英語英文学科", 
+        "grade": 4, 
+        "age": 21, 
+        "member_name_rubi": "Inamura Naho", 
+        "height": 160.0, 
+        "member_index": 163, 
+        "blog_url": "http://b2015.misscolle.com/seisen-inamura", 
+        "member_name": "稲村奈帆", 
+        "university": "清泉女子大学", 
+        "position_vector": [
+            161.42375163445703, 
+            1.6748988398415605
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/seisen2015/5/main.jpg?1439485962"
+    }, 
+    "Goto Shinju": {
+        "major": "経済学部経営学科", 
+        "grade": 1, 
+        "age": 17, 
+        "member_name_rubi": "Goto Shinju", 
+        "height": 155.0, 
+        "member_index": 74, 
+        "blog_url": "", 
+        "member_name": "後藤真珠", 
+        "university": "成城大学", 
+        "position_vector": [
+            155.96994904398082, 
+            -1.4868136235829352
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/seijo2015/1/main.jpg?1442129836"
+    }, 
+    "Inoue Seika": {
+        "major": "文学部比較芸術学科", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Inoue Seika", 
+        "height": 161.0, 
+        "member_index": 152, 
+        "blog_url": "http://b2015.misscolle.com/aoyama-inoue", 
+        "member_name": "井上清華", 
+        "university": "青山学院大学", 
+        "position_vector": [
+            162.1668927005749, 
+            -0.6829582244247472
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/aoyama2015/2/main.jpg?1435724514"
+    }, 
+    "Miki Erika": {
+        "major": "教育学部地域共生社会課程", 
+        "grade": 1, 
+        "age": 18, 
+        "member_name_rubi": "Miki Erika", 
+        "height": 156.0, 
+        "member_index": 43, 
+        "blog_url": "http://b2015.misscolle.com/kumadai-miki", 
+        "member_name": "三木絵里加", 
+        "university": "熊本大学", 
+        "position_vector": [
+            157.08138839429517, 
+            -1.1395838123578077
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/kumadai2015/1/main.jpg?1441932620"
+    }, 
+    "Matsuda Saki": {
+        "major": "経営学部国際経営学科", 
+        "grade": 3, 
+        "age": 19, 
+        "member_name_rubi": "Matsuda Saki", 
+        "height": 154.0, 
+        "member_index": 149, 
+        "blog_url": "http://b2015.misscolle.com/rits-matsuda", 
+        "member_name": "松田沙希", 
+        "university": "立命館大学", 
+        "position_vector": [
+            155.2762490051045, 
+            2.337411093616243
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/rits2015/2/main.jpg?1441938696"
+    }, 
+    "Tomita Ayane": {
+        "major": "経営学部経営学科", 
+        "grade": 2, 
+        "age": 18, 
+        "member_name_rubi": "Tomita Ayane", 
+        "height": 162.0, 
+        "member_index": 1, 
+        "blog_url": "http://b2015.misscolle.com/daito-tomita", 
+        "member_name": "富田彩音", 
+        "university": "大東文化大学", 
+        "position_vector": [
+            163.05253406671076, 
+            -1.3666020634998612
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/daito2015/2/main.jpg?1442382273"
+    }, 
+    "Isibashi Risa": {
+        "major": "環境情報学部環境情報学科", 
+        "grade": 3, 
+        "age": 19, 
+        "member_name_rubi": "Isibashi Risa", 
+        "height": 165.0, 
+        "member_index": 77, 
+        "blog_url": "http://b2015.misscolle.com/keiosfc-isibashi", 
+        "member_name": "石橋里紗", 
+        "university": "慶應義塾大学SFC", 
+        "position_vector": [
+            166.16997406201372, 
+            1.220316473979734
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/keiosfc2015/5/main.jpg?1436246791"
+    }, 
+    "Okabe Fuko": {
+        "major": "総合政策学部総合政策学科", 
+        "grade": 3, 
+        "age": 19, 
+        "member_name_rubi": "Okabe Fuko", 
+        "height": 156.0, 
+        "member_index": 99, 
+        "blog_url": "http://b2015.misscolle.com/keiosfc-okabe", 
+        "member_name": "岡部楓子", 
+        "university": "慶應義塾大学SFC", 
+        "position_vector": [
+            157.19558655190215, 
+            0.33813447471857255
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/keiosfc2015/4/main.jpg?1436246792"
+    }, 
+    "Tutumi Kanae": {
+        "major": "文学部社会学科", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Tutumi Kanae", 
+        "height": 145.0, 
+        "member_index": 167, 
+        "blog_url": "http://b2015.misscolle.com/teikyo-tutumi", 
+        "member_name": "堤佳奈惠", 
+        "university": "帝京大学", 
+        "position_vector": [
+            146.40680097548002, 
+            2.1864698200872854
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/teikyo2015/2/main.jpg?1441768927"
+    }, 
+    "Yoshida Hiroko": {
+        "major": "経営学部経営学科", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Yoshida Hiroko", 
+        "height": 162.0, 
+        "member_index": 140, 
+        "blog_url": "http://b2015.misscolle.com/senshu-yoshida", 
+        "member_name": "吉田浩子", 
+        "university": "専修大学", 
+        "position_vector": [
+            163.35862330845328, 
+            1.5007072142635058
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/senshu2015/2/main.jpg?1439095793"
+    }, 
+    "Ishiguro Kanako": {
+        "major": "現代教養学部人文学科哲学専攻", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Ishiguro Kanako", 
+        "height": 147.2, 
+        "member_index": 129, 
+        "blog_url": "http://b2015.misscolle.com/twu-ishiguro", 
+        "member_name": "石黒華奈子", 
+        "university": "東京女子大学", 
+        "position_vector": [
+            148.60865880785073, 
+            2.3749674349791503
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/twu2015/2/main.jpg?1441442231"
+    }, 
+    "Suehara Rei": {
+        "major": "国際学部国際学科", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Suehara Rei", 
+        "height": 169.0, 
+        "member_index": 104, 
+        "blog_url": "http://b2015.misscolle.com/meigaku-suehara", 
+        "member_name": "末原玲衣", 
+        "university": "明治学院大学", 
+        "position_vector": [
+            170.26758793272165, 
+            0.5635791196828889
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/meigaku2015/3/main.jpg?1442820731"
+    }, 
+    "Tanaka Chihiro": {
+        "major": "国際総合科学部国際総合科学科国際都市学系", 
+        "grade": 1, 
+        "age": 18, 
+        "member_name_rubi": "Tanaka Chihiro", 
+        "height": 160.0, 
+        "member_index": 62, 
+        "blog_url": "http://b2015.misscolle.com/ycu-tanaka", 
+        "member_name": "田中千尋", 
+        "university": "横浜市立大学", 
+        "position_vector": [
+            161.04356599001, 
+            -1.284622237170546
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/ycu2015/5/main.jpg?1436373323"
+    }, 
+    "Inagaki Kaori": {
+        "major": "経営学部グローバルマネジメント学科", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Inagaki Kaori", 
+        "height": 157.0, 
+        "member_index": 53, 
+        "blog_url": "http://b2015.misscolle.com/hyogo-inagaki", 
+        "member_name": "稲垣香織", 
+        "university": "兵庫県立大学", 
+        "position_vector": [
+            158.24050603725507, 
+            0.40948222326597494
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/hyogo2015/4/main.jpg?1440566791"
+    }, 
+    "Amano Nanami": {
+        "major": "文学部フランス文学科", 
+        "grade": 3, 
+        "age": 19, 
+        "member_name_rubi": "Amano Nanami", 
+        "height": 159.5, 
+        "member_index": 55, 
+        "blog_url": "http://b2015.misscolle.com/meigaku-amano", 
+        "member_name": "天野なな実", 
+        "university": "明治学院大学", 
+        "position_vector": [
+            160.70163065116898, 
+            -0.2058782549727252
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/meigaku2015/1/main.jpg?1442820732"
+    }, 
+    "Suzuki Haruka": {
+        "major": "経済学部産業経営学科", 
+        "grade": 4, 
+        "age": 21, 
+        "member_name_rubi": "Suzuki Haruka", 
+        "height": 164.0, 
+        "member_index": 133, 
+        "blog_url": "http://b2015.misscolle.com/misaki-suzuki", 
+        "member_name": "鈴木はるか", 
+        "university": "日本大学経済学部", 
+        "position_vector": [
+            165.36492951632826, 
+            1.0415739038924348
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/misaki2015/3/main.jpg?1443032042"
+    }, 
+    "Takazato Erina": {
+        "major": "文芸学部文化史学科", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Takazato Erina", 
+        "height": 158.0, 
+        "member_index": 82, 
+        "blog_url": "", 
+        "member_name": "高里絵理奈", 
+        "university": "成城大学", 
+        "position_vector": [
+            159.18880704048715, 
+            -0.250470040401084
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/seijo2015/4/main.jpg?1442129835"
+    }, 
+    "Wada Mizuki": {
+        "major": "経営学部経営学科", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Wada Mizuki", 
+        "height": 153.0, 
+        "member_index": 117, 
+        "blog_url": "", 
+        "member_name": "和田瑞季", 
+        "university": "横浜国立大学", 
+        "position_vector": [
+            154.2021485101215, 
+            -0.2669457643600855
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/ynu2015/3/main.jpg?1438938755"
+    }, 
+    "Igata Mikako": {
+        "major": "国際総合科学科", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Igata Mikako", 
+        "height": 166.5, 
+        "member_index": 10, 
+        "blog_url": "http://b2015.misscolle.com/ycu-igata", 
+        "member_name": "伊形美可子", 
+        "university": "横浜市立大学", 
+        "position_vector": [
+            167.74847317196196, 
+            -0.8064784948579781
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/ycu2015/3/main.jpg?1436373322"
+    }, 
+    "Ueta Hikari": {
+        "major": "経営学部", 
+        "grade": 1, 
+        "age": 18, 
+        "member_name_rubi": "Ueta Hikari", 
+        "height": 169.1, 
+        "member_index": 78, 
+        "blog_url": "http://b2015.misscolle.com/hyogo-ueta", 
+        "member_name": "上田光", 
+        "university": "兵庫県立大学", 
+        "position_vector": [
+            170.07026257694127, 
+            -2.6916944127887
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/hyogo2015/1/main.jpg?1440566792"
+    }, 
+    "Kuriyama Tomoko": {
+        "major": "経済学部経営学科", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Kuriyama Tomoko", 
+        "height": 153.0, 
+        "member_index": 6, 
+        "blog_url": "http://b2015.misscolle.com/sophia-kuriyama", 
+        "member_name": "栗山朋子", 
+        "university": "上智大学", 
+        "position_vector": [
+            154.37294867165707, 
+            1.5188009038362096
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/sophia2015/3/main.jpg?1443689581"
+    }, 
+    "Hayashi Nanaka": {
+        "major": "薬学部薬学科", 
+        "grade": 1, 
+        "age": 17, 
+        "member_name_rubi": "Hayashi Nanaka", 
+        "height": 157.0, 
+        "member_index": 49, 
+        "blog_url": "", 
+        "member_name": "林 菜々香", 
+        "university": "明治薬科大学", 
+        "position_vector": [
+            157.92162106430604, 
+            -2.338896820791807
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/mpu2015/3/main.jpg?1441026237"
+    }, 
+    "Naruta Chiho": {
+        "major": "法学部", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Naruta Chiho", 
+        "height": 160.0, 
+        "member_index": 161, 
+        "blog_url": "http://b2015.misscolle.com/rits-naruta", 
+        "member_name": "成田千穂", 
+        "university": "立命館大学", 
+        "position_vector": [
+            161.3511870567105, 
+            1.7616985149194966
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/rits2015/6/main.jpg?1441938694"
+    }, 
+    "Ro Sho": {
+        "major": "現代教養学部国際社会学科経済学専攻", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Ro Sho", 
+        "height": 162.0, 
+        "member_index": 18, 
+        "blog_url": "http://b2015.misscolle.com/twu-ro", 
+        "member_name": "呂晶", 
+        "university": "東京女子大学", 
+        "position_vector": [
+            163.3127192372713, 
+            1.651433132215539
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/twu2015/1/main.jpg?1442813197"
+    }, 
+    "Yamada Reika": {
+        "major": "政治経済学科", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Yamada Reika", 
+        "height": 158.0, 
+        "member_index": 171, 
+        "blog_url": "http://b2015.misscolle.com/phoenix-yamada", 
+        "member_name": "山田澪花", 
+        "university": "日本大学法学部", 
+        "position_vector": [
+            159.20067178666875, 
+            -0.23290510126629888
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/phoenix2015/5/main.jpg?1442816479"
+    }, 
+    "Hirahara Akiho": {
+        "major": "生活科学部居住環境学科", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Hirahara Akiho", 
+        "height": 153.7, 
+        "member_index": 57, 
+        "blog_url": "http://b2015.misscolle.com/abeno-hirahara", 
+        "member_name": "平原あきほ", 
+        "university": "大阪府立大学・大阪市立大学", 
+        "position_vector": [
+            154.92927493993287, 
+            0.2509597613700376
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/abeno2015/3/main.jpg?1443414820"
+    }, 
+    "Noda Tsubura": {
+        "major": "薬学部", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Noda Tsubura", 
+        "height": 159.0, 
+        "member_index": 58, 
+        "blog_url": "", 
+        "member_name": "野田円", 
+        "university": "明治薬科大学", 
+        "position_vector": [
+            160.17665885972517, 
+            -0.33021034122616716
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/mpu2015/4/main.jpg?1441026237"
+    }, 
+    "Kaku Ayaka": {
+        "major": "薬学部薬学科", 
+        "grade": 1, 
+        "age": 19, 
+        "member_name_rubi": "Kaku Ayaka", 
+        "height": 160.0, 
+        "member_index": 172, 
+        "blog_url": "", 
+        "member_name": "加来彩香", 
+        "university": "明治薬科大学", 
+        "position_vector": [
+            161.18341109464745, 
+            -0.4929182146832239
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/mpu2015/2/main.jpg?1441026238"
+    }, 
+    "Okada Arisa": {
+        "major": "文学部地球市民学科", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Okada Arisa", 
+        "height": 160.0, 
+        "member_index": 39, 
+        "blog_url": "http://b2015.misscolle.com/seisen-okada", 
+        "member_name": "岡田愛莉紗", 
+        "university": "清泉女子大学", 
+        "position_vector": [
+            161.3118564462493, 
+            0.6186475645914663
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/seisen2015/2/main.jpg?1439485964"
+    }, 
+    "Sato Minami": {
+        "major": "社会イノベーション学部政策イノベーション学科", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Sato Minami", 
+        "height": 160.0, 
+        "member_index": 22, 
+        "blog_url": "", 
+        "member_name": "佐藤みなみ", 
+        "university": "成城大学", 
+        "position_vector": [
+            161.30354431209662, 
+            0.36029565066992575
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/seijo2015/5/main.jpg?1442129835"
+    }, 
+    "Torigoe Kana": {
+        "major": "現代教養学部人間科学科", 
+        "grade": 3, 
+        "age": 19, 
+        "member_name_rubi": "Torigoe Kana", 
+        "height": 156.0, 
+        "member_index": 47, 
+        "blog_url": "http://b2015.misscolle.com/twu-torigoe", 
+        "member_name": "鳥越佳那", 
+        "university": "東京女子大学", 
+        "position_vector": [
+            157.22455756069886, 
+            -0.008722296075551939
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/twu2015/4/main.jpg?1441442230"
+    }, 
+    "Haruna Hiromi": {
+        "major": "経営", 
+        "grade": 1, 
+        "age": 17, 
+        "member_name_rubi": "Haruna Hiromi", 
+        "height": 153.0, 
+        "member_index": 173, 
+        "blog_url": "http://b2015.misscolle.com/hyogo-haruna", 
+        "member_name": "春名宏美", 
+        "university": "兵庫県立大学", 
+        "position_vector": [
+            153.92759195665883, 
+            -2.1452450510393692
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/hyogo2015/3/main.jpg?1440566791"
+    }, 
+    "Haginaka Wako": {
+        "major": "経済学部経営学科", 
+        "grade": 4, 
+        "age": 19, 
+        "member_name_rubi": "Haginaka Wako", 
+        "height": 164.5, 
+        "member_index": 135, 
+        "blog_url": "http://b2015.misscolle.com/saidai-haginaka", 
+        "member_name": "萩中和鼓", 
+        "university": "埼玉大学", 
+        "position_vector": [
+            165.6775939262747, 
+            1.498517371864721
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/saidai2015/4/main.jpg?1438937862"
+    }, 
+    "Horio Itsuki": {
+        "major": "現代システム科学域マネジメント学類", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Horio Itsuki", 
+        "height": 162.0, 
+        "member_index": 23, 
+        "blog_url": "http://b2015.misscolle.com/abeno-horio", 
+        "member_name": "堀尾伊津季", 
+        "university": "大阪府立大学・大阪市立大学", 
+        "position_vector": [
+            163.19969439621966, 
+            -0.08619111197721496
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/abeno2015/6/main.jpg?1444314890"
+    }, 
+    "Chiwaki Nako": {
+        "major": "経営学部経営学科", 
+        "grade": 3, 
+        "age": 21, 
+        "member_name_rubi": "Chiwaki Nako", 
+        "height": 150.0, 
+        "member_index": 51, 
+        "blog_url": "http://b2015.misscolle.com/asia-chiwaki", 
+        "member_name": "血脇なこ", 
+        "university": "亜細亜大学", 
+        "position_vector": [
+            151.4594024971964, 
+            2.1302499161855075
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/asia2015/1/main.jpg?1443295163"
+    }, 
+    "Iha Erika": {
+        "major": "経済学部商学科", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Iha Erika", 
+        "height": 162.0, 
+        "member_index": 115, 
+        "blog_url": "http://b2015.misscolle.com/komazawa-iha", 
+        "member_name": "伊波絵梨花", 
+        "university": "駒澤大学", 
+        "position_vector": [
+            163.29464316931293, 
+            1.646940909993148
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/komazawa2015/3/main.jpg?1442823438"
+    }, 
+    "Yamaga Kotoko": {
+        "major": "法学部法学科", 
+        "grade": 3, 
+        "age": 19, 
+        "member_name_rubi": "Yamaga Kotoko", 
+        "height": 160.0, 
+        "member_index": 110, 
+        "blog_url": "http://b2015.misscolle.com/aoyama-yamaga/", 
+        "member_name": "山賀琴子", 
+        "university": "青山学院大学", 
+        "position_vector": [
+            161.1929346654217, 
+            -0.17462039427748074
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/aoyama2015/4/main.jpg?1435724513"
+    }, 
+    "Okuno Saori": {
+        "major": "発達科学部修士", 
+        "grade": 1, 
+        "age": 22, 
+        "member_name_rubi": "Okuno Saori", 
+        "height": 160.0, 
+        "member_index": 30, 
+        "blog_url": "http://b2015.misscolle.com/kobe-okuno", 
+        "member_name": "奥野紗織", 
+        "university": "神戸大学", 
+        "position_vector": [
+            161.51760917770147, 
+            1.6938817227006204
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/kobe2015/5/main.jpg?1443540459"
+    }, 
+    "Sawaki Sumire": {
+        "major": "国際学部国際学科", 
+        "grade": 2, 
+        "age": 20, 
+        "member_name_rubi": "Sawaki Sumire", 
+        "height": 160.0, 
+        "member_index": 67, 
+        "blog_url": "http://b2015.misscolle.com/kyoritsu-sawaki", 
+        "member_name": "澤木菫", 
+        "university": "共立女子大学", 
+        "position_vector": [
+            161.28962711623134, 
+            0.2151085073700922
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/kyoritsu2015/4/main.jpg?1440139627"
+    }, 
+    "Nakahigashi Saki": {
+        "major": "文学部総合人文学科", 
+        "grade": 3, 
+        "age": 19, 
+        "member_name_rubi": "Nakahigashi Saki", 
+        "height": 166.0, 
+        "member_index": 86, 
+        "blog_url": "", 
+        "member_name": "中東佐紀", 
+        "university": "関西大学", 
+        "position_vector": [
+            167.1517407600665, 
+            0.1711295343967976
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/kandai2015/4/main.jpg?1437026900"
+    }, 
+    "Uehara Rika": {
+        "major": "看護", 
+        "grade": 1, 
+        "age": 17, 
+        "member_name_rubi": "Uehara Rika", 
+        "height": 154.0, 
+        "member_index": 103, 
+        "blog_url": "http://b2015.misscolle.com/hyogo-uehara", 
+        "member_name": "上原里佳", 
+        "university": "兵庫県立大学", 
+        "position_vector": [
+            154.92552066450233, 
+            -1.8197509451940566
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/hyogo2015/2/main.jpg?1440566792"
+    }, 
+    "Inoue Ayaka": {
+        "major": "外国語学部ドイツ語学科", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Inoue Ayaka", 
+        "height": 158.0, 
+        "member_index": 69, 
+        "blog_url": "", 
+        "member_name": "井上綾夏", 
+        "university": "獨協大学", 
+        "position_vector": [
+            159.28007569043987, 
+            0.5901067691996491
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/dokkyo2015/4/main.jpg?1442385288"
+    }, 
+    "Fukunaga Yuri": {
+        "major": "経済学部", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Fukunaga Yuri", 
+        "height": 158.0, 
+        "member_index": 7, 
+        "blog_url": "http://b2015.misscolle.com/kobe-fukunaga", 
+        "member_name": "福永裕梨", 
+        "university": "神戸大学", 
+        "position_vector": [
+            159.37286646516182, 
+            6.616242791075702
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/kobe2015/3/main.jpg?1443540460"
+    }, 
+    "Miyazaki Rei": {
+        "major": "総合政策学部総合政策学科", 
+        "grade": 3, 
+        "age": 21, 
+        "member_name_rubi": "Miyazaki Rei", 
+        "height": 163.0, 
+        "member_index": 126, 
+        "blog_url": "http://b2015.misscolle.com/keiosfc-miyazaki", 
+        "member_name": "宮崎玲衣", 
+        "university": "慶應義塾大学SFC", 
+        "position_vector": [
+            164.41954028745732, 
+            1.0901335207076759
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/keiosfc2015/3/main.jpg?1441388437"
+    }, 
+    "Hiraki Eru": {
+        "major": "教育学部特別支援学校教員養成課程", 
+        "grade": 3, 
+        "age": 21, 
+        "member_name_rubi": "Hiraki Eru", 
+        "height": 156.0, 
+        "member_index": 138, 
+        "blog_url": "http://b2015.misscolle.com/kumadai-hiraki", 
+        "member_name": "平木絵瑠", 
+        "university": "熊本大学", 
+        "position_vector": [
+            157.4301897773275, 
+            2.0147520371244743
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/kumadai2015/7/main.jpg?1441932618"
+    }, 
+    "Kioka Marina": {
+        "major": "工学域物質化学系学類", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Kioka Marina", 
+        "height": 161.0, 
+        "member_index": 162, 
+        "blog_url": "http://b2015.misscolle.com/abeno-kioka", 
+        "member_name": "木岡真理奈", 
+        "university": "大阪府立大学・大阪市立大学", 
+        "position_vector": [
+            162.30028761105478, 
+            0.8249545082743397
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/abeno2015/5/main.jpg?1443414819"
+    }, 
+    "Kato Ruka": {
+        "major": "文学部書道学科", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Kato Ruka", 
+        "height": 156.0, 
+        "member_index": 33, 
+        "blog_url": "http://b2015.misscolle.com/daito-kato", 
+        "member_name": "加藤瑠夏", 
+        "university": "大東文化大学", 
+        "position_vector": [
+            157.2230968316028, 
+            1.7084136391869165
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/daito2015/1/main.jpg?1442382273"
+    }, 
+    "Okumura Misaki": {
+        "major": "法学部法学科", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Okumura Misaki", 
+        "height": 165.0, 
+        "member_index": 107, 
+        "blog_url": "http://b2015.misscolle.com/kumadai-okumura", 
+        "member_name": "奥村美咲", 
+        "university": "熊本大学", 
+        "position_vector": [
+            166.27376441642164, 
+            0.4074709547719767
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/kumadai2015/5/main.jpg?1441932618"
+    }, 
+    "Yasui Wakana": {
+        "major": "薬学部薬学科", 
+        "grade": 1, 
+        "age": 18, 
+        "member_name_rubi": "Yasui Wakana", 
+        "height": 151.0, 
+        "member_index": 113, 
+        "blog_url": "", 
+        "member_name": "安井和歌奈", 
+        "university": "慶應義塾大学薬学部", 
+        "position_vector": [
+            152.08532898247165, 
+            -0.8925438238872062
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/keiopha2015/3/main.jpg?1442314647"
+    }, 
+    "Watanuki Yuuka": {
+        "major": "法学部", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Watanuki Yuuka", 
+        "height": 156.0, 
+        "member_index": 35, 
+        "blog_url": "http://b2015.misscolle.com/rits-watanuki", 
+        "member_name": "綿貫有花", 
+        "university": "立命館大学", 
+        "position_vector": [
+            157.38746954027903, 
+            4.28666867122656
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/rits2015/4/main.jpg?1441938695"
+    }, 
+    "Wada Ayaka": {
+        "major": "薬学科", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Wada Ayaka", 
+        "height": 174.0, 
+        "member_index": 72, 
+        "blog_url": "", 
+        "member_name": "和田彩夏", 
+        "university": "明治薬科大学", 
+        "position_vector": [
+            175.02387608271133, 
+            -2.299412296578373
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/mpu2015/5/main.jpg?1441026236"
+    }, 
+    "Sato Mizuki": {
+        "major": "薬学部", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Sato Mizuki", 
+        "height": 157.0, 
+        "member_index": 160, 
+        "blog_url": "http://b2015.misscolle.com/toho-sato", 
+        "member_name": "佐藤瑞季", 
+        "university": "東邦大学", 
+        "position_vector": [
+            158.23613266497898, 
+            0.4699009957792454
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/toho2015/3/main.jpg?1436249107"
+    }, 
+    "Shibata Konomi": {
+        "major": "発達科学部", 
+        "grade": 3, 
+        "age": 21, 
+        "member_name_rubi": "Shibata Konomi", 
+        "height": 148.0, 
+        "member_index": 141, 
+        "blog_url": "http://b2015.misscolle.com/kobe-shibata", 
+        "member_name": "芝田木実", 
+        "university": "神戸大学", 
+        "position_vector": [
+            149.48062382366535, 
+            2.611485095818918
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/kobe2015/4/main.jpg?1443540460"
+    }, 
+    "Aoyama Ruby": {
+        "major": "GMS", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Aoyama Ruby", 
+        "height": 167.0, 
+        "member_index": 108, 
+        "blog_url": "http://b2015.misscolle.com/komazawa-aoyama", 
+        "member_name": "青山瑠美依", 
+        "university": "駒澤大学", 
+        "position_vector": [
+            168.1309847033391, 
+            -1.155418393466928
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/komazawa2015/4/main.jpg?1442823438"
+    }, 
+    "Nishiguchi Mao": {
+        "major": "経営学部マーケティング科", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Nishiguchi Mao", 
+        "height": 170.0, 
+        "member_index": 89, 
+        "blog_url": "http://b2015.misscolle.com/aoyama-nishiguchi", 
+        "member_name": "西口真央", 
+        "university": "青山学院大学", 
+        "position_vector": [
+            171.09413954630548, 
+            -1.502717783533468
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/aoyama2015/6/main.jpg?1435724512"
+    }, 
+    "Hirai Anna": {
+        "major": "法学部公共政策学科", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Hirai Anna", 
+        "height": 162.0, 
+        "member_index": 31, 
+        "blog_url": "http://b2015.misscolle.com/phoenix-hirai", 
+        "member_name": "平井杏奈", 
+        "university": "日本大学法学部", 
+        "position_vector": [
+            163.18210006802457, 
+            0.040685908475673584
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/phoenix2015/1/main.jpg?1442816480"
+    }, 
+    "Ro Ami": {
+        "major": "外国語学部外国語学科", 
+        "grade": 3, 
+        "age": 21, 
+        "member_name_rubi": "Ro Ami", 
+        "height": 162.0, 
+        "member_index": 94, 
+        "blog_url": "http://b2015.misscolle.com/teikyo-ro", 
+        "member_name": "盧亜美", 
+        "university": "帝京大学", 
+        "position_vector": [
+            163.4122238553373, 
+            0.9591548226557044
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/teikyo2015/3/main.jpg?1442380326"
+    }, 
+    "Uematsu Arisa": {
+        "major": "経済学部経営学科", 
+        "grade": 1, 
+        "age": 18, 
+        "member_name_rubi": "Uematsu Arisa", 
+        "height": 158.0, 
+        "member_index": 151, 
+        "blog_url": "", 
+        "member_name": "植松ありさ", 
+        "university": "成城大学", 
+        "position_vector": [
+            159.06199076527835, 
+            -1.3237224350002368
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/seijo2015/2/main.jpg?1442129836"
+    }, 
+    "Eguchi Saki": {
+        "major": "薬学部薬科学科", 
+        "grade": 4, 
+        "age": 21, 
+        "member_name_rubi": "Eguchi Saki", 
+        "height": 158.0, 
+        "member_index": 28, 
+        "blog_url": "", 
+        "member_name": "江口沙樹", 
+        "university": "慶應義塾大学薬学部", 
+        "position_vector": [
+            159.46906678811365, 
+            2.3263599869576916
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/keiopha2015/1/main.jpg?1442314648"
+    }, 
+    "Shiratori Yurina": {
+        "major": "文芸学部文芸学科", 
+        "grade": 1, 
+        "age": 18, 
+        "member_name_rubi": "Shiratori Yurina", 
+        "height": 165.0, 
+        "member_index": 97, 
+        "blog_url": "http://b2015.misscolle.com/kyoritsu-shiratori", 
+        "member_name": "白鳥百合奈", 
+        "university": "共立女子大学", 
+        "position_vector": [
+            166.0188985636754, 
+            -2.1255677606123915
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/kyoritsu2015/5/main.jpg?1440139626"
+    }, 
+    "Ishimoto Hana": {
+        "major": "文学部新聞学科", 
+        "grade": 3, 
+        "age": 21, 
+        "member_name_rubi": "Ishimoto Hana", 
+        "height": 166.0, 
+        "member_index": 59, 
+        "blog_url": "http://b2015.misscolle.com/sophia-ishimoto", 
+        "member_name": "石本花", 
+        "university": "上智大学", 
+        "position_vector": [
+            167.35058118665825, 
+            0.5223331974457393
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/sophia2015/5/main.jpg?1443689580"
+    }, 
+    "Kimimura Makiko": {
+        "major": "政経学部経済学科", 
+        "grade": 1, 
+        "age": 19, 
+        "member_name_rubi": "Kimimura Makiko", 
+        "height": 154.0, 
+        "member_index": 123, 
+        "blog_url": "", 
+        "member_name": "君村真喜子", 
+        "university": "国士舘大学", 
+        "position_vector": [
+            155.18466346356956, 
+            -0.1737338677629735
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/kokushikan2015/2/main.jpg?1443276160"
+    }, 
+    "Shimmei Natsuko": {
+        "major": "文学部フランス文学科", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Shimmei Natsuko", 
+        "height": 156.0, 
+        "member_index": 119, 
+        "blog_url": "http://b2015.misscolle.com/aoyama-shimmei/", 
+        "member_name": "神名夏子", 
+        "university": "青山学院大学", 
+        "position_vector": [
+            157.35207956824655, 
+            1.432120318956069
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/aoyama2015/1/main.jpg?1435724514"
+    }, 
+    "Shimojo Ai": {
+        "major": "医学部保健学科看護学専攻", 
+        "grade": 1, 
+        "age": 17, 
+        "member_name_rubi": "Shimojo Ai", 
+        "height": 166.0, 
+        "member_index": 98, 
+        "blog_url": "http://b2015.misscolle.com/kumadai-shimojo", 
+        "member_name": "下城愛", 
+        "university": "熊本大学", 
+        "position_vector": [
+            166.88698383761445, 
+            -2.849533748898514
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/kumadai2015/3/main.jpg?1441932619"
+    }, 
+    "Kitazawa Naho": {
+        "major": "マネジメント学部生活環境マネジメント学科", 
+        "grade": 1, 
+        "age": 18, 
+        "member_name_rubi": "Kitazawa Naho", 
+        "height": 158.0, 
+        "member_index": 137, 
+        "blog_url": "", 
+        "member_name": "北澤奈帆", 
+        "university": "跡見学園女子大学", 
+        "position_vector": [
+            159.0938245819028, 
+            -0.43728462432583143
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/atomi2015/4/main.jpg?1440732282"
+    }, 
+    "Mikage Una": {
+        "major": "政経学部経済学科", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Mikage Una", 
+        "height": 163.0, 
+        "member_index": 111, 
+        "blog_url": "", 
+        "member_name": "御影宇那", 
+        "university": "国士舘大学", 
+        "position_vector": [
+            164.14373762022754, 
+            -1.060289848723894
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/kokushikan2015/3/main.jpg?1443276160"
+    }, 
+    "Nakajima Yukai": {
+        "major": "ビジネスマネジメント学群", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Nakajima Yukai", 
+        "height": 160.0, 
+        "member_index": 64, 
+        "blog_url": "http://b2015.misscolle.com/obirin-nakajima", 
+        "member_name": "中島ゆかい", 
+        "university": "桜美林大学", 
+        "position_vector": [
+            161.33721734471615, 
+            1.140281964315281
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/obirin2015/2/main.jpg?1439904073"
+    }, 
+    "Namiki Marina": {
+        "major": "経済学部経済経営学科", 
+        "grade": 2, 
+        "age": 18, 
+        "member_name_rubi": "Namiki Marina", 
+        "height": 160.0, 
+        "member_index": 125, 
+        "blog_url": "http://b2015.misscolle.com/seikei-namiki", 
+        "member_name": "並木万里菜", 
+        "university": "成蹊大学", 
+        "position_vector": [
+            161.0739890931744, 
+            -1.1595115581401196
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/seikei2015/1/main.jpg?1437216586"
+    }, 
+    "Nishida Rina": {
+        "major": "工学部機械宇宙学科", 
+        "grade": 2, 
+        "age": 20, 
+        "member_name_rubi": "Nishida Rina", 
+        "height": 161.0, 
+        "member_index": 131, 
+        "blog_url": "", 
+        "member_name": "西田莉那", 
+        "university": "東京工業大学", 
+        "position_vector": [
+            162.31246701568642, 
+            0.5603931190860624
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/titech2015/3/main.jpg?1440404325"
+    }, 
+    "Taga Kaori": {
+        "major": "教養学部", 
+        "grade": 1, 
+        "age": 18, 
+        "member_name_rubi": "Taga Kaori", 
+        "height": 163.0, 
+        "member_index": 100, 
+        "blog_url": "http://b2015.misscolle.com/saidai-taga", 
+        "member_name": "多賀香織", 
+        "university": "埼玉大学", 
+        "position_vector": [
+            164.01558580414684, 
+            -1.4393733342824735
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/saidai2015/2/main.jpg?1438937863"
+    }, 
+    "Yamamoto Marina": {
+        "major": "法学部新聞学科", 
+        "grade": 1, 
+        "age": 17, 
+        "member_name_rubi": "Yamamoto Marina", 
+        "height": 156.0, 
+        "member_index": 179, 
+        "blog_url": "http://b2015.misscolle.com/phoenix-yamamoto", 
+        "member_name": "山本茉里奈", 
+        "university": "日本大学法学部", 
+        "position_vector": [
+            156.97698466559527, 
+            -1.525835516423616
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/phoenix2015/3/main.jpg?1442816479"
+    }, 
+    "Otani Mizuki": {
+        "major": "地域保健学域看護学類", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Otani Mizuki", 
+        "height": 158.0, 
+        "member_index": 134, 
+        "blog_url": "http://b2015.misscolle.com/abeno-otani", 
+        "member_name": "大谷美月", 
+        "university": "大阪府立大学・大阪市立大学", 
+        "position_vector": [
+            159.21030758030813, 
+            -0.22866704726628637
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/abeno2015/4/main.jpg?1443414820"
+    }, 
+    "Masuda Moe": {
+        "major": "文芸学部文芸メディアコース", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Masuda Moe", 
+        "height": 170.0, 
+        "member_index": 29, 
+        "blog_url": "http://b2015.misscolle.com/kyoritsu-masuda", 
+        "member_name": "増田萌絵", 
+        "university": "共立女子大学", 
+        "position_vector": [
+            171.25297253743776, 
+            0.6939822753199891
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/kyoritsu2015/2/main.jpg?1440139628"
+    }, 
+    "Tsujisawa Kanae": {
+        "major": "社会学部コミュニティマネジメント学科", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Tsujisawa Kanae", 
+        "height": 161.0, 
+        "member_index": 42, 
+        "blog_url": "", 
+        "member_name": "辻澤叶恵", 
+        "university": "龍谷大学", 
+        "position_vector": [
+            162.29586893248978, 
+            0.9145093564290966
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/ryukoku2015/2/main.jpg?1442858032"
+    }, 
+    "Shimizu Miyu": {
+        "major": "文学部英文学科", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Shimizu Miyu", 
+        "height": 161.0, 
+        "member_index": 34, 
+        "blog_url": "http://b2015.misscolle.com/meigaku-shimizu", 
+        "member_name": "清水美優", 
+        "university": "明治学院大学", 
+        "position_vector": [
+            162.13810474238767, 
+            -1.0233380011942432
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/meigaku2015/2/main.jpg?1442820731"
+    }, 
+    "Ishida Shizuka": {
+        "major": "文学部人文学科地域研究学域", 
+        "grade": 1, 
+        "age": 17, 
+        "member_name_rubi": "Ishida Shizuka", 
+        "height": 162.0, 
+        "member_index": 157, 
+        "blog_url": "http://b2015.misscolle.com/rits-ishida", 
+        "member_name": "石田静香", 
+        "university": "立命館大学", 
+        "position_vector": [
+            162.93661657353607, 
+            -2.2416387600958445
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/rits2015/5/main.jpg?1441938694"
+    }, 
+    "Ueda Norimi": {
+        "major": "文学部中国学科", 
+        "grade": 3, 
+        "age": 19, 
+        "member_name_rubi": "Ueda Norimi", 
+        "height": 164.0, 
+        "member_index": 145, 
+        "blog_url": "http://b2015.misscolle.com/daito-ueda", 
+        "member_name": "上田紀美", 
+        "university": "大東文化大学", 
+        "position_vector": [
+            165.1728694482867, 
+            -0.13903088260592467
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/daito2015/4/main.jpg?1442382272"
+    }, 
+    "Shimizu Yumi": {
+        "major": "経営学部経営学科", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Shimizu Yumi", 
+        "height": 160.0, 
+        "member_index": 155, 
+        "blog_url": "http://b2015.misscolle.com/asia-shimizu", 
+        "member_name": "清水友海", 
+        "university": "亜細亜大学", 
+        "position_vector": [
+            161.30771275833496, 
+            0.5229780910411764
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/asia2015/4/main.jpg?1443295162"
+    }, 
+    "Tsuizaki Chihono": {
+        "major": "文学部国際文化学科", 
+        "grade": 1, 
+        "age": 18, 
+        "member_name_rubi": "Tsuizaki Chihono", 
+        "height": 154.0, 
+        "member_index": 124, 
+        "blog_url": "http://b2015.misscolle.com/seikei-tsuizaki", 
+        "member_name": "対崎千帆乃", 
+        "university": "成蹊大学", 
+        "position_vector": [
+            155.10999215855026, 
+            -0.4190438483675793
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/seikei2015/5/main.jpg?1437216584"
+    }, 
+    "Uehara Riyuki": {
+        "major": "経営学部経営学科", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Uehara Riyuki", 
+        "height": 152.5, 
+        "member_index": 169, 
+        "blog_url": "http://b2015.misscolle.com/komazawa-uehara", 
+        "member_name": "上原りゆき", 
+        "university": "駒澤大学", 
+        "position_vector": [
+            153.7266625541861, 
+            0.685868563656383
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/komazawa2015/2/main.jpg?1442823439"
+    }, 
+    "Nidaira Tamao": {
+        "major": "国際総合科学部国際総合科学科", 
+        "grade": 4, 
+        "age": 22, 
+        "member_name_rubi": "Nidaira Tamao", 
+        "height": 167.0, 
+        "member_index": 114, 
+        "blog_url": "http://b2015.misscolle.com/ycu-nidaira", 
+        "member_name": "仁平珠央", 
+        "university": "横浜市立大学", 
+        "position_vector": [
+            168.4964997075822, 
+            1.5982619766025334
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/ycu2015/4/main.jpg?1436373323"
+    }, 
+    "Himeno Sawako": {
+        "major": "経済学部国際経済学科", 
+        "grade": 2, 
+        "age": 20, 
+        "member_name_rubi": "Himeno Sawako", 
+        "height": 160.5, 
+        "member_index": 106, 
+        "blog_url": "", 
+        "member_name": "姫野佐和子", 
+        "university": "横浜国立大学", 
+        "position_vector": [
+            161.78540795495115, 
+            0.3736072838903017
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/ynu2015/4/main.jpg?1438243509"
+    }, 
+    "Nakamura Akari": {
+        "major": "外国語学部外国語学科", 
+        "grade": 4, 
+        "age": 21, 
+        "member_name_rubi": "Nakamura Akari", 
+        "height": 162.0, 
+        "member_index": 122, 
+        "blog_url": "http://b2015.misscolle.com/teikyo-nakamura", 
+        "member_name": "中村朱里", 
+        "university": "帝京大学", 
+        "position_vector": [
+            163.45128007762833, 
+            1.9432992261485351
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/teikyo2015/1/main.jpg?1441768927"
+    }, 
+    "Kawai Fumi": {
+        "major": "教育人間科学部人間文化課程", 
+        "grade": 4, 
+        "age": 22, 
+        "member_name_rubi": "Kawai Fumi", 
+        "height": 161.0, 
+        "member_index": 37, 
+        "blog_url": "", 
+        "member_name": "川合芙実", 
+        "university": "横浜国立大学", 
+        "position_vector": [
+            162.53203555168, 
+            2.384360188242739
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/ynu2015/5/main.jpg?1438243508"
+    }, 
+    "Kawamura Kasumi": {
+        "major": "経営学部経営学科", 
+        "grade": 1, 
+        "age": 18, 
+        "member_name_rubi": "Kawamura Kasumi", 
+        "height": 170.0, 
+        "member_index": 166, 
+        "blog_url": "http://b2015.misscolle.com/asia-kawamura", 
+        "member_name": "河村かすみ", 
+        "university": "亜細亜大学", 
+        "position_vector": [
+            170.96619084084307, 
+            -3.0437236538750563
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/asia2015/2/main.jpg?1443295162"
+    }, 
+    "Noumi Erina": {
+        "major": "教育学部養護教諭養成課程", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Noumi Erina", 
+        "height": 158.0, 
+        "member_index": 5, 
+        "blog_url": "http://b2015.misscolle.com/kumadai-noumi", 
+        "member_name": "能美恵里奈", 
+        "university": "熊本大学", 
+        "position_vector": [
+            159.32629317817202, 
+            0.941908643889098
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/kumadai2015/6/main.jpg?1441932618"
+    }, 
+    "Takagi Mariko": {
+        "major": "現代教養学部", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Takagi Mariko", 
+        "height": 167.0, 
+        "member_index": 165, 
+        "blog_url": "http://b2015.misscolle.com/twu-takagi", 
+        "member_name": "高木真理子", 
+        "university": "東京女子大学", 
+        "position_vector": [
+            168.23514151113577, 
+            -0.26475252384844633
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/twu2015/3/main.jpg?1441442230"
+    }, 
+    "Taki Nanako": {
+        "major": "短期大学部食物栄養学科", 
+        "grade": 1, 
+        "age": 17, 
+        "member_name_rubi": "Taki Nanako", 
+        "height": 154.0, 
+        "member_index": 85, 
+        "blog_url": "", 
+        "member_name": "滝菜々子", 
+        "university": "日本大学国際関係学部", 
+        "position_vector": [
+            154.91856594652654, 
+            -2.1829392435633075
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/fuo2015/3/main.jpg?1443709055"
+    }, 
+    "Tachibana Yuri": {
+        "major": "経営学部経営学科", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Tachibana Yuri", 
+        "height": 165.0, 
+        "member_index": 81, 
+        "blog_url": "http://b2015.misscolle.com/rits-tachibana", 
+        "member_name": "橘祐里", 
+        "university": "立命館大学", 
+        "position_vector": [
+            166.15943127655143, 
+            -0.455290112599799
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/rits2015/3/main.jpg?1441938695"
+    }, 
+    "Takiguchi Mayu": {
+        "major": "日本文学科", 
+        "grade": 2, 
+        "age": 18, 
+        "member_name_rubi": "Takiguchi Mayu", 
+        "height": 160.0, 
+        "member_index": 178, 
+        "blog_url": "http://b2015.misscolle.com/seikei-takiguchi", 
+        "member_name": "滝口真由", 
+        "university": "成蹊大学", 
+        "position_vector": [
+            161.09841062750544, 
+            -0.5482749154083104
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/seikei2015/4/main.jpg?1437216584"
+    }, 
+    "Aratani Yuri": {
+        "major": "総合政策学部総合政策学科", 
+        "grade": 3, 
+        "age": 19, 
+        "member_name_rubi": "Aratani Yuri", 
+        "height": 158.0, 
+        "member_index": 177, 
+        "blog_url": "http://b2015.misscolle.com/keiosfc-aratani", 
+        "member_name": "荒谷侑立", 
+        "university": "慶應義塾大学SFC", 
+        "position_vector": [
+            159.21301301171243, 
+            0.5786765926262653
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/keiosfc2015/1/main.jpg?1443861041"
+    }, 
+    "Shinada Cecil": {
+        "major": "英語英文科", 
+        "grade": 1, 
+        "age": 17, 
+        "member_name_rubi": "Shinada Cecil", 
+        "height": 163.0, 
+        "member_index": 120, 
+        "blog_url": "http://b2015.misscolle.com/seisen-shinada", 
+        "member_name": "品田世知", 
+        "university": "清泉女子大学", 
+        "position_vector": [
+            163.92363298143798, 
+            -2.429662091380262
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/seisen2015/4/main.jpg?1439485963"
+    }, 
+    "Takeishi Yurika": {
+        "major": "理学部生物学科", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Takeishi Yurika", 
+        "height": 155.0, 
+        "member_index": 45, 
+        "blog_url": "http://b2015.misscolle.com/toho-takeishi", 
+        "member_name": "竹石友理香", 
+        "university": "東邦大学", 
+        "position_vector": [
+            156.21572818128573, 
+            1.9876496302047462
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/toho2015/1/main.jpg?1436249106"
+    }, 
+    "Koizumi Yuuna": {
+        "major": "リベラルアーツ", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Koizumi Yuuna", 
+        "height": 167.0, 
+        "member_index": 65, 
+        "blog_url": "http://b2015.misscolle.com/obirin-koizumi", 
+        "member_name": "小泉優奈", 
+        "university": "桜美林大学", 
+        "position_vector": [
+            168.13611673953775, 
+            -1.2239918991075758
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/obirin2015/3/main.jpg?1439904072"
+    }, 
+    "Hosokawa Shiori": {
+        "major": "理工学部物質生命理工学科", 
+        "grade": 3, 
+        "age": 19, 
+        "member_name_rubi": "Hosokawa Shiori", 
+        "height": 166.0, 
+        "member_index": 101, 
+        "blog_url": "http://b2015.misscolle.com/seikei-hosokawa", 
+        "member_name": "細川栞", 
+        "university": "成蹊大学", 
+        "position_vector": [
+            167.15969471545782, 
+            -0.6527606448603303
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/seikei2015/2/main.jpg?1437216585"
+    }, 
+    "Miyazato Kanoko": {
+        "major": "人間科学部人間科学科", 
+        "grade": 1, 
+        "age": 18, 
+        "member_name_rubi": "Miyazato Kanoko", 
+        "height": 148.0, 
+        "member_index": 127, 
+        "blog_url": "http://b2015.misscolle.com/musashino-miyazato", 
+        "member_name": "宮里夏野子", 
+        "university": "武蔵野大学", 
+        "position_vector": [
+            149.12936478625016, 
+            0.02968154495424596
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/musashino2015/6/main.jpg?1439276520"
+    }, 
+    "Ueno Shinako": {
+        "major": "社会学部心理学専攻", 
+        "grade": 1, 
+        "age": 18, 
+        "member_name_rubi": "Ueno Shinako", 
+        "height": 167.0, 
+        "member_index": 36, 
+        "blog_url": "", 
+        "member_name": "植野史奈子", 
+        "university": "関西大学", 
+        "position_vector": [
+            167.98159947528953, 
+            -2.2503226001290204
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/kandai2015/1/main.jpg?1437026900"
+    }, 
+    "Asanuma Eri": {
+        "major": "リベラルアーツ学群", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Asanuma Eri", 
+        "height": 162.0, 
+        "member_index": 41, 
+        "blog_url": "http://b2015.misscolle.com/obirin-asanuma", 
+        "member_name": "浅沼惠理", 
+        "university": "桜美林大学", 
+        "position_vector": [
+            163.30682174342857, 
+            0.2828770754391986
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/obirin2015/5/main.jpg?1439904071"
+    }, 
+    "Ina Erika": {
+        "major": "マネジメント学部マネジメント学科", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Ina Erika", 
+        "height": 160.0, 
+        "member_index": 121, 
+        "blog_url": "", 
+        "member_name": "伊奈絵里佳", 
+        "university": "跡見学園女子大学", 
+        "position_vector": [
+            161.32255006990613, 
+            0.7635441958594409
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/atomi2015/5/main.jpg?1440732282"
+    }, 
+    "Igarashi Yuri": {
+        "major": "国際総合科学部", 
+        "grade": 1, 
+        "age": 18, 
+        "member_name_rubi": "Igarashi Yuri", 
+        "height": 155.5, 
+        "member_index": 63, 
+        "blog_url": "http://b2015.misscolle.com/ycu-igarashi", 
+        "member_name": "五十嵐ゆり", 
+        "university": "横浜市立大学", 
+        "position_vector": [
+            156.54526359532727, 
+            -1.2670787965023802
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/ycu2015/1/main.jpg?1436373321"
+    }, 
+    "Arai Hitomi": {
+        "major": "理学部化学科", 
+        "grade": 3, 
+        "age": 19, 
+        "member_name_rubi": "Arai Hitomi", 
+        "height": 164.0, 
+        "member_index": 46, 
+        "blog_url": "http://b2015.misscolle.com/kobe-arai", 
+        "member_name": "荒井仁美", 
+        "university": "神戸大学", 
+        "position_vector": [
+            165.16998923915128, 
+            -0.32383838791068364
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/kobe2015/1/main.jpg?1443540461"
+    }, 
+    "Hiramoto Sayaka": {
+        "major": "商学部", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Hiramoto Sayaka", 
+        "height": 151.0, 
+        "member_index": 83, 
+        "blog_url": "", 
+        "member_name": "平本紗也果", 
+        "university": "関西大学", 
+        "position_vector": [
+            152.39176976909872, 
+            2.249243581426654
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/kandai2015/7/main.jpg?1437026900"
+    }, 
+    "Hataguchi Mio": {
+        "major": "法学部法学政治学科", 
+        "grade": 1, 
+        "age": 19, 
+        "member_name_rubi": "Hataguchi Mio", 
+        "height": 159.0, 
+        "member_index": 76, 
+        "blog_url": "", 
+        "member_name": "畑口美穂", 
+        "university": "関西大学", 
+        "position_vector": [
+            160.22652697639145, 
+            1.6662402270567762
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/kandai2015/6/main.jpg?1437026899"
+    }, 
+    "Matsushita Ruka": {
+        "major": "経営学部事業創造学科", 
+        "grade": 2, 
+        "age": 18, 
+        "member_name_rubi": "Matsushita Ruka", 
+        "height": 161.0, 
+        "member_index": 54, 
+        "blog_url": "http://b2015.misscolle.com/hyogo-matsushita", 
+        "member_name": "松下瑠香", 
+        "university": "兵庫県立大学", 
+        "position_vector": [
+            162.02782642087035, 
+            -1.318481351642438
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/hyogo2015/5/main.jpg?1440566791"
+    }, 
+    "Okabe Mayu": {
+        "major": "総合人間科学部教育学科", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Okabe Mayu", 
+        "height": 160.0, 
+        "member_index": 154, 
+        "blog_url": "http://b2015.misscolle.com/sophia-okabe", 
+        "member_name": "岡部茉佑", 
+        "university": "上智大学", 
+        "position_vector": [
+            161.33371481367615, 
+            1.079626323930366
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/sophia2015/4/main.jpg?1443689580"
+    }, 
+    "Kasahara Mizuho": {
+        "major": "経済学部産業経営学科", 
+        "grade": 4, 
+        "age": 21, 
+        "member_name_rubi": "Kasahara Mizuho", 
+        "height": 165.0, 
+        "member_index": 109, 
+        "blog_url": "http://b2015.misscolle.com/misaki-kasahara", 
+        "member_name": "笠原瑞穂", 
+        "university": "日本大学経済学部", 
+        "position_vector": [
+            166.40741404179622, 
+            1.8657345418406395
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/misaki2015/4/main.jpg?1443032042"
+    }, 
+    "Takahashi Mari": {
+        "major": "経済学部経済学科", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Takahashi Mari", 
+        "height": 164.0, 
+        "member_index": 142, 
+        "blog_url": "http://b2015.misscolle.com/senshu-takahashi", 
+        "member_name": "高橋茉莉", 
+        "university": "専修大学", 
+        "position_vector": [
+            165.2727720766613, 
+            0.10059206720832063
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/senshu2015/4/main.jpg?1439095792"
+    }, 
+    "Shizukawa Haruna": {
+        "major": "教養学部教養学科", 
+        "grade": 4, 
+        "age": 21, 
+        "member_name_rubi": "Shizukawa Haruna", 
+        "height": 164.0, 
+        "member_index": 15, 
+        "blog_url": "http://b2015.misscolle.com/saidai-shizukawa", 
+        "member_name": "静川陽菜", 
+        "university": "埼玉大学", 
+        "position_vector": [
+            165.39314779600406, 
+            1.7102872915639475
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/saidai2015/5/main.jpg?1438937862"
+    }, 
+    "Shirata Mizuho": {
+        "major": "経済学科", 
+        "grade": 2, 
+        "age": 19, 
+        "member_name_rubi": "Shirata Mizuho", 
+        "height": 153.0, 
+        "member_index": 3, 
+        "blog_url": "http://b2015.misscolle.com/misaki-shirata", 
+        "member_name": "白田瑞歩", 
+        "university": "日本大学経済学部", 
+        "position_vector": [
+            154.19708993289333, 
+            0.2757399813015837
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/misaki2015/1/main.jpg?1443032043"
+    }, 
+    "Urushibata Eri": {
+        "major": "教育人間科学部学校教育課程", 
+        "grade": 4, 
+        "age": 21, 
+        "member_name_rubi": "Urushibata Eri", 
+        "height": 179.0, 
+        "member_index": 12, 
+        "blog_url": "", 
+        "member_name": "漆畑英里", 
+        "university": "横浜国立大学", 
+        "position_vector": [
+            180.2940767764003, 
+            -0.17000552218686332
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/ynu2015/6/main.jpg?1438243508"
+    }, 
+    "Iida Serina": {
+        "major": "国際関係学部国際教養学科", 
+        "grade": 1, 
+        "age": 18, 
+        "member_name_rubi": "Iida Serina", 
+        "height": 170.0, 
+        "member_index": 14, 
+        "blog_url": "", 
+        "member_name": "飯田芹莉奈", 
+        "university": "日本大学国際関係学部", 
+        "position_vector": [
+            170.93946931353233, 
+            -2.8929149531646714
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/fuo2015/2/main.jpg?1443709056"
+    }, 
+    "Ito Nagisa": {
+        "major": "文学部ドイツ文学科", 
+        "grade": 4, 
+        "age": 20, 
+        "member_name_rubi": "Ito Nagisa", 
+        "height": 155.0, 
+        "member_index": 95, 
+        "blog_url": "http://b2015.misscolle.com/sophia-ito", 
+        "member_name": "伊藤渚", 
+        "university": "上智大学", 
+        "position_vector": [
+            156.33336485248304, 
+            1.4135264956842297
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/sophia2015/2/main.jpg?1443689581"
+    }, 
+    "Matsufuji Yurika": {
+        "major": "文芸学部国文学科", 
+        "grade": 3, 
+        "age": 20, 
+        "member_name_rubi": "Matsufuji Yurika", 
+        "height": 168.0, 
+        "member_index": 91, 
+        "blog_url": "", 
+        "member_name": "松藤裕里佳", 
+        "university": "成城大学", 
+        "position_vector": [
+            169.24114898401572, 
+            0.1103670522136386
+        ], 
+        "photo_url": "https://misscolle.com//img/contests/seijo2015/6/main.jpg?1442395996"
+    }
+}
