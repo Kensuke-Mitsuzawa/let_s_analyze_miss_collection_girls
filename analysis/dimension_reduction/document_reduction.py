@@ -5,6 +5,7 @@ import os
 import numpy
 
 from analysis.dimension_reduction.modules.data_loader_documet import DocumentDataLoader
+from modules.data_loader_documet import SubProfiles
 import modules.reduction_core as reduction_core
 import logging
 logger = logging.getLogger()
@@ -18,6 +19,82 @@ logger.addHandler(sh)
 __author__ = 'kensuke-mi'
 
 PATH_PROFILE_JSON = '../../extracted/miss_collection/miss_member.json'
+
+
+def __make_name_prof_url_object(members_profiles):
+    assert isinstance(members_profiles, list)
+    member_rubi_url_obj = {
+        member_obj['name_rubi']: member_obj['top_profile_photo_url']
+        for member_obj
+        in members_profiles
+    }
+    return member_rubi_url_obj
+
+
+def __genarate_position_obj(member_index, member_sub_prof_obj, photo_url, member_position_vec):
+    """This method generate one member position object
+
+    :param member_index:
+    :param member_sub_prof_obj:
+    :param member_position_vec:
+    :return:
+    """
+    assert isinstance(member_index, int)
+    #assert isinstance(member_sub_prof_obj, SubProfiles)
+    assert isinstance(member_position_vec, numpy.ndarray)
+    assert isinstance(photo_url, (str, unicode))
+
+    position_object = {}
+    position_object['position_vector'] = member_position_vec.tolist()
+    position_object['member_index'] = member_index
+    position_object['member_name'] = member_sub_prof_obj.name
+    position_object['member_name_rubi'] = member_sub_prof_obj.name_rubi
+    position_object['age'] = member_sub_prof_obj.age
+    position_object['university'] = member_sub_prof_obj.university
+    position_object['major'] = member_sub_prof_obj.major
+    position_object['height'] = member_sub_prof_obj.height
+    position_object['grade'] = member_sub_prof_obj.grade
+    position_object['photo_url'] = photo_url
+
+    return position_object
+
+
+def make_position_objects(members_index_map, name_rubi_photo_url_obj, low_dim_matrix):
+    """This method generates following object.
+    {
+        member_name_rubi: {
+            'position_vector': list,
+            'member_index': int,
+            'age': int,
+            'grade': int,
+            'height': float,
+            'major': str,
+            'member_name': str,
+            'member_name_rubi': str,
+            'photo_url': str,
+            'university': str
+        }
+    }
+
+    :param members_index_map:
+    :param name_rubi_photo_url_obj:
+    :param low_dim_matrix:
+    :return:
+    """
+    assert isinstance(members_index_map, dict)
+    assert isinstance(low_dim_matrix, numpy.ndarray)
+
+    members_position_maps = {}
+    for member_index, member_sub_prof in members_index_map.items():
+        assert hasattr(member_sub_prof, "name_rubi")
+        position_object = __genarate_position_obj(member_index=member_index,
+                                                  member_sub_prof_obj=member_sub_prof,
+                                                  member_position_vec=low_dim_matrix[member_index],
+                                                  photo_url=name_rubi_photo_url_obj[member_sub_prof.name_rubi])
+        members_position_maps[member_sub_prof.name_rubi] = position_object
+
+    return members_position_maps
+
 
 
 def prepare_all_members_matrix():
@@ -34,9 +111,19 @@ def prepare_all_members_matrix():
     assert isinstance(members_index_map, dict)
 
     low_dim_matrix_svd = reduction_core.call_svd(members_matrix, 2, logger)
-    low_dim_matrix_tsne = reduction_core.execute_tsne(members_matrix, 2, logger)
+    low_dim_matrix_tsne = reduction_core.execute_tsne(members_matrix, 2, logger)\
 
+    name_rubi_photo_url_obj = __make_name_prof_url_object(members_profiles=members_profiles)
+
+    members_position_svd_maps = make_position_objects(members_index_map=members_index_map,
+                          name_rubi_photo_url_obj=name_rubi_photo_url_obj, low_dim_matrix=low_dim_matrix_svd)
+    members_position_tsne_maps =  make_position_objects(members_index_map=members_index_map,
+                          name_rubi_photo_url_obj=name_rubi_photo_url_obj, low_dim_matrix=low_dim_matrix_tsne)
+    assert isinstance(members_position_svd_maps, dict)
+    assert isinstance(members_position_tsne_maps, dict)
+
+    return members_position_svd_maps, members_position_tsne_maps
 
 
 if __name__ == '__main__':
-    prepare_all_members_matrix()
+    members_position_svd_maps, members_position_tsne_maps = prepare_all_members_matrix()

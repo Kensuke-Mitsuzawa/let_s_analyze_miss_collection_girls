@@ -169,7 +169,7 @@ class DocumentDataLoader(object):
             #print self.feature_index_mapper[sub_prof_feature]
             #print sub_prof_feature_dict[sub_prof_feature]
             numpy_array[self.feature_index_mapper[sub_prof_feature]] = sub_prof_feature_dict[sub_prof_feature]
-        return numpy_array, index_number, members_prof_objects.sub_profile.name_rubi
+        return numpy_array, index_number, members_prof_objects.sub_profile
 
     def make_all_members_matrix(self, all_members_profile_dict_obj):
         """This method creates feature matrix of all members.
@@ -186,7 +186,7 @@ class DocumentDataLoader(object):
         ]
         self.feature_index_mapper = self.make_feature_index(members_prof_objects)
 
-        # This list contains (members_vector, member_index_no, member_name_rubi)
+        # This list contains (members_vector, member_index_no, member_sub_profile)
         members_array_tuples = [
             self.make_members_array(members_prof_objects, index_number)
             for index_number, members_prof_objects
