@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 import math
 import logging
 
+
 def draw_test_mean_loss(test_mean_loss, path_to_graph_png, is_show=False):
     assert isinstance(test_mean_loss, list)
     assert os.path.exists(os.path.dirname(path_to_graph_png))
@@ -49,9 +50,6 @@ def plot_intermediate_node(l1_W, path_to_plot_png, n_epoch, datatype, logger, is
     assert isinstance(logger, logging.Logger)
 
     logger.info(msg=u"started to draw feature nodes")
-
-
-
 
     plt.style.use('fivethirtyeight')
     # draw digit images
