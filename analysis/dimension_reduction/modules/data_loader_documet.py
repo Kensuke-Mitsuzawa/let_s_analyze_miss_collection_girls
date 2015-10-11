@@ -1,6 +1,4 @@
 #! -*- coding: utf-8 -*-
-__author__ = 'kensuke-mi'
-
 from datetime import date, timedelta
 import re
 
@@ -8,6 +6,8 @@ import numpy
 import random
 from analysis.dimension_reduction.modules.JapaneseTokenizers.JapaneseTokenizer.mecab_wrapper.mecab_wrapper import MecabWrapper
 from models.question_answer import QuestionAnswerModel
+
+__author__ = 'kensuke-mi'
 
 
 class ProfileFeatures(object):
@@ -39,6 +39,7 @@ class ProfileFeatures(object):
 
     def __repr__(self):
         return 'ProfileFeatures'
+
 
 class SubProfiles(object):
     def __init__(self, birth_date, birth_place, height, major, name, name_rubi, university):
@@ -140,7 +141,6 @@ class DocumentDataLoader(object):
                         question_id_mapper=self.question_id_mapper)
         #features = profile_features_obj.make_string_features()
 
-
         return profile_features_obj
 
     def make_feature_index(self, members_prof_objects):
@@ -155,9 +155,10 @@ class DocumentDataLoader(object):
         self.feture_index = feature_index
         return {string_feature: feature_number for feature_number, string_feature in enumerate(feature_index)}
 
-    def make_members_array(self, members_prof_objects):
+    def make_members_array(self, members_prof_objects, index_number):
         assert isinstance(members_prof_objects, ProfileFeatures)
         assert hasattr(self, "feature_index_mapper")
+        assert isinstance(index_number, int)
 
         numpy_array = numpy.zeros(max(self.feature_index_mapper.values()) + 1)
         qa_features = members_prof_objects.make_qa_features()
@@ -168,10 +169,15 @@ class DocumentDataLoader(object):
             #print self.feature_index_mapper[sub_prof_feature]
             #print sub_prof_feature_dict[sub_prof_feature]
             numpy_array[self.feature_index_mapper[sub_prof_feature]] = sub_prof_feature_dict[sub_prof_feature]
-        return numpy_array
-
+        return numpy_array, index_number, members_prof_objects.sub_profile.name_rubi
 
     def make_all_members_matrix(self, all_members_profile_dict_obj):
+        """This method creates feature matrix of all members.
+        And this method returns {index: member_name} object also.
+
+        :param all_members_profile_dict_obj:
+        :return:
+        """
         assert isinstance(all_members_profile_dict_obj, list)
         members_prof_objects = [
             self.make_member_profile(member_prof_obj)
@@ -180,25 +186,23 @@ class DocumentDataLoader(object):
         ]
         self.feature_index_mapper = self.make_feature_index(members_prof_objects)
 
-        members_arrays = [
-            self.make_members_array(members_prof_objects)
-            for members_prof_objects
-            in members_prof_objects
+        # This list contains (members_vector, member_index_no, member_name_rubi)
+        members_array_tuples = [
+            self.make_members_array(members_prof_objects, index_number)
+            for index_number, members_prof_objects
+            in enumerate(members_prof_objects)
         ]
+        members_index_map = {
+            info_tuple[1]: info_tuple[2]
+            for info_tuple
+            in members_array_tuples
+        }
+        members_arrays = [
+            info_tuple[0]
+            for info_tuple
+            in members_array_tuples
+        ]
+
         members_matrix = numpy.array(members_arrays)
 
-        return  members_matrix
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        return  members_matrix, members_index_map
