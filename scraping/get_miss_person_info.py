@@ -23,7 +23,7 @@ def prepare_miss_collection_info():
 
     extract_obj = extract_miss_collection.ExtractPersonInfo(root_url=miss_root_url, path_to_cache_files=PATH_CACHE_DIR)
 
-    """
+
     # make list of target university links
     universities = extract_obj.parse_top_html()
     assert isinstance(universities, list)
@@ -42,7 +42,7 @@ def prepare_miss_collection_info():
     member_profile_info = extract_obj.make_person_information(member_abstract_objects)
     assert isinstance(member_profile_info, list)
     path_to_persons_information = extract_obj.save_persons_information_pickle(member_profile_info)
-    """
+
 
     # merge members profile and photo urls
     all_photo_urls = load_pickle_obj(os.path.join(PATH_CACHE_DIR, 'photo_links.pickle'))
@@ -61,7 +61,7 @@ def prepare_mr_collection_info():
 
     extract_obj = extract_miss_collection.ExtractPersonInfo(root_url=mr_root_url, path_to_cache_files=PATH_CACHE_DIR)
 
-    """
+
     # make list of target university links
     universities = extract_obj.parse_top_html()
     assert isinstance(universities, list)
@@ -80,7 +80,7 @@ def prepare_mr_collection_info():
     member_profile_info = extract_obj.make_person_information(member_abstract_objects)
     assert isinstance(member_profile_info, list)
     path_to_persons_information = extract_obj.save_persons_information_pickle(member_profile_info)
-    """
+
 
     # merge members profile and photo urls
     all_photo_urls = load_pickle_obj(os.path.join(PATH_CACHE_DIR, 'photo_links.pickle'))
