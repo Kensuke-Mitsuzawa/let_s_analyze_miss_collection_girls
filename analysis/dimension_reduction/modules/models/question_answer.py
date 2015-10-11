@@ -1,7 +1,7 @@
 #! -*- coding: utf-8 -*-
+from ..JapaneseTokenizers.JapaneseTokenizer.mecab_wrapper.mecab_wrapper import MecabWrapper
 __author__ = 'kensuke-mi'
 
-from ..JapaneseTokenizers.JapaneseTokenizer.mecab_wrapper.mecab_wrapper import MecabWrapper
 
 class QuestionAnswerModel(object):
 
@@ -41,7 +41,6 @@ class QuestionAnswerModel(object):
         ]
         return tokens
 
-
     def __removeStopWords(self, question_words):
         assert isinstance(question_words, dict)
 
@@ -50,8 +49,6 @@ class QuestionAnswerModel(object):
             filetred_tokens[question] = self.__filter_tokens(words)
 
         return filetred_tokens
-
-
 
     def __repr__(self):
         return str("QuestionAnswerModel")
