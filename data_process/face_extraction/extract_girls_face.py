@@ -44,7 +44,23 @@ def girls_face_process():
         face_extract.main_procedure(imagefile_name=path_input, path_to_save=path_save, path_to_resized=PATH_TO_RESIZED)
 
 
+def boys_face_process():
+    PATH_INPUT_DIR = '../../extracted/mr_collection/original_pic'
+    PATH_SAVE_DIR = '../../extracted/mr_collection/face'
+    PATH_TO_RESIZED = '../../extracted/mr_collection/gray'
+
+    assert os.path.exists(PATH_INPUT_DIR)
+    assert os.path.exists(os.path.dirname(PATH_SAVE_DIR))
+    if os.path.exists(PATH_SAVE_DIR)==False: os.mkdir(PATH_SAVE_DIR)
+    if os.path.exists(PATH_TO_RESIZED)==False: os.mkdir(PATH_TO_RESIZED)
+
+    input_output_save_dict = make_save_paths(PATH_INPUT_DIR, PATH_SAVE_DIR)
+
+    for path_input, path_save in input_output_save_dict.items():
+        face_extract.main_procedure(imagefile_name=path_input, path_to_save=path_save, path_to_resized=PATH_TO_RESIZED)
+
 
 if __name__ == '__main__':
     #example_usage()
     girls_face_process()
+    boys_face_process()
