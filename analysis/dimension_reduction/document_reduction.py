@@ -111,7 +111,7 @@ def make_position_objects(members_index_map, name_rubi_photo_url_obj, name_blog_
 
 
 
-def prepare_all_members_matrix():
+def prepare_all_members_matrix(PATH_PROFILE_JSON):
     """ミスコン出場者の行列を生成する
 
 
@@ -125,7 +125,7 @@ def prepare_all_members_matrix():
     assert isinstance(members_index_map, dict)
 
     low_dim_matrix_svd = reduction_core.call_svd(members_matrix, 2, logger)
-    low_dim_matrix_tsne = reduction_core.execute_tsne(members_matrix, 2, logger)\
+    low_dim_matrix_tsne = reduction_core.execute_tsne(members_matrix, 2, logger)
 
     name_rubi_photo_url_obj = __make_name_prof_url_object(members_profiles=members_profiles)
     name_blog_url_obj = __make_name_blog_link_url_object(members_profiles=members_profiles)
@@ -152,7 +152,7 @@ if __name__ == '__main__':
     assert os.path.exists(os.path.dirname(path_to_save_document_svd_result))
     assert os.path.exists(os.path.dirname(path_to_save_document_tsne_result))
 
-    members_position_svd_maps, members_position_tsne_maps = prepare_all_members_matrix()
+    members_position_svd_maps, members_position_tsne_maps = prepare_all_members_matrix(PATH_PROFILE_JSON)
     with codecs.open(path_to_save_document_svd_result, 'w', 'utf-8') as f:
         f.write(json.dumps(members_position_svd_maps, ensure_ascii=False, indent=4))
 
