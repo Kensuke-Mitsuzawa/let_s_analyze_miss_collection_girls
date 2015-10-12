@@ -628,8 +628,7 @@ class ExtractPersonInfo(object):
 
         return person_s_dir
 
-
-    def conv_profiles_with_json(self, person_index_information, path_pics_dir):
+    def conv_profiles_with_json(self, person_index_information, path_pics_dir, pics_download=True):
         assert isinstance(person_index_information, dict)
         assert os.path.exists(path_pics_dir)
 
@@ -647,6 +646,7 @@ class ExtractPersonInfo(object):
             item['twitter_link'] = member_profile.abstract.twitter_link
             item['blog_link'] = member_profile.abstract.blog_link
 
+            item['profile_page_url'] = member_profile.abstract.prof_link
             item['top_profile_photo_url'] = member_profile.abstract.photo_url
             item['photo_urls'] = [self.root_url + url for url in member_profile.photo_urls]
 
@@ -661,19 +661,20 @@ class ExtractPersonInfo(object):
             path_to_persons_pics_dir = self.__make_persons_directory(path_to_pics_dir=path_pics_dir,
                                                                      person_name=member_profile.profile.name_rubi)
             # ----------------------------------------------------------------------
-            # download and save top profile picture
+            if pics_download == True:
+                # download and save top profile picture
 
-            path_top_pic = u'{}.jpg'.format(os.path.join(path_to_persons_pics_dir, member_profile.profile.name_rubi))
-            self.__download_pics(url=member_profile.abstract.photo_url, path=path_top_pic)
-            time.sleep(random.randint(wait_time_from, wait_time_to))
-            # ----------------------------------------------------------------------
-            # download and save all profile pictures
-            path_to_saved_photos = []
-            for photo_index, photo_url in enumerate(member_profile.photo_urls):
-                path_to_photo = os.path.join(path_to_persons_pics_dir, u'{}_{}.jpg'.format(member_profile.profile.name_rubi,
-                                                                                           photo_index))
-                self.__download_pics(url=self.root_url + photo_url, path=path_to_photo)
-                path_to_saved_photos.append(path_to_photo)
+                path_top_pic = u'{}.jpg'.format(os.path.join(path_to_persons_pics_dir, member_profile.profile.name_rubi))
+                self.__download_pics(url=member_profile.abstract.photo_url, path=path_top_pic)
+                time.sleep(random.randint(wait_time_from, wait_time_to))
+                # ----------------------------------------------------------------------
+                # download and save all profile pictures
+                path_to_saved_photos = []
+                for photo_index, photo_url in enumerate(member_profile.photo_urls):
+                    path_to_photo = os.path.join(path_to_persons_pics_dir, u'{}_{}.jpg'.format(member_profile.profile.name_rubi,
+                                                                                               photo_index))
+                    self.__download_pics(url=self.root_url + photo_url, path=path_to_photo)
+                    path_to_saved_photos.append(path_to_photo)
 
             # ----------------------------------------------------------------------
             for key_value_tuple in member_profile.QA:
@@ -685,17 +686,16 @@ class ExtractPersonInfo(object):
 
         return array_object
 
-
-    def save_result_with_json(self, person_index_information):
+    def save_result_with_json(self, person_index_information, pics_download=True):
         assert os.path.exists(self.path_to_cache_files)
         assert isinstance(person_index_information, dict)
 
         if os.path.exists(os.path.join(self.path_to_cache_files, 'original_pic'))==False:
             os.mkdir(os.path.join(self.path_to_cache_files, 'original_pic'))
 
-
         array_object = self.conv_profiles_with_json(person_index_information=person_index_information,
-                                                    path_pics_dir=os.path.join(self.path_to_cache_files, 'original_pic'))
+                                                    path_pics_dir=os.path.join(self.path_to_cache_files, 'original_pic'),
+                                                    pics_download=pics_download)
 
         path_member_json = self
         with codecs.open(os.path.join(self.path_to_cache_files, 'miss_member.json'), 'w', 'utf-8') as f:

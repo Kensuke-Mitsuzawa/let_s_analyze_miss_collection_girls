@@ -42,7 +42,7 @@ class ProfileFeatures(object):
 
 
 class SubProfiles(object):
-    def __init__(self, birth_date, birth_place, height, major, name, name_rubi, university):
+    def __init__(self, birth_date, birth_place, height, major, name, name_rubi, university, profile_url):
         self.birth_date = birth_date
         today = date.today()
         self.age = self.yearbirthday(b=self.__split_birth_day(), y=today)
@@ -53,6 +53,7 @@ class SubProfiles(object):
         self.name = name
         self.name_rubi = name_rubi
         self.university = university
+        self.profile_url = profile_url
 
     def __split_major_and_grade(self, major_and_grade):
         assert isinstance(major_and_grade, unicode)
@@ -136,7 +137,8 @@ class DocumentDataLoader(object):
         question_answer_obj = self.make_qa_model(member_profile_dict['name'], member_profile_dict['QA'])
         sub_profile_obj = SubProfiles(birth_date=member_profile_dict['birth_date'], birth_place=member_profile_dict['birth_place'],
                                       height=member_profile_dict['height'], major=member_profile_dict['major'], name=member_profile_dict['name'],
-                                      name_rubi=member_profile_dict['name_rubi'], university=member_profile_dict['univ_name'])
+                                      name_rubi=member_profile_dict['name_rubi'], university=member_profile_dict['univ_name'],
+                                      profile_url=member_profile_dict['profile_page_url'])
         profile_features_obj = ProfileFeatures(sub_profile_obj=sub_profile_obj, question_answer_obj=question_answer_obj,
                         question_id_mapper=self.question_id_mapper)
         #features = profile_features_obj.make_string_features()

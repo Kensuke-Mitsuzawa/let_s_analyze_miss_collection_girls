@@ -52,7 +52,7 @@ def prepare_miss_collection_info():
 
 
     # converts into array and dict format to make it use to save with json
-    list_of_items = extract_obj.save_result_with_json(profile_photo_urls_merged_object)
+    list_of_items = extract_obj.save_result_with_json(profile_photo_urls_merged_object, pics_download=False)
 
 
 def prepare_mr_collection_info():
@@ -89,7 +89,7 @@ def prepare_mr_collection_info():
                                                                                all_photo_urls=all_photo_urls)
 
     # converts into array and dict format to make it use to save with json
-    list_of_items = extract_obj.save_result_with_json(profile_photo_urls_merged_object)
+    list_of_items = extract_obj.save_result_with_json(profile_photo_urls_merged_object, pics_download=False)
 
 
 if __name__ == '__main__':

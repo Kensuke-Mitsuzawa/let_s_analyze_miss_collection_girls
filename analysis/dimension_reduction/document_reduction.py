@@ -41,7 +41,7 @@ def __make_name_blog_link_url_object(members_profiles):
     return member_blog_link_obj
 
 
-def __genarate_position_obj(member_index, member_sub_prof_obj, photo_url, blog_url, member_position_vec):
+def __genarate_position_obj(member_index, member_sub_prof_obj, photo_url, blog_url, profile_url, member_position_vec):
     """This method generate one member position object
 
     :param member_index:
@@ -66,6 +66,7 @@ def __genarate_position_obj(member_index, member_sub_prof_obj, photo_url, blog_u
     position_object['grade'] = member_sub_prof_obj.grade
     position_object['photo_url'] = photo_url
     position_object['blog_url'] = blog_url
+    position_object['profile_url'] = profile_url
 
     return position_object
 
@@ -104,7 +105,8 @@ def make_position_objects(members_index_map, name_rubi_photo_url_obj, name_blog_
                                                   member_sub_prof_obj=member_sub_prof,
                                                   member_position_vec=low_dim_matrix[member_index],
                                                   photo_url=name_rubi_photo_url_obj[member_sub_prof.name_rubi],
-                                                  blog_url=name_blog_url_obj[member_sub_prof.name_rubi])
+                                                  blog_url=name_blog_url_obj[member_sub_prof.name_rubi],
+                                                  profile_url=member_sub_prof.profile_url)
         members_position_maps[member_sub_prof.name_rubi] = position_object
 
     return members_position_maps

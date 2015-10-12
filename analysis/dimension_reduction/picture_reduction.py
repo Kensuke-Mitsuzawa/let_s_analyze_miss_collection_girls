@@ -49,7 +49,8 @@ def make_member_profile(member_profile_dict):
 
     sub_profile_obj = SubProfiles(birth_date=member_profile_dict['birth_date'], birth_place=member_profile_dict['birth_place'],
                                   height=member_profile_dict['height'], major=member_profile_dict['major'], name=member_profile_dict['name'],
-                                  name_rubi=member_profile_dict['name_rubi'], university=member_profile_dict['univ_name'])
+                                  name_rubi=member_profile_dict['name_rubi'], university=member_profile_dict['univ_name'],
+                                  profile_url=member_profile_dict['name_rubi'])
 
     return sub_profile_obj
 
