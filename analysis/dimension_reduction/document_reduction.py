@@ -126,8 +126,8 @@ def prepare_all_members_matrix(PATH_PROFILE_JSON):
     assert isinstance(members_matrix, numpy.ndarray)
     assert isinstance(members_index_map, dict)
 
-    low_dim_matrix_svd = reduction_core.call_svd(members_matrix, 2, logger)
-    low_dim_matrix_tsne = reduction_core.execute_tsne(members_matrix, 2, logger)
+    low_dim_matrix_svd = reduction_core.call_svd(members_matrix, 2, logger, normalize=True)
+    low_dim_matrix_tsne = reduction_core.execute_tsne(members_matrix, 2, logger, normalize=True)
 
     name_rubi_photo_url_obj = __make_name_prof_url_object(members_profiles=members_profiles)
     name_blog_url_obj = __make_name_blog_link_url_object(members_profiles=members_profiles)
