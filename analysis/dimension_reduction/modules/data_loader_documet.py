@@ -48,12 +48,18 @@ class SubProfiles(object):
         self.age = self.yearbirthday(b=self.__split_birth_day(), y=today)
         self.birth_place = birth_place
         self.height = float(height.replace(u'cm', u''))
-        self.major = self.__split_major_and_grade(major)[0]
-        self.grade = self.__split_major_and_grade(major)[1]
+
         self.name = name
         self.name_rubi = name_rubi
         self.university = university
         self.profile_url = profile_url
+
+        if major == '':
+            self.major = 'unknown'
+            self.grade = 0
+        else:
+            self.major = self.__split_major_and_grade(major)[0]
+            self.grade = self.__split_major_and_grade(major)[1]
 
     def __split_major_and_grade(self, major_and_grade):
         assert isinstance(major_and_grade, unicode)
@@ -71,10 +77,11 @@ class SubProfiles(object):
             month, rest = rest.split(u'月')
             day = rest.replace(u'日', u'')
         else:
-            # 年齢不詳な場合は、大学生が取り得る範囲で適当に埋める
+            # 年齢不詳な場合は、いまの年にしておく。そうしたら、年齢が０になるはず
             month, rest = self.birth_date.split(u'月')
             day = rest.replace(u'日', u'')
-            year = date.today().year - random.randint(18, 23)
+            #year = date.today().year - random.randint(18, 23)
+            year = 2015
 
         return date(int(year), int(month), int(day))
 

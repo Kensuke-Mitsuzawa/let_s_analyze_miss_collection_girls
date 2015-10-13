@@ -18,8 +18,6 @@ logger.addHandler(sh)
 
 __author__ = 'kensuke-mi'
 
-PATH_PROFILE_JSON = '../../extracted/miss_collection/miss_member.json'
-
 
 def __make_name_prof_url_object(members_profiles):
     assert isinstance(members_profiles, list)
@@ -147,10 +145,12 @@ def prepare_all_members_matrix(PATH_PROFILE_JSON):
     return members_position_svd_maps, members_position_tsne_maps
 
 
-if __name__ == '__main__':
+def generate_girls_postion_information():
     PATH_TO_SAVE_RESULT_DIR = '../../visualization/data_for_visual/'
-    path_to_save_document_svd_result = os.path.join(PATH_TO_SAVE_RESULT_DIR, 'document_svd_obj.json')
-    path_to_save_document_tsne_result = os.path.join(PATH_TO_SAVE_RESULT_DIR, 'document_tsne_obj.json')
+    PATH_PROFILE_JSON = '../../extracted/miss_collection/miss_member.json'
+
+    path_to_save_document_svd_result = os.path.join(PATH_TO_SAVE_RESULT_DIR, 'miss_document_svd_obj.json')
+    path_to_save_document_tsne_result = os.path.join(PATH_TO_SAVE_RESULT_DIR, 'miss_document_tsne_obj.json')
     assert os.path.exists(os.path.dirname(path_to_save_document_svd_result))
     assert os.path.exists(os.path.dirname(path_to_save_document_tsne_result))
 
@@ -160,3 +160,25 @@ if __name__ == '__main__':
 
     with codecs.open(path_to_save_document_tsne_result, 'w', 'utf-8') as f:
         f.write(json.dumps(members_position_tsne_maps, ensure_ascii=False, indent=4))
+
+
+def generate_boys_postion_information():
+    PATH_TO_SAVE_RESULT_DIR = '../../visualization/data_for_visual/'
+    PATH_PROFILE_JSON = '../../extracted/mr_collection/miss_member.json'
+
+    path_to_save_document_svd_result = os.path.join(PATH_TO_SAVE_RESULT_DIR, 'mr_document_svd_obj.json')
+    path_to_save_document_tsne_result = os.path.join(PATH_TO_SAVE_RESULT_DIR, 'mr_document_tsne_obj.json')
+    assert os.path.exists(os.path.dirname(path_to_save_document_svd_result))
+    assert os.path.exists(os.path.dirname(path_to_save_document_tsne_result))
+
+    members_position_svd_maps, members_position_tsne_maps = prepare_all_members_matrix(PATH_PROFILE_JSON)
+    with codecs.open(path_to_save_document_svd_result, 'w', 'utf-8') as f:
+        f.write(json.dumps(members_position_svd_maps, ensure_ascii=False, indent=4))
+
+    with codecs.open(path_to_save_document_tsne_result, 'w', 'utf-8') as f:
+        f.write(json.dumps(members_position_tsne_maps, ensure_ascii=False, indent=4))
+
+
+if __name__ == '__main__':
+    generate_girls_postion_information()
+    generate_boys_postion_information()

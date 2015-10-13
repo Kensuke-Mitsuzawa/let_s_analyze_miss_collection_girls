@@ -22,10 +22,6 @@ logger.addHandler(sh)
 
 __author__ = 'kensuke-mi'
 
-PATH_TO_PICS_DIR = '../../extracted/miss_collection/gray'
-PATH_TO_SAVE_PICKLE = './data_directory/picture_matrix_obj.pickle'
-PATH_TO_INPUT_JSON = '../../extracted/miss_collection/miss_member.json'
-
 
 def make_path_pic_list(path_input_dir, suffix='*jpg', only_main_pic=True):
     path_list = []
@@ -138,12 +134,36 @@ def prepare_picture_matrix_with_trained_features(path_to_trained_model_pickle, v
     converted_matrix = space_convert_obj.space_convert(feature_vectors=selected_vectors)
     assert isinstance(converted_matrix, numpy.ndarray)
 
-if __name__ == '__main__':
-    path_to_pic_tsne_result = '../../visualization/data_for_visual/pics_tsne_obj.json'
+
+def generate_girls_position():
+    PATH_TO_PICS_DIR = '../../extracted/miss_collection/gray'
+    PATH_TO_SAVE_PICKLE = './data_directory/miss_picture_matrix_obj.pickle'
+    PATH_TO_INPUT_JSON = '../../extracted/miss_collection/miss_member.json'
+    path_to_pic_tsne_result = '../../visualization/data_for_visual/miss_pics_tsne_obj.json'
+
     position_map_picture_tsne = picture_reduction_normal_tsne(PATH_TO_PICS_DIR, PATH_TO_INPUT_JSON, PATH_TO_SAVE_PICKLE)
     with codecs.open(path_to_pic_tsne_result, 'w', 'utf-8') as f:
         f.write(json.dumps(position_map_picture_tsne, indent=4, ensure_ascii=False))
 
     #path_to_trained_model_pickle = '../test/relu_2layer_simple_test.pickle'
+
+
+def generate_boys_position():
+    PATH_TO_PICS_DIR = '../../extracted/mr_collection/gray'
+    PATH_TO_SAVE_PICKLE = './data_directory/mr_picture_matrix_obj.pickle'
+    PATH_TO_INPUT_JSON = '../../extracted/mr_collection/miss_member.json'
+    path_to_pic_tsne_result = '../../visualization/data_for_visual/mr_pics_tsne_obj.json'
+
+    position_map_picture_tsne = picture_reduction_normal_tsne(PATH_TO_PICS_DIR, PATH_TO_INPUT_JSON, PATH_TO_SAVE_PICKLE)
+    with codecs.open(path_to_pic_tsne_result, 'w', 'utf-8') as f:
+        f.write(json.dumps(position_map_picture_tsne, indent=4, ensure_ascii=False))
+
+    #path_to_trained_model_pickle = '../test/relu_2layer_simple_test.pickle'
+
+
+if __name__ == '__main__':
+    generate_girls_position()
+    generate_boys_position()
+
 
 
