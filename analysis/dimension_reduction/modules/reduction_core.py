@@ -53,7 +53,10 @@ def execute_tsne(ndarray_matrix, target_dims, logger, svd=True, normalize=False)
     if svd==True:
         X_input = call_svd(processed_matrix, 50, logger)
     else:
-        X_input = processed_matrix.csc_matrix.todense()
+        if type(processed_matrix) == csr_matrix:
+            X_input = processed_matrix.csc_matrix.todense()
+        elif type(processed_matrix) == numpy.ndarray:
+            X_input = processed_matrix
 
 
     model = TSNE(n_components=target_dims, perplexity=40, verbose=2)

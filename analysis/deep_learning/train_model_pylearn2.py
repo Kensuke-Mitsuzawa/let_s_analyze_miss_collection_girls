@@ -13,8 +13,6 @@ pickle file in which training data is.
 
 __author__ = 'kensuke-mi'
 
-PATH_TO_PYLEARN2_MODES_DIR = os.path.abspath('./model_pylearn2')
-
 
 @no_debug_mode
 def train_yaml(yaml_file):
@@ -23,10 +21,10 @@ def train_yaml(yaml_file):
     train.main_loop()
 
 
-def train_grdm_dbm_mode(yaml_models_dir):
-    input_pickle_path = os.path.abspath('./intermediate_files_pylearn2/toy_train/toy_train.pkl')
+def train_grdm_dbm_mode(yaml_models_dir, input_pkl_dir, project_name):
+    input_pickle_path = os.path.abspath(os.path.join(input_pkl_dir, '{}.pkl'.format(project_name)))
     yaml_file_path = os.path.join(yaml_models_dir, 'grdm_dbm.yaml')
-    save_path = os.path.join(yaml_models_dir, 'grdm_dbm.pickle')
+    save_path = os.path.join(input_pkl_dir, 'grdm_dbm.pickle')
     yaml = open(yaml_file_path, 'r').read()
 
     print input_pickle_path
@@ -44,11 +42,10 @@ def train_grdm_dbm_mode(yaml_models_dir):
     train_yaml(yaml)
 
 
-def train_dbm_model(yaml_models_dir):
-
-    input_pickle_path = os.path.abspath('./intermediate_files_pylearn2/toy_train/toy_train.pkl')
+def train_dbm_model(yaml_models_dir, input_pkl_dir, project_name):
+    input_pickle_path = os.path.abspath(os.path.join(input_pkl_dir, '{}.pkl'.format(project_name)))
     yaml_file_path = os.path.join(yaml_models_dir, 'rbm.yaml')
-    save_path = os.path.join(yaml_models_dir, 'rbm.pickle')
+    save_path = os.path.join(input_pkl_dir, 'rbm.pickle')
 
     yaml = open(yaml_file_path, 'r').read()
 
@@ -64,9 +61,12 @@ def train_dbm_model(yaml_models_dir):
 
 
 def train_generic():
+    PATH_TO_PYLEARN2_MODES_DIR = os.path.abspath('./model_pylearn2')
+    PATH_TO_INPUT_DIR = os.path.abspath('./intermediate_files_pylearn2/toy_train/')
+    PROJECT_NAME = 'toy_train'
 
     skip.skip_if_no_data()
-    train_dbm_model(PATH_TO_PYLEARN2_MODES_DIR)
+    train_dbm_model(PATH_TO_PYLEARN2_MODES_DIR, PATH_TO_INPUT_DIR, PROJECT_NAME)
 
 
 if __name__ == '__main__':
