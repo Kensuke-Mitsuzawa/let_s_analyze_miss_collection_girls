@@ -1,4 +1,6 @@
-deep_learning/trained_models/
+deep_learning/chainer_intermediate_files/
+deep_learning/pylearn2_intermediate_files/
 dimension_reduction/data_directory/
-deep_learning/intermediate_files_pylearn2/
 *pickle
+
+
