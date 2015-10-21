@@ -1,6 +1,6 @@
 #! -*- coding: utf-8 -*-
-from train_model import ChainerDeepNetWoek
-from draw_graphs import *
+from core_chainer.train_model import ChainerDeepNetWoek
+from core_chainer.draw_graphs import *
 import os
 import logging
 logger = logging.getLogger('root_logger')
@@ -13,10 +13,10 @@ __author__ = 'kensuke-mi'
 
 
 PATH_INPUT_DATA_DIR = '../../extracted/miss_collection/gray'
-PATH_LOSS_GRAPH_DIR = './graphs/loss_score'
-PATH_W1_LAYER_GRAPH_DIR = './graphs/w1_layer'
-PATH_W2_LAYER_GRAPH_DIR = './graphs/w2_layer'
-PATH_TRAINED_MODELS = './trained_models'
+PATH_LOSS_GRAPH_DIR = './chainer_intermediate_files/graphs/loss_score'
+PATH_W1_LAYER_GRAPH_DIR = './chainer_intermediate_files/graphs/w1_layer'
+PATH_W2_LAYER_GRAPH_DIR = './chainer_intermediate_files/graphs/w2_layer'
+PATH_TRAINED_MODELS = 'chainer_intermediate_files/trained_models'
 
 # -----------------------------------------------------------------------
 

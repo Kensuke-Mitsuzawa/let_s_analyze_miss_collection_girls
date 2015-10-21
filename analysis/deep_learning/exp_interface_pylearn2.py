@@ -20,7 +20,7 @@ def make_girls_face_dbm_model():
     PROJECT_NAME = 'girls_face_dmb'
     make_dataset_pylearn2.main(input_files_list, PATH_TO_DATA_DIR, PROJECT_NAME)
 
-    PATH_TO_PYLEARN2_MODES_DIR = os.path.abspath(os.path.join(PATH_TO_DATA_DIR, 'model_pylearn2'))
+    PATH_TO_PYLEARN2_MODES_DIR = os.path.abspath(os.path.join('core_pylearn2', 'model_pylearn2'))
     PATH_TO_INPUT_DIR = os.path.abspath(os.path.join(PATH_TO_DATA_DIR, PROJECT_NAME))
 
     skip.skip_if_no_data()
