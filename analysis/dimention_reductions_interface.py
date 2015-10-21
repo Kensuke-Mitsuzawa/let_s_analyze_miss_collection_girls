@@ -1,4 +1,3 @@
-from deep_learning.make_dataset_pylearn2 import FacePicDataSet
 import dimension_reduction.picture_reduction as p_d
 import codecs
 import json

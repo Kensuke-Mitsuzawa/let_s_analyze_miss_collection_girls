@@ -121,7 +121,7 @@ def picture_reduction_normal_tsne(path_input_dir, path_to_input_json, path_to_sa
 
 
 def prepare_picture_matrix_with_deepNN_features(path_to_members_info_json, path_to_trained_model_pickle,
-                                                path_to_datasource_dir, project_name, vector_numbers_index):
+                                                path_to_datasource_dir, project_name, vector_numbers_index, reduction_mode):
     """This method create feature Embedded matrix. Thus, feature space is already converted into new space made with deepLeanrning.
     This method is only for pylearn2 model.
 
@@ -132,6 +132,7 @@ def prepare_picture_matrix_with_deepNN_features(path_to_members_info_json, path_
     assert isinstance(vector_numbers_index, list)
     assert os.path.exists(path_to_trained_model_pickle)
     assert os.path.exists(path_to_datasource_dir)
+    if not reduction_mode in ['t-sne', 'pca']: raise SystemError('reduction mode is {t-sne, pca}')
 
     members_profiles = json.loads(codecs.open(path_to_members_info_json, 'r', 'utf-8').read())
     name_rubi_photo_url_obj = document_reduction.__make_name_prof_url_object(members_profiles=members_profiles)
@@ -166,12 +167,23 @@ def prepare_picture_matrix_with_deepNN_features(path_to_members_info_json, path_
         member_name: converted_matrix[index]
         for member_name, index in index_main_prof_mapper.items()
     }
-    low_dim_matrix = reduction_core.execute_tsne(ndarray_matrix=numpy.array([vec for vec in name_vector_mapper.values()]),
-                                                 target_dims=2, logger=logger, svd=False)
+
+    if reduction_mode=='t-sne':
+        low_dim_matrix = reduction_core.execute_tsne(ndarray_matrix=numpy.array([vec for vec in name_vector_mapper.values()]),
+                                                     target_dims=2, logger=logger, svd=False)
+    elif reduction_mode=='pca':
+        low_dim_matrix = reduction_core.call_pca(ndarray_matrix=numpy.array([vec for vec in name_vector_mapper.values()]),
+                                                     low_dims=2, logger=logger, normalize=False)
+    else:
+        raise SystemError('must be {t-sne, pca}')
 
 
     index_subprof_mapper = make_index_subprof_mapper(name_subprof_mapper=name_sub_prof_mapper,
-                                                     index_name_mapper={new_index: name for new_index, name in enumerate(index_main_prof_mapper.keys())})
+                                                     index_name_mapper={
+                                                         new_index: name
+                                                         for new_index, name
+                                                         in enumerate(index_main_prof_mapper.keys())
+                                                         })
     member_position_map = document_reduction.make_position_objects(members_index_map=index_subprof_mapper,
                                              name_rubi_photo_url_obj=name_rubi_photo_url_obj,
                                              name_blog_url_obj=name_blog_url_obj,

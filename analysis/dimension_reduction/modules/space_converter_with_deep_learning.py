@@ -58,14 +58,22 @@ class SpaceConverterDeepFeaturePyLearn2(object):
         return model_object
 
     def select_feature_vectors(self, vector_index_numbers):
+        """This method selects some features. you can select any feature numbers.
+        if you pass [-1], this method selects all features.
+
+        :param vector_index_numbers:
+        :return:
+        """
         assert isinstance(vector_index_numbers, list)
         selected_vectors = []
         T_original_space = self.feature_vector.T
-        for vector_index in vector_index_numbers:
-            vector = T_original_space[vector_index]
-            selected_vectors.append(vector)
-
-        return numpy.array(selected_vectors)
+        if vector_index_numbers==[-1]:
+            return T_original_space
+        else:
+            for vector_index in vector_index_numbers:
+                vector = T_original_space[vector_index]
+                selected_vectors.append(vector)
+            return numpy.array(selected_vectors)
 
     def space_convert(self, feature_vectors):
         assert hasattr(self, "data_matrix")
