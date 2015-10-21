@@ -1,5 +1,7 @@
 # what's this?
 
+This directory contains codes to utilize data with machine learning metrics
+
 # setting up
 
 ## make virtual environment with conda
@@ -48,5 +50,13 @@ I put simple bash script which install pylearn2 and run demo code.
 To execute this file, move into `using_pylearn2` directory and execute `setup_procedure.sh`
 
 
-# usage
+# Directory structure
 
+
+    ├── README.md: this file
+    ├── deep_learning: codes to call and use deep learning techniques
+    ├── dimension_reduction: codes to make data into small dimension
+    ├── misc: meaningless scripts
+    ├── requirement.txt: pip requirement file
+    ├── test: test script of python unittest
+    └── using_pylearn2: simple procedure to use pylearn2 turtorial

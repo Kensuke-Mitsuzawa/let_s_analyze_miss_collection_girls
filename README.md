@@ -1,4 +1,14 @@
-# メモ
+# what's this?
+
+This project is all codes to utilize the data from Japanese Miss/Mr contest.
+
+For now, this project contains following contents
+
+* Extract information from Miss/Mr web site
+* Automatic Face recognition
+* Extract and make picture embedded into dense vector space with DeepNN
+* Dimension reduction with LSI, SVD, tSNE
+* Visualize 2-dimension plot with interactive scatter graph
 
 # setting up
 
