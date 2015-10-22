@@ -30,25 +30,66 @@ def generate_boys_position():
 def generate_girls_position_deepNN():
 
     PATH_TO_INPUT_JSON = '../extracted/miss_collection/miss_member.json'
-    PATH_TO_DEEPNN_DATA_SOURCE_PICKLE = 'deep_learning/intermediate_files_pylearn2/toy_train/'
-    PATH_TO_DEEPNN_TRAINED = 'deep_learning/intermediate_files_pylearn2/toy_train/rbm.pickle/dbm.pkl'
-    PROJECT_NAME = 'toy_train'
+    PATH_TO_DEEPNN_DATA_SOURCE_PICKLE = 'deep_learning/pylearn2_intermediate_files/girls_face_dmb'
+    PATH_TO_DEEPNN_TRAINED = 'deep_learning/pylearn2_intermediate_files/girls_face_dmb/rbm.pickle/dbm.pkl'
+    PROJECT_NAME = 'girls_face_dmb'
     PATH_TO_SAVE_DEEP_NN_RESULT = '../visualization/data_for_visual/miss_pics_deepNN_obj.json'
 
-    vector_numbers_index = [30, 46, 65]
+    # [-1] indicates to use all features
+    vector_numbers_index = [-1]
 
     position_map_picture_deepNN = p_d.prepare_picture_matrix_with_deepNN_features(PATH_TO_INPUT_JSON,
                                                     PATH_TO_DEEPNN_TRAINED,
                                                     PATH_TO_DEEPNN_DATA_SOURCE_PICKLE,
                                                     PROJECT_NAME,
-                                                    vector_numbers_index)
+                                                    vector_numbers_index,reduction_mode='t-sne')
     with codecs.open(PATH_TO_SAVE_DEEP_NN_RESULT, 'w', 'utf-8') as f:
         f.write(json.dumps(position_map_picture_deepNN, indent=4, ensure_ascii=False))
+
+    PATH_TO_SAVE_DEEP_NN_RESULT = '../visualization/data_for_visual/miss_pics_deepNN_pca_obj.json'
+    position_map_picture_deepNN_pca = p_d.prepare_picture_matrix_with_deepNN_features(PATH_TO_INPUT_JSON,
+                                                    PATH_TO_DEEPNN_TRAINED,
+                                                    PATH_TO_DEEPNN_DATA_SOURCE_PICKLE,
+                                                    PROJECT_NAME,
+                                                    vector_numbers_index, reduction_mode='pca')
+    with codecs.open(PATH_TO_SAVE_DEEP_NN_RESULT, 'w', 'utf-8') as f:
+        f.write(json.dumps(position_map_picture_deepNN_pca, indent=4, ensure_ascii=False))
+
+
+def generate_boy_position_deepNN():
+
+    PATH_TO_INPUT_JSON = '../extracted/mr_collection/miss_member.json'
+    PATH_TO_DEEPNN_DATA_SOURCE_PICKLE = 'deep_learning/pylearn2_intermediate_files/boys_face_dmb'
+    PATH_TO_DEEPNN_TRAINED = 'deep_learning/pylearn2_intermediate_files/boys_face_dmb/rbm.pickle/dbm.pkl'
+    PROJECT_NAME = 'boys_face_dmb'
+    PATH_TO_SAVE_DEEP_NN_RESULT = '../visualization/data_for_visual/mr_pics_deepNN_tsne_obj.json'
+
+    # [-1] indicates to use all features
+    vector_numbers_index = [-1]
+
+    position_map_picture_deepNN = p_d.prepare_picture_matrix_with_deepNN_features(PATH_TO_INPUT_JSON,
+                                                    PATH_TO_DEEPNN_TRAINED,
+                                                    PATH_TO_DEEPNN_DATA_SOURCE_PICKLE,
+                                                    PROJECT_NAME,
+                                                    vector_numbers_index, reduction_mode='t-sne')
+    with codecs.open(PATH_TO_SAVE_DEEP_NN_RESULT, 'w', 'utf-8') as f:
+        f.write(json.dumps(position_map_picture_deepNN, indent=4, ensure_ascii=False))
+
+
+    PATH_TO_SAVE_DEEP_NN_RESULT = '../visualization/data_for_visual/mr_pics_deepNN_pca_obj.json'
+    position_map_picture_deepNN_pca = p_d.prepare_picture_matrix_with_deepNN_features(PATH_TO_INPUT_JSON,
+                                                    PATH_TO_DEEPNN_TRAINED,
+                                                    PATH_TO_DEEPNN_DATA_SOURCE_PICKLE,
+                                                    PROJECT_NAME,
+                                                    vector_numbers_index, reduction_mode='pca')
+    with codecs.open(PATH_TO_SAVE_DEEP_NN_RESULT, 'w', 'utf-8') as f:
+        f.write(json.dumps(position_map_picture_deepNN_pca, indent=4, ensure_ascii=False))
 
 
 if __name__ == '__main__':
     #generate_girls_position()
     #generate_boys_position()
     generate_girls_position_deepNN()
+    #generate_boy_position_deepNN()
 
 

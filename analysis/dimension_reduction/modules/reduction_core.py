@@ -50,11 +50,10 @@ def call_pca(ndarray_matrix, low_dims, logger, normalize=False):
     else:
         processed_matrix = ndarray_matrix
 
-    X = csr_matrix(processed_matrix)
-    logger.info(u"original dims: {}".format(X.shape[1]))
+    logger.info(u"original dims: {}".format(processed_matrix.shape[1]))
     pca = PCA(n_components=low_dims)
-    X_input = pca.fit_transform(X)
-    logger.info(u"after SVD dims: {}".format(X_input.shape[1]))
+    X_input = pca.fit_transform(processed_matrix)
+    logger.info(u"after PCA dims: {}".format(X_input.shape[1]))
 
     return X_input
 
